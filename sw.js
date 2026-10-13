@@ -1,10 +1,11 @@
-const CACHE_NAME = 'be-productive-v2';
+const CACHE_NAME = 'be-productive-v5';
 const APP_SHELL = [
   './',
   './index.html',
   './config.js',
   './manifest.webmanifest',
-  './icons/app-icon.svg'
+  './icons/app-icon.svg',
+  './icons/sow-ca-logo.svg'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
