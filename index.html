@@ -119,7 +119,7 @@
 </div>
 </section>
 <section id="taskManagerView" class="app-section manager-view hidden">
-  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">🧭 PRIORITY · PROGRESS · HISTORY</div><h1>Task Manager</h1></div></div>
+  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">📝 PLAN · DO · DONE</div><h1>Task Manager</h1></div></div>
 <section class="wake-grid" aria-label="Morning wake-up plan">
   <article id="wakeTodayCard" class="wake-card neutral">
     <div class="panel-head" style="margin-bottom:7px"><div><div class="eyebrow">🌅 FIRST WIN</div><h2>Wake-up check</h2></div><span id="wakeTodayBadge" class="wake-badge">Checking</span></div>
@@ -151,9 +151,8 @@
     <div><div class="eyebrow">✅ TODAY'S PLAN</div><h2>Task Board</h2><p class="task-subtitle">Pick the next thing. Finish strong.</p></div>
     <button id="showTaskForm" class="button task-add-button" type="button">＋ Add task</button>
   </div>
-  <div class="task-quick-stats">
-    <div class="task-stat stat-open"><span>📌</span><div><strong id="taskOverviewCount">0</strong><small>Open</small></div></div>
-    <div class="task-stat stat-high"><span>🔥</span><div><strong id="taskHighCount">0</strong><small>High priority</small></div></div>
+  <div class="task-quick-stats task-two-stats">
+    <div class="task-stat stat-open"><span>🕒</span><div><strong id="taskOverviewCount">0</strong><small>Incomplete</small></div></div>
     <div class="task-stat stat-done"><span>✅</span><div><strong id="taskDoneTodayCount">0</strong><small>Completed today</small></div></div>
   </div>
   <form id="taskForm" class="task-form hidden">
@@ -164,11 +163,7 @@
     </div>
     <div class="formgrid">
       <div class="field"><label for="dueDate">📅 Due date</label><input id="dueDate" type="date" required></div>
-      <div class="field"><label for="priority">🚦 Priority</label><select id="priority"><option value="high">🔥 High — Do first</option><option value="normal" selected>🟣 Normal</option><option value="low">🌱 Low — When free</option></select></div>
-    </div>
-    <div class="formgrid">
       <div class="field"><label for="estimate">⏱️ Expected time (min)</label><input id="estimate" type="number" min="0" max="1440" value="45"></div>
-      <div class="field task-form-tip"><span>🎯 Small goals. Strong progress.</span></div>
     </div>
     <div class="task-form-actions"><button class="button" type="submit">Save task</button><button id="cancelTask" class="button secondary" type="button">Cancel</button></div>
     <div id="taskMessage" class="message" role="status"></div>
@@ -184,21 +179,22 @@
     </section>
   </div>
 </section>
-<section class="panel task-history-panel" aria-label="Task history and daily report">
-  <div class="panel-head task-history-head">
-    <div><div class="eyebrow">📊 AUTO-SAVED</div><h2>Task History</h2><p class="task-subtitle">Daily totals + full activity log.</p></div>
-    <div class="history-controls"><label for="historyDate">Report date</label><input id="historyDate" type="date"><button id="exportTaskHistory" class="button secondary" type="button">⬇ Export CSV</button></div>
+<section class="panel task-history-panel daily-report-panel" aria-label="Date-wise task report export">
+  <div class="report-heading">
+    <div class="report-heading-icon">📅</div>
+    <div class="report-heading-copy"><div class="eyebrow">📊 DAILY REPORT</div><h2>Export task report</h2><p>Choose a date. Download just the daily totals.</p></div>
   </div>
-  <div class="history-stats">
-    <div class="history-stat"><span>➕ Added</span><strong id="historyAddedCount">0</strong></div>
-    <div class="history-stat"><span>✅ Completed</span><strong id="historyCompletedCount">0</strong></div>
-    <div class="history-stat"><span>⏳ Incomplete</span><strong id="historyOpenCount">0</strong></div>
-    <div class="history-stat"><span>🗑️ Deleted</span><strong id="historyDeletedCount">0</strong></div>
+  <div class="report-controls">
+    <div class="field report-date-field"><label for="historyDate">📆 Select date</label><input id="historyDate" type="date"></div>
+    <button id="exportTaskHistory" class="button report-csv-button" type="button">⬇ Download CSV</button>
+    <button id="exportTaskHistoryWord" class="button report-word-button" type="button">📝 Download Word</button>
   </div>
-  <div class="history-list-head"><strong id="historyListTitle">Activity</strong><span id="historyEventCount" class="lane-count">0 events</span></div>
-  <div id="historyEvents" class="history-events"></div>
-  <div id="historyEmpty" class="task-empty">Your daily task records will appear here.</div>
-  <p id="historyMessage" class="message" role="status"></p>
+  <div class="history-stats report-stats">
+    <div class="history-stat report-added"><span>➕ Tasks added</span><strong id="historyAddedCount">0</strong></div>
+    <div class="history-stat report-completed"><span>✅ Tasks completed</span><strong id="historyCompletedCount">0</strong></div>
+    <div class="history-stat report-incomplete"><span>⏳ Remaining at day end</span><strong id="historyOpenCount">0</strong></div>
+  </div>
+  <p id="historyMessage" class="message report-message" role="status"></p>
 </section>
 
 </section>
@@ -238,7 +234,7 @@ function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView'
 function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));}
 function init(){let t=today(),h=new Date().getHours();$('studyDate').value=t;$('dueDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');$('dueDate').value=today();updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);
+wireNavigation();$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');$('dueDate').value=today();updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 if(!ready){show('auth');$('setupWarning').classList.remove('hidden');say('authMessage','Supabase config missing. Check config.js.');$('authSubmit').disabled=true;return}
@@ -255,7 +251,7 @@ let timer;async function refresh(){clearTimeout(timer);timer=setTimeout(()=>load
 function subscribe(){if(state.channel)state.db.removeChannel(state.channel);state.channel=state.db.channel('study-progress-sync').on('postgres_changes',{event:'*',schema:'public',table:'study_sessions'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_tasks'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_settings'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'wake_up_plans'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_task_history'},refresh).subscribe(status=>{if(status==='SUBSCRIBED')$('syncStatus').textContent='Live sync on'})}
 async function saveSession(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('sessionMessage','');try{let {error}=await state.db.from('study_sessions').insert({user_id:state.user.id,subject:$('subject').value,study_date:$('studyDate').value,duration_minutes:Number($('minutes').value),study_type:$('studyType').value,topic:$('topic').value.trim()||null,notes:$('notes').value.trim()||null});if(error)throw error;$('topic').value='';$('notes').value='';$('minutes').value=60;say('sessionMessage','Session saved and synced.',true);await load()}catch(e){say('sessionMessage',e.message)}finally{b.disabled=false}}
 function updateTaskCategory(){const isPersonal=$('taskCategory').value==='personal';$('taskSubjectWrap').classList.toggle('hidden',isPersonal);$('taskSubject').required=!isPersonal}
-async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:$('dueDate').value,priority:$('priority').value,estimated_minutes:Number($('estimate').value||0),completed:false});if(error)throw error;$('taskForm').reset();$('dueDate').value=today();$('estimate').value=45;$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
+async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:$('dueDate').value,priority:'normal',estimated_minutes:Number($('estimate').value||0),completed:false});if(error)throw error;$('taskForm').reset();$('dueDate').value=today();$('estimate').value=45;$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
 function shiftDate(iso,offset){const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+offset);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function prettyTime(value){if(!value)return '—';const [h,m]=value.slice(0,5).split(':').map(Number);const d=new Date();d.setHours(h,m,0,0);return d.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'})}
 function byDate(iso){return state.wakePlans.find(x=>x.plan_date===iso)}
@@ -279,11 +275,11 @@ async function saveTarget(){let n=Number($('targetSlider').value);say('targetMes
 async function toggleTask(id,v){let {error}=await state.db.from('study_tasks').update({completed:v,completed_at:v?new Date().toISOString():null}).eq('id',id);if(error)alert(error.message);else await load()}
 async function removeRow(table,id){if(!confirm('Delete this item?'))return;let {error}=await state.db.from(table).delete().eq('id',id);if(error)alert(error.message);else await load()}
 function render(){renderWake();let t=today(),ss=state.sessions.filter(s=>s.study_date===t),mins=ss.reduce((n,s)=>n+Number(s.duration_minutes||0),0),tt=state.tasks.filter(x=>x.due_date===t),done=tt.filter(x=>x.completed).length;$('todayTime').textContent=time(mins);$('sessionCount').textContent=ss.length;$('taskCount').textContent=done+'/'+tt.length;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
-const visibleTasks=[...state.tasks].filter(x=>!x.completed||x.due_date>=t).sort((a,b)=>Number(a.completed)-Number(b.completed)||priorityRank(a.priority)-priorityRank(b.priority)||a.due_date.localeCompare(b.due_date));
+const visibleTasks=[...state.tasks].filter(x=>!x.completed||x.due_date>=t).sort((a,b)=>Number(a.completed)-Number(b.completed)||a.due_date.localeCompare(b.due_date));
 const caTasks=visibleTasks.filter(x=>x.subject!=='Personal'),personalTasks=visibleTasks.filter(x=>x.subject==='Personal');
-const openCount=visibleTasks.filter(x=>!x.completed).length,highCount=visibleTasks.filter(x=>!x.completed&&x.priority==='high').length,doneToday=new Set(state.taskHistory.filter(x=>x.event_type==='completed'&&localDateKey(x.event_at)===t).map(x=>x.task_id)).size;$('taskOverviewCount').textContent=openCount;$('taskHighCount').textContent=highCount;$('taskDoneTodayCount').textContent=doneToday;
+const openCount=visibleTasks.filter(x=>!x.completed).length,doneToday=new Set(state.taskHistory.filter(x=>x.event_type==='completed'&&localDateKey(x.event_at)===t).map(x=>x.task_id)).size;$('taskOverviewCount').textContent=openCount;$('taskDoneTodayCount').textContent=doneToday;
 $('caTaskCount').textContent=caTasks.filter(x=>!x.completed).length+' open';$('personalTaskCount').textContent=personalTasks.filter(x=>!x.completed).length+' open';
-function taskMarkup(x,kind){const priority=x.priority||'normal',pill=priority==='high'?'🔥 HIGH':priority==='low'?'🌱 LOW':'🟣 NORMAL',pillClass='priority-'+priority,overdue=!x.completed&&x.due_date<t,dueLabel=x.due_date===t?'📅 TODAY':overdue?'⚠️ OVERDUE':'📅 '+date(x.due_date);return '<div class="task-row '+(x.completed?'completed':'')+' '+kind+'"><input class="check" type="checkbox" aria-label="Complete task" data-check="'+esc(x.id)+'" '+(x.completed?'checked':'')+'><div class="item-main"><div class="item-title">'+(x.subject==='Personal'?'🌿 ':'📚 ')+esc(x.title)+'</div><div class="item-sub">'+(x.subject!=='Personal'?esc(x.subject)+' · ':'')+'<span class="due-pill '+(overdue?'overdue':'')+'">'+dueLabel+'</span> <span class="priority-pill '+pillClass+'">'+pill+'</span> '+(x.estimated_minutes?'<span>⏱️ '+x.estimated_minutes+'m</span>':'')+'</div></div><button class="button danger" data-deltask="'+esc(x.id)+'" aria-label="Delete task">🗑️</button></div>'}
+function taskMarkup(x,kind){const overdue=!x.completed&&x.due_date<t,dueLabel=x.due_date===t?'📅 TODAY':overdue?'⚠️ OVERDUE':'📅 '+date(x.due_date);return '<div class="task-row '+(x.completed?'completed':'')+' '+kind+'"><input class="check" type="checkbox" aria-label="Complete task" data-check="'+esc(x.id)+'" '+(x.completed?'checked':'')+'><div class="item-main"><div class="item-title">'+(x.subject==='Personal'?'🌿 ':'📚 ')+esc(x.title)+'</div><div class="item-sub">'+(x.subject!=='Personal'?esc(x.subject)+' · ':'')+'<span class="due-pill '+(overdue?'overdue':'')+'">'+dueLabel+'</span> '+(x.estimated_minutes?'<span>⏱️ '+x.estimated_minutes+' min</span>':'')+'</div></div><button class="button danger" data-deltask="'+esc(x.id)+'" aria-label="Delete task">🗑️</button></div>'}
 $('caTasks').innerHTML=caTasks.map(x=>taskMarkup(x,'ca-task')).join('');$('personalTasks').innerHTML=personalTasks.map(x=>taskMarkup(x,'personal-task')).join('');
 $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpty').classList.toggle('hidden',personalTasks.length>0);
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
