@@ -136,38 +136,59 @@
   </article>
 </section>
 
-<section class="today-tasks panel" aria-label="Today's tasks">
-  <div class="panel-head today-task-heading">
-    <div><div class="eyebrow">YOUR DAY, YOUR PACE</div><h2>Today's Tasks</h2><p class="task-subtitle">Small steps add up. Finish one thing at a time.</p></div>
-    <div class="task-heading-actions"><span id="taskOverviewCount" class="task-open-count">0 tasks left</span><button id="showTaskForm" class="button secondary" type="button">+ Add task</button></div>
+<section class="today-tasks panel task-board" aria-label="Today's tasks">
+  <div class="task-board-top">
+    <div><div class="eyebrow">✅ TODAY'S PLAN</div><h2>Task Board</h2><p class="task-subtitle">Pick the next thing. Finish strong.</p></div>
+    <button id="showTaskForm" class="button task-add-button" type="button">＋ Add task</button>
+  </div>
+  <div class="task-quick-stats">
+    <div class="task-stat stat-open"><span>📌</span><div><strong id="taskOverviewCount">0</strong><small>Open</small></div></div>
+    <div class="task-stat stat-high"><span>🔥</span><div><strong id="taskHighCount">0</strong><small>High priority</small></div></div>
+    <div class="task-stat stat-done"><span>✅</span><div><strong id="taskDoneTodayCount">0</strong><small>Completed today</small></div></div>
   </div>
   <form id="taskForm" class="task-form hidden">
-    <div class="field"><label for="taskTitle">What do you want to finish?</label><input id="taskTitle" maxlength="140" placeholder="e.g. Revise audit standards / tidy my desk" required></div>
+    <div class="field"><label for="taskTitle">✍️ Task name</label><input id="taskTitle" maxlength="140" placeholder="What will you finish?" required></div>
     <div class="formgrid">
-      <div class="field"><label for="taskCategory">Task category</label><select id="taskCategory"><option value="ca">CA Study</option><option value="personal">Personal</option></select></div>
-      <div id="taskSubjectWrap" class="field"><label for="taskSubject">CA subject</label><select id="taskSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+      <div class="field"><label for="taskCategory">📂 Category</label><select id="taskCategory"><option value="ca">📚 CA Study</option><option value="personal">🌿 Personal</option></select></div>
+      <div id="taskSubjectWrap" class="field"><label for="taskSubject">📖 CA subject</label><select id="taskSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
     </div>
     <div class="formgrid">
-      <div class="field"><label for="dueDate">Due date</label><input id="dueDate" type="date" required></div>
-      <div class="field"><label for="priority">Priority</label><select id="priority"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select></div>
+      <div class="field"><label for="dueDate">📅 Due date</label><input id="dueDate" type="date" required></div>
+      <div class="field"><label for="priority">🚦 Priority</label><select id="priority"><option value="high">🔥 High — Do first</option><option value="normal" selected>🟣 Normal</option><option value="low">🌱 Low — When free</option></select></div>
     </div>
     <div class="formgrid">
-      <div class="field"><label for="estimate">Expected time (minutes)</label><input id="estimate" type="number" min="0" max="1440" value="45"></div>
-      <div class="field task-form-tip"><span>💜 A manageable task is a good task.</span></div>
+      <div class="field"><label for="estimate">⏱️ Expected time (min)</label><input id="estimate" type="number" min="0" max="1440" value="45"></div>
+      <div class="field task-form-tip"><span>🎯 Small goals. Strong progress.</span></div>
     </div>
     <div class="task-form-actions"><button class="button" type="submit">Save task</button><button id="cancelTask" class="button secondary" type="button">Cancel</button></div>
     <div id="taskMessage" class="message" role="status"></div>
   </form>
   <div class="task-lanes">
     <section class="task-lane ca-lane">
-      <div class="task-lane-heading"><div class="task-lane-icon">📚</div><div><h3>CA Study Tasks</h3><p>Chapters · practice · revision</p></div><span id="caTaskCount" class="lane-count">0 open</span></div>
-      <div id="caTasks" class="task-items"></div><div id="caTaskEmpty" class="task-empty">No CA tasks yet. Add one small study goal.</div>
+      <div class="task-lane-heading"><div class="task-lane-icon">📚</div><div><h3>CA Study</h3><p>Study · Practice · Revision</p></div><span id="caTaskCount" class="lane-count">0 open</span></div>
+      <div id="caTasks" class="task-items"></div><div id="caTaskEmpty" class="task-empty">✨ Add your first CA goal.</div>
     </section>
     <section class="task-lane personal-lane">
-      <div class="task-lane-heading"><div class="task-lane-icon">🌿</div><div><h3>Personal Tasks</h3><p>Self-care · daily life · breaks</p></div><span id="personalTaskCount" class="lane-count">0 open</span></div>
-      <div id="personalTasks" class="task-items"></div><div id="personalTaskEmpty" class="task-empty">Personal space, clear mind. Add your first task.</div>
+      <div class="task-lane-heading"><div class="task-lane-icon">🌿</div><div><h3>Personal</h3><p>Life · Self-care · Breaks</p></div><span id="personalTaskCount" class="lane-count">0 open</span></div>
+      <div id="personalTasks" class="task-items"></div><div id="personalTaskEmpty" class="task-empty">🌸 Keep room for yourself, too.</div>
     </section>
   </div>
+</section>
+<section class="panel task-history-panel" aria-label="Task history and daily report">
+  <div class="panel-head task-history-head">
+    <div><div class="eyebrow">📊 SAVED AUTOMATICALLY</div><h2>Task History</h2><p class="task-subtitle">Every add, finish, reopen and delete is recorded.</p></div>
+    <div class="history-controls"><label for="historyDate">Report date</label><input id="historyDate" type="date"><button id="exportTaskHistory" class="button secondary" type="button">⬇ Export CSV</button></div>
+  </div>
+  <div class="history-stats">
+    <div class="history-stat"><span>➕ Added</span><strong id="historyAddedCount">0</strong></div>
+    <div class="history-stat"><span>✅ Completed</span><strong id="historyCompletedCount">0</strong></div>
+    <div class="history-stat"><span>⏳ Open at day end</span><strong id="historyOpenCount">0</strong></div>
+    <div class="history-stat"><span>🗑️ Deleted</span><strong id="historyDeletedCount">0</strong></div>
+  </div>
+  <div class="history-list-head"><strong id="historyListTitle">Activity</strong><span id="historyEventCount" class="lane-count">0 events</span></div>
+  <div id="historyEvents" class="history-events"></div>
+  <div id="historyEmpty" class="task-empty">Your daily task records will appear here.</div>
+  <p id="historyMessage" class="message" role="status"></p>
 </section>
 
 </section>
