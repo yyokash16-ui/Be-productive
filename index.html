@@ -89,6 +89,69 @@
 @media(max-width:760px){.task-board{padding:14px}.task-quick-stats{gap:7px}.task-stat{padding:9px;gap:7px}.task-stat>span{font-size:17px}.task-stat strong{font-size:17px}.task-stat small{font-size:9px}.task-board .task-lanes{grid-template-columns:1fr}.task-history-panel{padding:14px}.history-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.history-controls{width:100%}.history-controls input{flex:1;min-width:130px}.history-controls .button{flex-shrink:0}}
 @media(max-width:420px){.task-board-top{align-items:flex-start}.task-board-top h2{font-size:21px}.task-add-button{padding:10px 12px}.task-stat{flex-direction:column;align-items:flex-start}.history-event-type{display:none}.task-board .task-row .item-sub{font-size:9px}}
 
+
+/* Brighter, mobile-first Task Manager skin */
+.task-board,.daily-report-panel{border:1px solid #dedbfa!important;background:linear-gradient(145deg,#ffffff 0%,#fbf7ff 45%,#f3faff 100%)!important;box-shadow:0 12px 30px #51438a10!important}
+.task-board-top h2,.daily-report-panel h2{font-weight:900;letter-spacing:-.6px;color:#21213d}
+.task-two-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.task-two-stats .task-stat{padding:14px 17px;border-radius:17px}
+.task-two-stats .stat-open{background:linear-gradient(120deg,#eee9ff,#e5edff);border-color:#d7d0ff;color:#5748bc}
+.task-two-stats .stat-done{background:linear-gradient(120deg,#dbfaed,#dff6fa);border-color:#bcebdc;color:#137858}
+.task-two-stats .task-stat strong{font-size:25px;font-weight:950}
+.task-two-stats .task-stat small{font-size:12px;color:#3e4660;font-weight:900}
+.task-board .task-lanes{gap:15px}
+.task-board .ca-lane{background:linear-gradient(150deg,#f2edff,#e8edff)!important;border:1px solid #d8d0ff!important}
+.task-board .personal-lane{background:linear-gradient(150deg,#e7fbf4,#e3f7ff)!important;border:1px solid #bfebdf!important}
+.task-board .task-lane-heading h3{font-size:15px;font-weight:900;color:#262442}
+.task-board .task-lane-icon{width:43px;height:43px;flex-basis:43px;border-radius:15px;font-size:23px;box-shadow:0 4px 12px #322f5910}
+.task-board .lane-count{font-size:11px;font-weight:950;padding:7px 10px;color:#5748bc}
+.personal-lane .lane-count{color:#137858}
+.task-board .task-row{background:#ffffffeb;border:1px solid #dcd8ff;border-radius:14px;padding:12px;box-shadow:0 4px 12px #51438a08}
+.task-board .personal-lane .task-row{border-color:#cceee2}
+.task-board .task-row .item-title{font-size:13px;font-weight:900;color:#20213a;line-height:1.5}
+.task-board .task-row .item-sub{font-size:11px;font-weight:750;color:#566078;margin-top:5px}
+.task-board .task-row .check{width:19px;height:19px;flex-basis:19px}
+.task-board .ca-lane .check{accent-color:#7153df}.task-board .personal-lane .check{accent-color:#19a982}
+.task-board .task-row.completed{background:#f0fbf5;border-color:#b5e7cb}.task-board .task-row.completed .item-title{color:#537565}
+.task-board .task-add-button{background:linear-gradient(120deg,#5543c6,#7864ee);font-weight:900}
+.task-board .task-form{background:linear-gradient(140deg,#f5f2ff,#effaf8);border:1px solid #ddd7ff}
+.task-board .field label{font-size:12px;font-weight:900;color:#353650}
+.task-board input,.task-board select{font-weight:750;color:#272940}
+.daily-report-panel{margin-top:16px;padding:20px;border-radius:22px}
+.report-heading{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.report-heading-icon{display:grid;place-items:center;width:48px;height:48px;flex:0 0 48px;border-radius:16px;background:linear-gradient(140deg,#e9e4ff,#dbf8ef);font-size:25px}
+.report-heading-copy h2{font-size:21px;margin:4px 0 0;font-weight:950}
+.report-heading-copy p{margin:4px 0 0;font-size:12px;line-height:1.45;font-weight:650;color:#667085}
+.report-controls{display:grid;grid-template-columns:minmax(180px,1fr) auto auto;gap:10px;align-items:end}
+.report-date-field{margin:0!important}.report-date-field label{font-size:12px;font-weight:900;color:#34344e}.report-date-field input{width:100%;padding:11px 12px;border-radius:12px;border:1px solid #d9d6f8;background:#fff;font-weight:800;color:#2b2948}
+.report-csv-button,.report-word-button{padding:11px 14px;border-radius:12px;font-size:12px;font-weight:900;white-space:nowrap}.report-csv-button{background:linear-gradient(120deg,#5d45ce,#7f67f3)}.report-word-button{background:linear-gradient(120deg,#078c83,#18b59a)}
+.report-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0 0}
+.report-stats .history-stat{padding:14px;border-radius:15px;border:1px solid transparent}
+.report-stats .report-added{background:linear-gradient(140deg,#f0eaff,#e5edff);border-color:#d9d0ff}
+.report-stats .report-completed{background:linear-gradient(140deg,#ddf8ea,#dff8f4);border-color:#c0ebd8}
+.report-stats .report-incomplete{background:linear-gradient(140deg,#fff0e2,#ffe9ee);border-color:#f6d4da}
+.report-stats .history-stat span{font-size:11px;font-weight:900;color:#424663}.report-stats .history-stat strong{font-size:28px;font-weight:950;color:#282845;margin-top:8px}
+.report-message{font-size:12px;font-weight:800}
+@media(max-width:760px){
+ .task-board,.daily-report-panel{border-radius:20px!important}
+ .task-board{padding:14px!important}
+ .task-board-top{align-items:center;margin-bottom:12px}.task-board-top h2{font-size:24px;font-weight:950}
+ .task-two-stats{gap:9px;margin-bottom:13px}.task-two-stats .task-stat{padding:12px;gap:9px;border-radius:15px;flex-direction:row;align-items:center}.task-two-stats .task-stat>span{font-size:22px}.task-two-stats .task-stat strong{font-size:23px}.task-two-stats .task-stat small{font-size:11px}
+ .task-board .task-lanes{gap:12px;grid-template-columns:1fr}
+ .task-board .task-lane{padding:13px;border-radius:17px}
+ .task-board .task-row{padding:12px 10px}
+ .task-board .task-row .item-title{font-size:13px;font-weight:900}
+ .daily-report-panel{padding:15px!important}
+ .report-controls{grid-template-columns:1fr 1fr;gap:9px}.report-date-field{grid-column:1/-1}
+ .report-csv-button,.report-word-button{width:100%;padding:12px 8px;white-space:normal;line-height:1.25}
+ .report-stats{gap:8px}.report-stats .history-stat{padding:12px 10px}.report-stats .history-stat span{font-size:10px;line-height:1.35}.report-stats .history-stat strong{font-size:25px}
+}
+@media(max-width:400px){
+ .task-board-top h2{font-size:21px}.task-add-button{padding:10px 11px;font-size:12px}
+ .task-two-stats .task-stat{gap:7px;padding:10px 8px}.task-two-stats .task-stat>span{font-size:18px}.task-two-stats .task-stat strong{font-size:21px}.task-two-stats .task-stat small{font-size:10px}
+ .report-stats{grid-template-columns:1fr;gap:7px}.report-stats .history-stat{display:flex;align-items:center;justify-content:space-between;gap:12px}.report-stats .history-stat strong{font-size:24px;margin:0}
+}
+
 </style>
 </head>
 <body>
@@ -266,11 +329,13 @@ async function saveWakeToday(e){e.preventDefault();say('wakeTodayFormMessage',''
 function localDateKey(value){const d=new Date(value);if(Number.isNaN(d.getTime()))return '';return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function priorityRank(value){return value==='high'?0:value==='normal'?1:2}
 function historyTieRank(value){return ({created:0,edited:1,completed:2,reopened:3,deleted:4})[value]||0}
-function historyCountsForDay(day){const rows=state.taskHistory.filter(x=>localDateKey(x.event_at)===day);const unique=(type)=>new Set(rows.filter(x=>x.event_type===type).map(x=>x.task_id)).size;return {added:unique('created'),completed:unique('completed'),deleted:unique('deleted'),events:rows.length}}
-function historyOpenAtEndOfDay(day){const latest=new Map();for(const row of state.taskHistory){if(localDateKey(row.event_at)>day)continue;if(!latest.has(row.task_id))latest.set(row.task_id,row)}let count=0;for(const row of latest.values()){if(row.event_type==='deleted')continue;const done=typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed';if(!done)count++}return count}
-function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyAddedCount').textContent='—';$('historyCompletedCount').textContent='—';$('historyOpenCount').textContent='—';$('historyDeletedCount').textContent='—';$('historyEvents').innerHTML='';$('historyEventCount').textContent='0 events';$('historyEmpty').classList.remove('hidden');$('historyEmpty').textContent='Task history is unavailable. Check the study_task_history setup in Supabase.';$('historyMessage').textContent='';return}const rows=state.taskHistory.filter(x=>localDateKey(x.event_at)===day).sort((a,b)=>new Date(b.event_at)-new Date(a.event_at));const c=historyCountsForDay(day);$('historyAddedCount').textContent=c.added;$('historyCompletedCount').textContent=c.completed;$('historyOpenCount').textContent=historyOpenAtEndOfDay(day);$('historyDeletedCount').textContent=c.deleted;$('historyEventCount').textContent=rows.length+' events';$('historyListTitle').textContent='Activity · '+new Date(day+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});$('historyMessage').textContent='';const info={created:{icon:'➕',label:'ADDED',className:'created'},completed:{icon:'✅',label:'COMPLETED',className:'completed'},reopened:{icon:'↩️',label:'REOPENED',className:'reopened'},deleted:{icon:'🗑️',label:'DELETED',className:'deleted'},edited:{icon:'✏️',label:'EDITED',className:'edited'}};$('historyEvents').innerHTML=rows.slice(0,100).map(x=>{const meta=info[x.event_type]||info.edited;const stamp=new Date(x.event_at).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'});return '<div class="history-event event-'+meta.className+'"><div class="history-event-icon">'+meta.icon+'</div><div class="history-event-body"><div class="history-event-title">'+esc(x.task_title)+'</div><div class="history-event-meta">'+(x.task_subject==='Personal'?'🌿 Personal':'📚 '+esc(x.task_subject))+' · '+stamp+' · '+esc(x.priority||'normal')+'</div></div><span class="history-event-type">'+meta.label+'</span></div>'}).join('');$('historyEmpty').classList.toggle('hidden',rows.length>0);$('historyEmpty').textContent='No task activity for this date yet.'}
+function historyCountsForDay(day){const rows=state.taskHistory.filter(x=>localDateKey(x.event_at)===day);const unique=type=>new Set(rows.filter(x=>x.event_type===type).map(x=>x.task_id)).size;return {added:unique('created'),completed:unique('completed')}}
+function taskSnapshotAtEndOfDay(day){const latest=new Map();const rows=[...state.taskHistory].sort((a,b)=>new Date(b.event_at)-new Date(a.event_at)||historyTieRank(b.event_type)-historyTieRank(a.event_type));for(const row of rows){if(localDateKey(row.event_at)>day)continue;if(!latest.has(row.task_id))latest.set(row.task_id,row)}let remaining=0;for(const row of latest.values()){if(row.event_type==='deleted')continue;const done=typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed';if(!done)remaining++}return {remaining,latest}}
+function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyAddedCount').textContent='—';$('historyCompletedCount').textContent='—';$('historyOpenCount').textContent='—';$('historyMessage').textContent='Task report history is not available.';return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);$('historyAddedCount').textContent=c.added;$('historyCompletedCount').textContent=c.completed;$('historyOpenCount').textContent=snap.remaining;$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
-function exportTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','History is not available yet. Check the Supabase setup.');return}const c=historyCountsForDay(day);const lines=[['Be Productive — Daily Task Report',day],[],['Daily summary','Count'],['Added',c.added],['Completed',c.completed],['Incomplete at end of day',historyOpenAtEndOfDay(day)],['Deleted',c.deleted],[],['Task snapshot at end of day'],['Task ID','Task title','Category / Subject','Priority','Due date','Estimated minutes','End-of-day status','First created at']];const latest=new Map();for(const row of state.taskHistory){if(localDateKey(row.event_at)>day)continue;if(!latest.has(row.task_id))latest.set(row.task_id,row)}const snapshot=[...latest.entries()].map(([id,row])=>({id,row})).sort((a,b)=>String(a.row.task_title).localeCompare(String(b.row.task_title)));for(const item of snapshot){const row=item.row,status=row.event_type==='deleted'?'Deleted':(typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed')?'Completed':'Incomplete';lines.push([item.id,row.task_title,row.task_subject,row.priority,row.due_date,row.estimated_minutes,status,row.task_created_at])}lines.push([],['Activity on selected date'],['Event time','Event','Task','Category / Subject','Priority','Due date','Estimated minutes']);const selected=state.taskHistory.filter(x=>localDateKey(x.event_at)===day).sort((a,b)=>new Date(a.event_at)-new Date(b.event_at));for(const row of selected)lines.push([new Date(row.event_at).toLocaleString('en-IN'),row.event_type,row.task_title,row.task_subject,row.priority,row.due_date,row.estimated_minutes]);const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','Daily report exported.',true)}
+function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+function exportTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const lines=[['BE PRODUCTIVE — DAILY TASK REPORT'],['Date',reportDayLabel(day)],[],['Task summary','Count'],['Tasks added',c.added],['Tasks completed',c.completed],['Incomplete at end of day',snap.remaining]];const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','CSV report downloaded.',true)}
+function exportTaskHistoryWord(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const escHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));const doc='<!doctype html><html><head><meta charset="utf-8"><title>Daily Task Report</title><style>body{font-family:Arial,sans-serif;color:#20233b;margin:35px}h1{color:#6553ce}p{color:#667085}table{border-collapse:collapse;width:100%;margin-top:22px}th,td{border:1px solid #d9ddec;padding:13px;text-align:left}th{background:#eeebff;color:#40378b}td:last-child{font-weight:bold;text-align:center}.note{margin-top:24px;font-size:11px;color:#788198}</style></head><body><h1>Be Productive</h1><h2>Daily Task Report</h2><p>'+escHtml(reportDayLabel(day))+'</p><table><thead><tr><th>Summary</th><th>Tasks</th></tr></thead><tbody><tr><td>Tasks added</td><td>'+c.added+'</td></tr><tr><td>Tasks completed</td><td>'+c.completed+'</td></tr><tr><td>Incomplete at end of day</td><td>'+snap.remaining+'</td></tr></tbody></table><p class="note">Report generated by Be Productive.</p></body></html>';const blob=new Blob(['\uFEFF',doc],{type:'application/msword;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.doc';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','Word-compatible report downloaded.',true)}
 async function saveTarget(){let n=Number($('targetSlider').value);say('targetMessage','');try{let {error}=await state.db.from('study_settings').upsert({user_id:state.user.id,daily_target:n,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(error)throw error;state.target=n;say('targetMessage','Target saved and synced.',true);await load()}catch(e){say('targetMessage',e.message)}}
 async function toggleTask(id,v){let {error}=await state.db.from('study_tasks').update({completed:v,completed_at:v?new Date().toISOString():null}).eq('id',id);if(error)alert(error.message);else await load()}
 async function removeRow(table,id){if(!confirm('Delete this item?'))return;let {error}=await state.db.from(table).delete().eq('id',id);if(error)alert(error.message);else await load()}
