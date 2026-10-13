@@ -1,4 +1,4 @@
-const CACHE_NAME = 'be-productive-v12';
+const CACHE_NAME = 'be-productive-v13';
 const APP_SHELL = [
   './',
   './index.html',
