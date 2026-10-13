@@ -391,6 +391,118 @@
 @media(max-width:920px){#studyManagerView .study-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#studyManagerView .metric-daily-target{grid-column:1/-1}#studyManagerView .study-layout{grid-template-columns:1fr}}
 @media(max-width:720px){#studyManagerView .study-metrics{grid-template-columns:1fr 1fr;gap:8px}#studyManagerView .metric-daily-target{grid-column:1/-1;padding:13px 14px}#studyManagerView .study-target-topline{font-size:10px}#studyManagerView .study-top-target-controls label{font-size:11px}#studyManagerView .metric-daily-target .study-target-button{padding:10px;font-size:12px}}
 
+
+/* Study Planner — restored white, pink and purple with only four functional areas */
+#studyManagerView.study-planner{
+  --planner-ink:#302341;--planner-muted:#75647f;--planner-pink:#ed83b8;--planner-pink-soft:#ffe8f3;--planner-purple:#8064db;--planner-purple-deep:#6248bd;
+  position:relative;isolation:isolate;overflow:hidden;margin:0 -8px 20px;padding:19px;border-radius:29px;
+  background:linear-gradient(145deg,#fff9fd 0%,#fff0f7 35%,#f2edff 72%,#fffafd 100%)!important;
+  border:1px solid #eadbf4;box-shadow:0 20px 48px #9a6cb516;color:var(--planner-ink)
+}
+#studyManagerView.study-planner:before,#studyManagerView.study-planner:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%}
+#studyManagerView.study-planner:before{width:330px;height:330px;right:-190px;top:130px;background:radial-gradient(circle,#f8c5e488 0%,#f8c5e400 72%)}
+#studyManagerView.study-planner:after{width:340px;height:340px;left:-210px;bottom:-100px;background:radial-gradient(circle,#d8c9ff77 0%,#d8c9ff00 73%)}
+#studyManagerView .planner-heading{display:flex;align-items:center;gap:13px;padding:3px 3px 16px}
+#studyManagerView .study-back{background:linear-gradient(130deg,#fff,#ffe8f3)!important;border:1px solid #f0d6e7!important;color:#684a87!important;font-weight:900;box-shadow:0 5px 14px #9b69a510}
+#studyManagerView .study-title-wrap{flex:1;min-width:0}
+#studyManagerView .study-kicker{font-size:10px;letter-spacing:1.3px;font-weight:950;color:#9e5c9c}
+#studyManagerView .study-page-heading h1{margin:4px 0 0;font-size:clamp(26px,3.5vw,36px);line-height:1.08;font-weight:950;letter-spacing:-1px;color:#302341}
+#studyManagerView .planner-heading-art{display:grid;place-items:center;width:43px;height:43px;flex:0 0 43px;border-radius:15px;background:linear-gradient(145deg,#ffe1ef,#e8deff);border:1px solid #f0d5eb;color:#b05fa1;font-size:25px;box-shadow:0 7px 18px #9269bc16}
+#studyManagerView .planner-study-time{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:190px;padding:23px 28px;border-radius:25px;background:linear-gradient(115deg,#5e45ac 0%,#8662d4 48%,#d777ab 100%)!important;border:1px solid #b89be7;color:#fff;box-shadow:0 14px 30px #835ab92a;margin-bottom:13px}
+#studyManagerView .planner-study-time:before{content:"";position:absolute;z-index:-1;width:330px;height:330px;right:3%;top:-80%;border:1px solid #ffffff30;border-radius:50%;box-shadow:0 0 0 24px #ffffff0c,0 0 0 50px #ffffff08,0 0 0 75px #ffffff05}
+#studyManagerView .planner-study-time-copy{flex:1;min-width:0;z-index:1}
+#studyManagerView .planner-label{font-size:11px;font-weight:950;letter-spacing:1.3px;color:#ffe7f4}
+#studyManagerView .planner-big-time{font-size:clamp(42px,6.4vw,70px);font-weight:950;line-height:1;letter-spacing:-2.4px;margin:14px 0 9px;color:#fff;text-shadow:0 3px 18px #39236e2c}
+#studyManagerView .planner-target-caption{font-size:12px;font-weight:850;color:#fff0fa}
+#studyManagerView .planner-time-track{height:8px;max-width:480px;margin-top:13px;border-radius:99px;background:#ffffff39;overflow:hidden}
+#studyManagerView .planner-time-track>div{height:100%;border-radius:99px;background:linear-gradient(90deg,#ffe7a8,#fff6df);transition:width .3s}
+#studyManagerView .planner-time-art{position:relative;display:grid;place-items:center;width:145px;height:125px;flex:0 0 145px}
+#studyManagerView .planner-time-art>span{font-size:51px;filter:drop-shadow(0 8px 9px #39236e32);z-index:1}
+#studyManagerView .planner-time-ring{position:absolute;width:118px;height:118px;border-radius:50%;border:1px solid #ffffff6c;box-shadow:0 0 0 13px #ffffff0b}
+#studyManagerView .planner-time-ring.ring-two{width:87px;height:87px;border-style:dashed;border-color:#ffe7f4a1}
+#studyManagerView .planner-time-art i,#studyManagerView .planner-time-art b{position:absolute;font-style:normal;font-weight:500;color:#ffe4f1;font-size:22px}
+#studyManagerView .planner-time-art i{top:4px;right:3px}#studyManagerView .planner-time-art b{bottom:3px;left:1px;color:#ffe7ae}
+#studyManagerView .planner-mini-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:13px;margin-bottom:13px;align-items:stretch}
+#studyManagerView .planner-sessions-card,#studyManagerView .planner-target-card{position:relative;isolation:isolate;overflow:hidden;min-width:0;border-radius:22px;padding:18px;border:1px solid transparent;box-shadow:0 10px 24px #855ca30c}
+#studyManagerView .planner-sessions-card{background:linear-gradient(145deg,#ffeaf4 0%,#f9e4ff 58%,#efe8ff 100%)!important;border-color:#edcfef}
+#studyManagerView .planner-target-card{background:linear-gradient(145deg,#fff 0%,#fff0f7 46%,#f0eaff 100%)!important;border-color:#e8d7f1}
+#studyManagerView .planner-card-icon{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;border:1px solid #ffffffc9;background:#ffffffb8;font-size:20px;box-shadow:0 5px 12px #9269bc10}
+#studyManagerView .planner-sessions-icon{background:linear-gradient(145deg,#fff,#ffd9eb);border-color:#ffdaed}
+#studyManagerView .planner-mini-label{font-size:10px;letter-spacing:.8px;font-weight:950;color:#7d559e;line-height:1.4}
+#studyManagerView .planner-sessions-card .planner-mini-label{margin-top:13px}
+#studyManagerView .planner-session-number{font-size:42px;line-height:1;font-weight:950;letter-spacing:-1px;color:#573b98;margin-top:8px}
+#studyManagerView .planner-mini-caption{font-size:11px;font-weight:800;color:#8d679b;margin-top:7px}
+#studyManagerView .planner-card-sparkle{position:absolute;right:16px;bottom:7px;font-size:42px;color:#b69ae8;opacity:.32}
+#studyManagerView .planner-target-card-head{display:flex;align-items:center;gap:10px}
+#studyManagerView .planner-goal-icon{background:linear-gradient(145deg,#eee7ff,#ffe6f1);border-color:#e6d8ff}
+#studyManagerView .planner-target-card-head>div:nth-child(2){flex:1;min-width:0}
+#studyManagerView .planner-target-caption-small{font-size:10px;font-weight:750;color:#9877a8;margin:4px 0 0}
+#studyManagerView .planner-target-value{display:flex;align-items:baseline;gap:4px;color:#694db4}
+#studyManagerView .planner-target-value strong{font-size:29px;font-weight:950;letter-spacing:-1px}
+#studyManagerView .planner-target-value span{font-size:10px;font-weight:900}
+#studyManagerView .planner-goal-track{height:7px;margin:15px 0 11px;background:#e2d7f4;border-radius:99px;overflow:hidden}
+#studyManagerView .planner-goal-track>div{height:100%;background:linear-gradient(90deg,#8064db,#ea83b8);border-radius:99px;transition:width .25s}
+#studyManagerView .planner-slider-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+#studyManagerView .planner-slider-row label{font-size:10px;font-weight:900;color:#79598f;white-space:nowrap}
+#studyManagerView .planner-slider-row input{flex:1;min-width:60px;margin:0;padding:0;accent-color:#a46bd3}
+#studyManagerView .planner-save-target{width:100%;padding:10px 12px;border-radius:12px;color:#fff;font-size:11px;font-weight:950;background:linear-gradient(110deg,#6d50c4,#b366c8 55%,#e47faa)!important;box-shadow:0 6px 15px #9364c326}
+#studyManagerView .planner-target-card .message{margin-top:5px;font-size:10px}
+#studyManagerView .planner-log-card{padding:21px;border-radius:23px;background:linear-gradient(145deg,#fff 0%,#fff5fa 48%,#f3efff 100%)!important;border:1px solid #e6d7f1;box-shadow:0 12px 28px #855ca310}
+#studyManagerView .planner-log-heading{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+#studyManagerView .planner-log-icon{background:linear-gradient(145deg,#ffe0ed,#e8deff);border-color:#ecd7f6}
+#studyManagerView .planner-log-heading>div:nth-child(2){flex:1;min-width:0}
+#studyManagerView .planner-log-heading h2{font-size:19px;font-weight:950;color:#302341;margin:4px 0 0;letter-spacing:-.4px}
+#studyManagerView .planner-log-heading p{font-size:11px;font-weight:700;color:#8b719b;margin:5px 0 0}
+#studyManagerView .planner-win-chip{font-size:9px;font-weight:950;color:#9256a7;background:#ffe1f0;border:1px solid #f6cce4;padding:7px 9px;border-radius:99px;white-space:nowrap}
+#studyManagerView .planner-session-form .field{margin-bottom:11px}
+#studyManagerView .planner-session-form .field label{font-size:11px;font-weight:900;color:#604976}
+#studyManagerView .planner-session-form .field input,#studyManagerView .planner-session-form .field select,#studyManagerView .planner-session-form .field textarea{background:#fffafd;border:1px solid #e5d8ef;border-radius:12px;padding:11px 12px;color:#39294e;font-size:12px;font-weight:750;box-shadow:0 3px 9px #9269bc08}
+#studyManagerView .planner-session-form .field input:focus,#studyManagerView .planner-session-form .field select:focus,#studyManagerView .planner-session-form .field textarea:focus{border-color:#b57cdb;box-shadow:0 0 0 3px #b57cdb21}
+#studyManagerView .planner-save-session{border-radius:13px;background:linear-gradient(110deg,#7354ca,#a467d0 58%,#e17eae)!important;color:#fff;font-weight:950;box-shadow:0 8px 19px #9364c329}
+#studyManagerView .planner-session-form .message{font-size:11px;font-weight:800}
+@media(max-width:720px){
+ #studyManagerView.study-planner{margin:0 -5px 15px;padding:12px;border-radius:22px}
+ #studyManagerView .planner-heading{gap:9px;padding:2px 1px 12px}
+ #studyManagerView .planner-heading .study-back{padding:9px 10px;font-size:11px}
+ #studyManagerView .study-page-heading h1{font-size:26px}
+ #studyManagerView .planner-heading-art{width:36px;height:36px;flex-basis:36px;border-radius:12px;font-size:21px}
+ #studyManagerView .planner-study-time{padding:18px;border-radius:20px;min-height:155px;gap:8px}
+ #studyManagerView .planner-big-time{font-size:clamp(38px,9vw,55px);letter-spacing:-1.6px}
+ #studyManagerView .planner-label{font-size:9px;letter-spacing:.8px}
+ #studyManagerView .planner-target-caption{font-size:11px}
+ #studyManagerView .planner-time-art{width:86px;height:90px;flex-basis:86px}
+ #studyManagerView .planner-time-art>span{font-size:34px}
+ #studyManagerView .planner-time-ring{width:79px;height:79px}
+ #studyManagerView .planner-time-ring.ring-two{width:59px;height:59px}
+ #studyManagerView .planner-time-art i,#studyManagerView .planner-time-art b{font-size:15px}
+ #studyManagerView .planner-mini-grid{grid-template-columns:1fr;gap:10px}
+ #studyManagerView .planner-sessions-card{display:grid;grid-template-columns:45px 1fr auto;align-items:center;column-gap:9px;padding:13px 14px;border-radius:17px}
+ #studyManagerView .planner-sessions-card .planner-card-icon{grid-row:1 / span 2}
+ #studyManagerView .planner-sessions-card .planner-mini-label{margin:0;align-self:end;font-size:9px}
+ #studyManagerView .planner-session-number{grid-column:3;grid-row:1 / span 2;font-size:32px;margin:0 6px 0 0}
+ #studyManagerView .planner-mini-caption{grid-column:2;grid-row:2;font-size:10px;margin-top:3px}
+ #studyManagerView .planner-card-sparkle{display:none}
+ #studyManagerView .planner-target-card{padding:15px;border-radius:18px}
+ #studyManagerView .planner-log-card{padding:15px;border-radius:20px}
+ #studyManagerView .planner-log-heading{gap:8px;margin-bottom:13px}
+ #studyManagerView .planner-log-icon{width:36px;height:36px;flex-basis:36px}
+ #studyManagerView .planner-log-heading h2{font-size:17px}
+ #studyManagerView .planner-log-heading p{font-size:10px}
+ #studyManagerView .planner-win-chip{font-size:8px;padding:6px}
+ #studyManagerView .planner-session-form .field label{font-size:11px}
+ #studyManagerView .planner-session-form .field input,#studyManagerView .planner-session-form .field select,#studyManagerView .planner-session-form .field textarea{padding:11px 10px;font-size:12px}
+ #studyManagerView .formgrid{gap:9px}
+}
+@media(max-width:385px){
+ #studyManagerView .planner-study-time{padding:15px}
+ #studyManagerView .planner-time-art{width:58px;height:65px;flex-basis:58px}
+ #studyManagerView .planner-time-ring{width:57px;height:57px}
+ #studyManagerView .planner-time-ring.ring-two{width:41px;height:41px}
+ #studyManagerView .planner-time-art>span{font-size:27px}
+ #studyManagerView .planner-big-time{font-size:36px}
+ #studyManagerView .planner-win-chip{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -491,92 +603,72 @@
 </section>
 
 </section>
-<section id="studyManagerView" class="app-section manager-view hidden study-manager">
-  <div class="study-page-heading">
+<section id="studyManagerView" class="app-section manager-view hidden study-manager study-planner">
+  <div class="study-page-heading planner-heading">
     <button class="back-home study-back" type="button" data-back-home>← Home</button>
     <div class="study-title-wrap">
-      <div class="study-kicker">📚 YOUR STUDY SPACE</div>
-      <h1>Study Manager</h1>
-      <div class="study-title-chips"><span>CA INTER</span><span>FOCUS · PRACTICE · REVISE</span></div>
+      <div class="study-kicker">💗 YOUR CA INTER SPACE</div>
+      <h1>Study Planner</h1>
     </div>
-    <div class="study-heading-mark" aria-hidden="true">✦</div>
+    <div class="planner-heading-art" aria-hidden="true">✿</div>
   </div>
 
-  <section class="study-hero">
-    <div class="study-hero-copy">
-      <div class="study-hero-label">YOUR STUDY JOURNEY</div>
-      <h2>Small sessions.<br><em>Big results.</em></h2>
-      <div class="study-hero-line">✨ Every focused minute counts.</div>
+  <section class="planner-study-time" aria-label="Study time today">
+    <div class="planner-study-time-copy">
+      <span class="planner-label">⏳ STUDY TIME TODAY</span>
+      <div id="todayTime" class="planner-big-time">0h 00m</div>
+      <div id="targetCaption" class="planner-target-caption">Target: 6 hours</div>
+      <div class="planner-time-track"><div id="targetBar"></div></div>
     </div>
-    <div class="study-hero-art" aria-hidden="true">
-      <div class="study-orbit orbit-a"></div><div class="study-orbit orbit-b"></div>
-      <div class="study-book-stack"><span>📘</span><span>📙</span><span>📗</span></div>
-      <span class="study-art-spark spark-a">✦</span><span class="study-art-spark spark-b">✧</span><span class="study-art-heart">♡</span>
+    <div class="planner-time-art" aria-hidden="true">
+      <div class="planner-time-ring ring-one"></div><div class="planner-time-ring ring-two"></div>
+      <span>📚</span><i>✦</i><b>♡</b>
     </div>
-    <div class="study-hero-side"><span class="mini-chip">🌿 One day at a time</span><span class="mini-chip">🎯 Progress over perfection</span></div>
   </section>
 
-  <section class="metrics study-metrics" aria-label="Study progress and daily target">
-    <article class="metric study-metric metric-today">
-      <div class="metric-label">⏱️ STUDY TIME TODAY</div>
-      <div id="todayTime" class="metric-value">0h 00m</div>
-      <div id="targetCaption" class="metric-foot">Target: 6 hours</div>
-      <div class="track"><div id="targetBar"></div></div>
-    </article>
-    <article class="metric study-metric metric-sessions">
-      <div class="metric-label">📖 SESSIONS TODAY</div>
-      <div id="sessionCount" class="metric-value">0</div>
-      <div class="metric-foot">Every session matters</div>
-      <div class="metric-deco">✦</div>
-    </article>
-    <article class="metric study-metric metric-daily-target">
-      <div class="study-target-topline"><span>🎯 DAILY STUDY TARGET</span><strong><b id="targetValue">6</b> <small>hours</small></strong></div>
-      <div class="study-target-track"><div id="studyTargetPreview" style="width:0%"></div></div>
-      <div class="study-top-target-controls"><label for="targetSlider">Set hours per day</label><input id="targetSlider" type="range" min="1" max="14" value="6"></div>
-      <button id="saveTarget" class="button study-target-button" type="button">💚 Save target</button>
+  <div class="planner-mini-grid">
+    <section class="planner-sessions-card" aria-label="Sessions logged today">
+      <div class="planner-card-icon planner-sessions-icon">📝</div>
+      <div class="planner-mini-label">SESSIONS LOGGED TODAY</div>
+      <div id="sessionCount" class="planner-session-number">0</div>
+      <div class="planner-mini-caption">Every session counts ✨</div>
+      <div class="planner-card-sparkle" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="planner-target-card" aria-label="Daily study target">
+      <div class="planner-target-card-head">
+        <div class="planner-card-icon planner-goal-icon">🎯</div>
+        <div><div class="planner-mini-label">DAILY STUDY TARGET</div><p class="planner-target-caption-small">Make today count</p></div>
+        <div class="planner-target-value"><strong id="targetValue">6</strong><span>hrs</span></div>
+      </div>
+      <div class="planner-goal-track"><div id="studyTargetPreview" style="width:0%"></div></div>
+      <div class="planner-slider-row"><label for="targetSlider">Hours per day</label><input id="targetSlider" type="range" min="1" max="14" value="6"></div>
+      <button id="saveTarget" class="button planner-save-target" type="button">💜 Save daily target</button>
       <div id="targetMessage" class="message"></div>
-    </article>
-  </section>
-
-  <div class="study-layout">
-    <div class="study-column study-column-main">
-      <section class="panel study-form-panel">
-        <div class="study-panel-heading">
-          <div class="study-panel-icon icon-log">✍️</div>
-          <div><div class="study-kicker">SAVE YOUR EFFORT</div><h2>Log a study session</h2><p>Record it now. Be proud later.</p></div>
-          <span class="study-panel-badge">+1 WIN</span>
-        </div>
-        <form id="sessionForm" class="study-session-form">
-          <div class="formgrid">
-            <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
-            <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
-          </div>
-          <div class="formgrid">
-            <div class="field"><label for="minutes">⏱️ Duration (minutes)</label><input id="minutes" type="number" min="1" max="1440" value="60" required></div>
-            <div class="field"><label for="studyType">🎯 Study method</label><select id="studyType"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
-          </div>
-          <div class="field"><label for="topic">📝 Chapter / topic</label><input id="topic" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div>
-          <div class="field"><label for="notes">💭 Quick reflection (optional)</label><textarea id="notes" rows="2" maxlength="500" placeholder="What clicked today? What needs another look?"></textarea></div>
-          <button class="button full study-save-button" type="submit">✨ Save study session</button>
-          <div id="sessionMessage" class="message"></div>
-        </form>
-      </section>
-
-    </div>
-
-    <div class="study-column study-column-side">
-
-      <section class="panel study-subject-panel">
-        <div class="study-panel-heading">
-          <div class="study-panel-icon icon-subject">🧩</div>
-          <div><div class="study-kicker">SUBJECT BREAKDOWN</div><h2>Study by subject</h2><p>See where your time goes.</p></div>
-        </div>
-        <div id="subjectBreakdown" class="subject-breakdown"></div>
-        <div id="subjectBreakdownEmpty" class="empty study-empty">📚 Log a session to see your subject progress here.</div>
-      </section>
-
-    </div>
+    </section>
   </div>
+
+  <section class="planner-log-card" aria-label="Log a study session">
+    <div class="planner-log-heading">
+      <div class="planner-card-icon planner-log-icon">✍️</div>
+      <div><div class="study-kicker">RECORD YOUR EFFORT</div><h2>Log a study session</h2><p>Capture what you studied today.</p></div>
+      <span class="planner-win-chip">+1 WIN 💗</span>
+    </div>
+    <form id="sessionForm" class="study-session-form planner-session-form">
+      <div class="formgrid">
+        <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+        <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
+      </div>
+      <div class="formgrid">
+        <div class="field"><label for="minutes">⏱️ Duration (minutes)</label><input id="minutes" type="number" min="1" max="1440" value="60" required></div>
+        <div class="field"><label for="studyType">🎀 Study method</label><select id="studyType"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
+      </div>
+      <div class="field"><label for="topic">📖 Chapter / topic</label><input id="topic" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div>
+      <div class="field"><label for="notes">💭 Quick reflection (optional)</label><textarea id="notes" rows="2" maxlength="500" placeholder="What did you understand today?"></textarea></div>
+      <button class="button full planner-save-session" type="submit">✨ Save study session</button>
+      <div id="sessionMessage" class="message"></div>
+    </form>
+  </section>
 </section>
 <section id="reviewManagerView" class="app-section manager-view hidden">
   <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PAUSE · REFLECT · GROW</div><h1>Review Time</h1><p>Your quiet space to look back, reset, and plan what comes next.</p></div></div>
@@ -655,9 +747,6 @@ function taskMarkup(x,kind){const legacy=['Cost & Management Accounting','Auditi
 $('caTasks').innerHTML=caTasks.map(x=>taskMarkup(x,'ca-task')).join('');$('personalTasks').innerHTML=personalTasks.map(x=>taskMarkup(x,'personal-task')).join('');
 $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpty').classList.toggle('hidden',personalTasks.length>0);
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
-const subjectTotals={};for(const item of state.sessions){const name=item.subject||'Other';if(!subjectTotals[name])subjectTotals[name]={minutes:0,count:0};subjectTotals[name].minutes+=Number(item.duration_minutes||0);subjectTotals[name].count++}
-const subjectRows=Object.entries(subjectTotals).sort((a,b)=>b[1].minutes-a[1].minutes);const maxSubject=Math.max(1,...subjectRows.map(x=>x[1].minutes));
-$('subjectBreakdown').innerHTML=subjectRows.map(([name,data],i)=>{const hrs=(data.minutes/60).toFixed(data.minutes%60?1:0);const pct=Math.max(4,Math.round(data.minutes/maxSubject*100));return '<div class="subject-progress-row subject-tone-'+(i%5)+'"><div class="subject-progress-head"><span class="subject-progress-name">'+esc(name)+'</span><span class="subject-progress-meta">'+hrs+'h · '+data.count+' session'+(data.count===1?'':'s')+'</span></div><div class="subject-progress-track"><div class="subject-progress-fill" style="width:'+pct+'%"></div></div></div>'}).join('');$('subjectBreakdownEmpty').classList.toggle('hidden',subjectRows.length>0);
 $('studyTargetPreview').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 $('targetValue').textContent=state.target;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 }
