@@ -31,3 +31,7 @@ Mobile-first study tracking PWA with Supabase cloud sync. Built for CA Inter: su
 
 ## Privacy and cost
 The repository is public and contains browser app code, not passwords. Supabase publishable keys are designed for client use, with RLS policies enforcing row access. Do not commit passwords, personal exports, or service-role/secret keys. Free hosting/database tiers are subject to provider quotas and can change.
+
+
+## Task history and reports
+Task activity is logged in the private `study_task_history` table. It records new tasks, completions, reopenings, edits and deletions, and the Task Manager can show a date-based summary and export that day as CSV. History is scoped to the signed-in user and is retained independently of task deletion.
