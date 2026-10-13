@@ -761,6 +761,13 @@ body.night-mode .review-copy p,body.night-mode .review-ready-card p{color:#d6c5e
 body.night-mode .review-promise{background:#2a1f32;border-color:#69435f;color:#ffdced}
 body.night-mode .footer{color:#bbaed0}
 
+
+/* Personal welcome hero: simple greeting + one motivational line */
+.home-view .welcome-sow-title{font-size:clamp(34px,4.2vw,48px);line-height:1.08;letter-spacing:-1.15px;font-weight:900;margin:12px 0 15px;color:#fff}
+.home-view .welcome-sow-quote{display:flex;align-items:center;gap:9px;margin-top:0;font-size:13px;line-height:1.5;font-weight:750;color:#fff0fa;max-width:460px}
+.home-view .welcome-sow-quote .hero-sparkle{font-size:20px;flex:0 0 auto;color:#ffdf9d}
+@media(max-width:760px){.home-view .welcome-sow-title{font-size:clamp(30px,7vw,38px);letter-spacing:-.6px;margin:4px 0 12px}.home-view .welcome-sow-quote{font-size:12px;line-height:1.45;gap:7px}.home-view .home-hero-copy{min-width:0}}
+
 </style>
 </head>
 <body>
@@ -777,9 +784,8 @@ body.night-mode .footer{color:#bbaed0}
 
 <section class="home-hero">
   <div class="home-hero-copy">
-    <div class="home-eyebrow"><span class="hero-dot"></span> SOW CA · YOUR SPACE</div>
-    <h1>Your goals.<br><em>Your pace.</em></h1>
-    <div class="hero-note"><span class="hero-sparkle">✦</span><span>One day. One win. You’ve got this.</span></div>
+    <h1 class="welcome-sow-title">Welcome, Sow!</h1>
+    <div class="hero-note welcome-sow-quote"><span class="hero-sparkle">✦</span><span>One small step today, one brighter tomorrow.</span></div>
   </div>
   <div class="home-hero-art"><div class="hero-logo-orbit"><img src="./icons/sow-ca-logo.svg" alt="Sow CA"></div><span class="float-star star-one">✦</span><span class="float-star star-two">✧</span><span class="float-heart">♡</span></div>
 </section>
