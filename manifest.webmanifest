@@ -1,0 +1,14 @@
+{
+  "name": "Be Productive — CA Study Tracker",
+  "short_name": "Be Productive",
+  "description": "A focused CA Inter study tracker with shared progress sync.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#111827",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
