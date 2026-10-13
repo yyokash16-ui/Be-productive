@@ -26,6 +26,59 @@
 @media(max-width:620px){.home-hero{grid-template-columns:1fr;padding:24px 21px;min-height:auto}.home-hero-art{min-height:125px;margin-top:15px}.hero-logo-orbit{width:112px;height:112px}.home-hero h1{font-size:34px}.home-section-heading{align-items:flex-start;flex-direction:column}.home-heading-caption{white-space:normal}.manager-cards{grid-template-columns:1fr}.manager-card{min-height:0;padding:17px}.manager-card-top{margin-bottom:12px}.manager-card p{margin-bottom:13px}.manager-card-bottom{grid-template-columns:1fr auto;align-items:center}.manager-card-title{font-size:20px}.manager-page-heading{flex-direction:column;gap:11px}.review-hero{grid-template-columns:1fr;padding:20px}.review-illustration{min-height:135px}.review-book{width:100px;height:100px}.review-ready-card{align-items:flex-start;padding:14px}.ready-spark{display:none}}
 .today-tasks{margin:0 0 18px;padding:20px}.today-task-heading{margin-bottom:14px;align-items:center}.task-subtitle{font-size:12px;color:var(--muted);margin:7px 0 0}.task-heading-actions{display:flex;align-items:center;gap:10px}.task-open-count{font-size:11px;font-weight:800;color:#6252c8;background:#efedff;padding:8px 10px;border-radius:99px;white-space:nowrap}.task-form{border:1px solid #e4e0fa;border-radius:16px;background:#faf9ff;padding:15px;margin-bottom:16px}.task-form .formgrid{gap:10px}.task-form .field{margin-bottom:8px}.task-form-tip{display:flex;justify-content:center;align-items:center;font-size:11px;color:#7764c6;background:#f0edff;border-radius:12px;padding:10px}.task-form-actions{display:flex;gap:8px;flex-wrap:wrap}.task-lanes{display:grid;grid-template-columns:1fr 1fr;gap:13px}.task-lane{min-width:0;border:1px solid transparent;border-radius:17px;padding:14px}.ca-lane{background:#f5f2ff;border-color:#e3dcff}.personal-lane{background:#eefbf7;border-color:#d1f1e5}.task-lane-heading{display:flex;align-items:center;gap:9px;margin-bottom:12px;min-width:0}.task-lane-icon{display:grid;place-items:center;flex:0 0 37px;width:37px;height:37px;background:#fff;border-radius:12px;font-size:18px}.task-lane-heading h3{font-size:14px;letter-spacing:-.2px;margin:0}.task-lane-heading p{font-size:10px;color:var(--muted);margin:4px 0 0}.lane-count{font-size:10px;font-weight:800;color:#6654c9;background:#fff;padding:6px 8px;border-radius:99px;margin-left:auto;white-space:nowrap}.personal-lane .lane-count{color:#147a68}.task-items{display:grid;gap:8px}.task-row{display:flex;gap:9px;align-items:flex-start;padding:10px;background:#ffffffdc;border:1px solid #e8e6f3;border-radius:12px;min-width:0}.personal-lane .task-row{border-color:#d9f0e8}.task-row .check{margin-top:2px;flex:0 0 17px;width:17px;height:17px}.task-row .item-main{min-width:0}.task-row .item-title{font-size:12px;line-height:1.4}.task-row.completed .item-title{text-decoration:line-through;color:#7a8797}.task-row.completed{opacity:.75}.task-row .item-sub{font-size:10px;margin-top:4px}.task-row .item-time{font-size:10px;color:var(--muted);padding-top:2px}.task-row .button.danger{font-size:13px;padding:3px 7px;border-radius:8px}.task-empty{padding:16px 10px;text-align:center;border:1px dashed #d8d4ed;border-radius:12px;font-size:11px;line-height:1.5;color:#766f96}.personal-lane .task-empty{border-color:#cde9df;color:#5c897e}.ca-lane .task-row .check{accent-color:#6d5ce8}.personal-lane .task-row .check{accent-color:#20a387}@media(max-width:760px){.wake-grid{grid-template-columns:1fr}.wake-card{padding:17px}.task-lanes{grid-template-columns:1fr}.today-tasks{padding:14px}.today-task-heading{align-items:flex-start;flex-direction:column}.task-heading-actions{width:100%;justify-content:space-between}.task-lane{padding:12px}}.shell{padding:16px 13px 38px}.top{margin-bottom:20px}.welcome{align-items:flex-start;flex-direction:column}.metrics{grid-template-columns:1fr 1fr}.metric.primary{grid-column:1/-1}.metric{padding:17px}.grid,.auth-wrap{grid-template-columns:1fr}.auth-wrap{gap:22px;padding:12px 0}.hero h1{font-size:40px}.panel{padding:17px}.formgrid{gap:9px}.sync{white-space:normal}.metric-value{margin:8px 0}.brand small{font-size:9px}}
 @media(max-width:380px){.formgrid{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:13px}.button{padding:11px 12px}}
+
+/* Compact single-screen home page */
+.home-view .welcome{margin-bottom:12px;align-items:center}
+.home-view .welcome h1{font-size:clamp(23px,2.5vw,30px);margin:4px 0}
+.home-view .welcome .muted{font-size:12px}
+.home-view .welcome .sync{padding:7px 10px;font-size:11px}
+.home-view .home-hero{min-height:0;height:190px;padding:20px 27px;border-radius:22px;margin-bottom:17px;grid-template-columns:1.3fr .7fr}
+.home-view .home-hero h1{font-size:clamp(30px,3.2vw,39px);margin:11px 0 0;line-height:1.04}
+.home-view .hero-note{margin-top:14px;font-size:11px}
+.home-view .home-hero-art{min-height:0;height:150px}
+.home-view .hero-logo-orbit{width:124px;height:124px}
+.home-view .home-section-heading{margin:0 2px 10px;align-items:center}
+.home-view .home-section-heading h2{font-size:21px;margin:3px 0 0}
+.home-view .manager-cards{gap:13px}
+.home-view .manager-card{min-height:158px;padding:15px 17px;border-radius:18px}
+.home-view .manager-card-top{margin-bottom:12px}
+.home-view .manager-icon{width:38px;height:38px;border-radius:13px;font-size:19px}
+.home-view .manager-card-title{font-size:18px}
+.home-view .manager-card-bottom{margin-top:auto;gap:13px}
+.home-view .manager-chip{font-size:10px;padding:6px 8px}
+.home-view .card-go{font-size:11px}
+@media(max-width:760px){
+ .home-view .home-hero{height:auto;min-height:0;padding:19px 20px;grid-template-columns:1fr .45fr}
+ .home-view .home-hero h1{font-size:clamp(26px,5vw,34px)}
+ .home-view .home-hero-art{height:100px}
+ .home-view .hero-logo-orbit{width:94px;height:94px}
+ .home-view .manager-cards{grid-template-columns:1fr;gap:9px}
+ .home-view .manager-card{min-height:0;padding:13px 15px}
+ .home-view .manager-card-top{margin-bottom:8px}
+ .home-view .manager-card-bottom{grid-template-columns:1fr auto;align-items:center;gap:8px}
+ .home-view .home-section-heading h2{font-size:19px}
+}
+@media(max-width:480px){
+ .home-view .home-hero{grid-template-columns:1fr;padding:18px}
+ .home-view .home-hero-art{display:none}
+ .home-view .manager-card{display:grid;grid-template-columns:40px 1fr auto;align-items:center;column-gap:10px}
+ .home-view .manager-card-top{grid-row:1 / span 2;margin:0}
+ .home-view .manager-icon{width:36px;height:36px}
+ .home-view .manager-arrow{display:none}
+ .home-view .manager-card-title{align-self:end}
+ .home-view .manager-card-bottom{grid-column:2 / 4;grid-template-columns:1fr auto;align-self:start}
+}
+@media(max-height:780px) and (min-width:761px){
+ .shell{padding-top:10px;padding-bottom:18px}
+ .top{margin-bottom:12px}
+ .home-view .welcome{margin-bottom:8px}
+ .home-view .home-hero{height:170px;margin-bottom:12px}
+ .home-view .home-hero-art{height:130px}
+ .home-view .hero-logo-orbit{width:110px;height:110px}
+ .home-view .manager-card{min-height:145px;padding:12px 15px}
+ .home-view .manager-card-top{margin-bottom:8px}
+ .home-view .home-section-heading{margin-bottom:8px}
+}
 </style>
 </head>
 <body>
@@ -42,20 +95,18 @@
 
 <section class="home-hero">
   <div class="home-hero-copy">
-    <div class="home-eyebrow"><span class="hero-dot"></span> YOUR PERSONAL STUDY SPACE</div>
-    <h1>A softer way to<br><em>reach your goals.</em></h1>
-    <p>One little step at a time, babe. Make space for your studies, your life, and your next big dream.</p>
-    <div class="hero-note"><span class="hero-sparkle">✦</span><span>Progress, not pressure. You’ve got this.</span></div>
+    <div class="home-eyebrow"><span class="hero-dot"></span> SOW CA · YOUR SPACE</div>
+    <h1>Your goals.<br><em>Your pace.</em></h1>
+    <div class="hero-note"><span class="hero-sparkle">✦</span><span>One day. One win. You’ve got this.</span></div>
   </div>
   <div class="home-hero-art"><div class="hero-logo-orbit"><img src="./icons/sow-ca-logo.svg" alt="Sow CA"></div><span class="float-star star-one">✦</span><span class="float-star star-two">✧</span><span class="float-heart">♡</span></div>
 </section>
-<div class="home-section-heading"><div><div class="eyebrow">CHOOSE YOUR SPACE</div><h2>What would you like to work on?</h2></div><span class="home-heading-caption">Made for your every day 🌷</span></div>
+<div class="home-section-heading"><div><div class="eyebrow">YOUR SPACES</div><h2>Where to next?</h2></div></div>
 <div class="manager-cards">
-  <button class="manager-card manager-tasks" type="button" data-open-view="tasks"><div class="manager-card-top"><span class="manager-icon">☀</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Task Manager</div><p>Wake-up goals, CA study tasks, and personal tasks—all in one calm space.</p><div class="manager-card-bottom"><span class="manager-chip">Wake-up · CA · Personal</span><span class="card-go">Open space <b>→</b></span></div></button>
-  <button class="manager-card manager-study" type="button" data-open-view="study"><div class="manager-card-top"><span class="manager-icon">✎</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Study Manager</div><p>Log study hours, record topics, and see your effort build day by day.</p><div class="manager-card-bottom"><span class="manager-chip">Study log · Progress</span><span class="card-go">Open space <b>→</b></span></div></button>
-  <button class="manager-card manager-review" type="button" data-open-view="review"><div class="manager-card-top"><span class="manager-icon">✧</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Review Time</div><p>A calm place for revision and review tools, built around the way you want to study.</p><div class="manager-card-bottom"><span class="manager-chip">Your next chapter</span><span class="card-go">Open space <b>→</b></span></div></button>
+  <button class="manager-card manager-tasks" type="button" data-open-view="tasks"><div class="manager-card-top"><span class="manager-icon">☀</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Task Manager</div><div class="manager-card-bottom"><span class="manager-chip">Wake-up · CA · Personal</span><span class="card-go">Open <b>→</b></span></div></button>
+  <button class="manager-card manager-study" type="button" data-open-view="study"><div class="manager-card-top"><span class="manager-icon">✎</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Study Manager</div><div class="manager-card-bottom"><span class="manager-chip">Sessions · Hours · Progress</span><span class="card-go">Open <b>→</b></span></div></button>
+  <button class="manager-card manager-review" type="button" data-open-view="review"><div class="manager-card-top"><span class="manager-icon">✧</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Review Time</div><div class="manager-card-bottom"><span class="manager-chip">Reflect · Revise · Reset</span><span class="card-go">Open <b>→</b></span></div></button>
 </div>
-<div class="home-footer-note"><span>♡</span> Every little effort counts. Be proud of yourself today.</div>
 </section>
 <section id="taskManagerView" class="app-section manager-view hidden">
   <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PLAN WITH KINDNESS</div><h1>Task Manager</h1><p>Take care of your morning first, then one task at a time.</p></div></div>
