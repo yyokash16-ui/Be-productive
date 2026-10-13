@@ -44,3 +44,7 @@ Task groups are **Professional Tasks** and **Personal Tasks**. Professional task
 
 ## Daily task reset
 The Task Manager shows only tasks created on the current local calendar date. When a new local day begins, an open app detects the date change and refreshes within 30 seconds. Older tasks are retained in Supabase history for date-specific CSV and Word-compatible reports; no automatic task deletion is performed.
+
+
+## Study Manager redesign
+The Study Manager uses a deep-teal and warm-coral visual theme, study-time cards, weekly activity, a study streak indicator, subject-wise session totals, a daily target control, the original study-session form, and recent study history. It uses the existing study_sessions and study_settings data and requires no database migration.
