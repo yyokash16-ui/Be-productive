@@ -23,7 +23,28 @@
 <form id="authForm" class="auth-card"><div class="tabs"><button type="button" class="active" data-mode="signin">Sign in</button><button type="button" data-mode="signup">Create account</button></div><label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>Password<input id="password" type="password" minlength="6" autocomplete="current-password" placeholder="At least 6 characters" required></label><button id="authSubmit" class="button full" type="submit">Sign in</button><p id="authHint" class="muted">Use the same account on both devices to see the same tracker.</p><div id="authMessage" class="message" role="status"></div></form>
 </section>
 <main id="appView" class="hidden">
+<section id="homeView" class="app-section home-view">
 <div class="welcome"><div><div id="todayWeekday" class="eyebrow">YOUR STUDY SPACE</div><h1 id="greeting">Good study day.</h1><div id="todayDate" class="muted">A little progress adds up.</div></div><div id="syncStatus" class="sync">Connecting to cloud…</div></div>
+
+<section class="home-hero">
+  <div class="home-hero-copy">
+    <div class="home-eyebrow"><span class="hero-dot"></span> YOUR PERSONAL STUDY SPACE</div>
+    <h1>A softer way to<br><em>reach your goals.</em></h1>
+    <p>One little step at a time, babe. Make space for your studies, your life, and your next big dream.</p>
+    <div class="hero-note"><span class="hero-sparkle">✦</span><span>Progress, not pressure. You’ve got this.</span></div>
+  </div>
+  <div class="home-hero-art"><div class="hero-logo-orbit"><img src="./icons/sow-ca-logo.svg" alt="Sow CA"></div><span class="float-star star-one">✦</span><span class="float-star star-two">✧</span><span class="float-heart">♡</span></div>
+</section>
+<div class="home-section-heading"><div><div class="eyebrow">CHOOSE YOUR SPACE</div><h2>What would you like to work on?</h2></div><span class="home-heading-caption">Made for your every day 🌷</span></div>
+<div class="manager-cards">
+  <button class="manager-card manager-tasks" type="button" data-open-view="tasks"><div class="manager-card-top"><span class="manager-icon">☀</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Task Manager</div><p>Wake-up goals, CA study tasks, and personal tasks—all in one calm space.</p><div class="manager-card-bottom"><span class="manager-chip">Wake-up · CA · Personal</span><span class="card-go">Open space <b>→</b></span></div></button>
+  <button class="manager-card manager-study" type="button" data-open-view="study"><div class="manager-card-top"><span class="manager-icon">✎</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Study Manager</div><p>Log study hours, record topics, and see your effort build day by day.</p><div class="manager-card-bottom"><span class="manager-chip">Study log · Progress</span><span class="card-go">Open space <b>→</b></span></div></button>
+  <button class="manager-card manager-review" type="button" data-open-view="review"><div class="manager-card-top"><span class="manager-icon">✧</span><span class="manager-arrow">↗</span></div><div class="manager-card-title">Review Time</div><p>A calm place for revision and review tools, built around the way you want to study.</p><div class="manager-card-bottom"><span class="manager-chip">Your next chapter</span><span class="card-go">Open space <b>→</b></span></div></button>
+</div>
+<div class="home-footer-note"><span>♡</span> Every little effort counts. Be proud of yourself today.</div>
+</section>
+<section id="taskManagerView" class="app-section manager-view hidden">
+  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PLAN WITH KINDNESS</div><h1>Task Manager</h1><p>Take care of your morning first, then one task at a time.</p></div></div>
 <section class="wake-grid" aria-label="Morning wake-up plan">
   <article id="wakeTodayCard" class="wake-card neutral">
     <div class="panel-head" style="margin-bottom:7px"><div><div class="eyebrow">YOUR FIRST WIN</div><h2>First thing when I wake up today</h2></div><span id="wakeTodayBadge" class="wake-badge">Checking</span></div>
@@ -83,6 +104,10 @@
     </section>
   </div>
 </section>
+
+</section>
+<section id="studyManagerView" class="app-section manager-view hidden">
+  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">YOUR EFFORT ADDS UP</div><h1>Study Manager</h1><p>Log each study session and keep track of your consistency.</p></div></div>
 <section class="metrics"><article class="metric primary"><div class="metric-label">STUDY TIME TODAY</div><div id="todayTime" class="metric-value">0h 00m</div><div id="targetCaption" class="metric-foot">Target: 6 hours</div><div class="track"><div id="targetBar"></div></div></article><article class="metric"><div class="metric-label">SESSIONS</div><div id="sessionCount" class="metric-value">0</div><div class="metric-foot">Logged today</div></article><article class="metric"><div class="metric-label">TASKS DONE</div><div id="taskCount" class="metric-value">0/0</div><div class="metric-foot">Today's checklist</div></article></section>
 <div class="grid"><div class="stack">
 <section class="panel"><div class="panel-head"><div><div class="eyebrow">STUDY LOG</div><h2>Log a study session</h2></div><span>◷</span></div>
@@ -91,7 +116,14 @@
 <div class="stack">
 <section class="panel"><div class="panel-head"><div><div class="eyebrow">CONSISTENCY, NOT PERFECTION</div><h2>Last 7 days</h2></div><strong id="weekTotal">0h this week</strong></div><div id="chart" class="chart"></div><p class="muted" style="font-size:12px;margin-bottom:0">Study hours recorded each day.</p></section>
 <section class="panel"><div class="panel-head"><div><div class="eyebrow">YOUR ROUTINE</div><h2>Daily study target</h2></div><strong><span id="targetValue">6</span> h</strong></div><div class="field"><label for="targetSlider">Hours per day</label><input id="targetSlider" type="range" min="1" max="14" value="6" style="accent-color:var(--accent);padding:0"></div><button id="saveTarget" class="button secondary full" type="button">Save daily target</button><div id="targetMessage" class="message"></div></section>
-</div></div><div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
+</div></div>
+</section>
+<section id="reviewManagerView" class="app-section manager-view hidden">
+  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PAUSE · REFLECT · GROW</div><h1>Review Time</h1><p>Your quiet space to look back, reset, and plan what comes next.</p></div></div>
+  <div class="review-hero"><div class="review-illustration"><div class="review-book">✧</div><span class="review-petal p1">✦</span><span class="review-petal p2">♡</span><span class="review-petal p3">✧</span></div><div class="review-copy"><div class="eyebrow">THIS SPACE IS YOURS</div><h2>Let’s build your review ritual.</h2><p>We’ve kept this section calm and ready. Tell me what you’d like to review here next, and we’ll add it one feature at a time—without disturbing your existing study records.</p><div class="review-promise"><span>♡</span> A gentle review can turn today’s effort into tomorrow’s confidence.</div></div></div>
+  <div class="review-ready-card"><span class="review-ready-icon">✧</span><div><strong>Ready for your ideas</strong><p>Revision plans, weekly reflections, chapter recall, mock-test reviews—whatever you decide, we’ll shape it around your routine.</p></div><span class="ready-spark">✦</span></div>
+</section>
+<div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
 </main>
 </div>
 <script src="./config.js"></script>
