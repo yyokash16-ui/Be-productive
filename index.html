@@ -571,6 +571,75 @@
 }
 @media(max-width:390px){#studyManagerView .take-test-button{width:59px;flex-basis:59px}#studyManagerView .take-test-button small{font-size:8px}.test-timer-display{font-size:50px}.test-clock-top{font-size:9px}}
 
+
+/* High-contrast, clearly separated Study Planner cards + stronger mobile type */
+#studyManagerView.study-planner{padding:22px;border:2px solid #e5c9f2;gap:0;background:linear-gradient(145deg,#fff7fc 0%,#fff0f8 46%,#eee7ff 100%)!important}
+#studyManagerView .planner-heading{padding:4px 5px 19px;margin-bottom:3px;border-bottom:2px solid #e7c9ef;gap:15px}
+#studyManagerView .study-page-heading h1{font-size:clamp(30px,3.5vw,40px);font-weight:900;letter-spacing:-.8px;color:#30203f}
+#studyManagerView .study-kicker{font-size:12px;font-weight:900;letter-spacing:.35px;color:#81509b}
+#studyManagerView .planner-study-time{margin-top:17px;margin-bottom:18px;min-height:205px;border:2px solid #6b4b8a;box-shadow:0 16px 0 #e4d1f1,0 22px 36px #4f2d6940,inset 0 1px #ffffff35}
+#studyManagerView .planner-label{font-size:13px;letter-spacing:.55px;font-weight:900;color:#ffe4f4}
+#studyManagerView .planner-big-time{font-size:clamp(52px,6.4vw,76px);font-weight:950;letter-spacing:-1.8px}
+#studyManagerView .planner-target-caption{font-size:14px;font-weight:850;color:#fff4fc}
+#studyManagerView .planner-time-track{height:10px;background:#ffffff48;border:1px solid #ffffff32}
+#studyManagerView .planner-mini-grid{gap:17px;margin-bottom:18px}
+#studyManagerView .planner-sessions-card,#studyManagerView .planner-target-card{border:2px solid #e7c4f0;box-shadow:0 8px 0 #e7d5f1,0 15px 25px #7e51a515}
+#studyManagerView .planner-sessions-card{background:linear-gradient(145deg,#ffe5f2 0%,#f4ddff 55%,#eee6ff 100%)!important}
+#studyManagerView .planner-target-card{background:linear-gradient(145deg,#fffafd 0%,#ffeaf5 50%,#eee5ff 100%)!important;border-color:#ddc9f1}
+#studyManagerView .planner-card-icon{width:44px;height:44px;border-radius:14px;border:2px solid #fff;box-shadow:0 5px 12px #80549b19;font-size:22px}
+#studyManagerView .planner-mini-label{font-size:13px;font-weight:900;letter-spacing:.15px;color:#624078}
+#studyManagerView .planner-session-number{font-size:48px;font-weight:950;color:#54318b}
+#studyManagerView .planner-mini-caption{font-size:12px;font-weight:850;color:#7a5597}
+#studyManagerView .planner-target-caption-small{font-size:12px;font-weight:800;color:#77568f}
+#studyManagerView .planner-target-value strong{font-size:32px;font-weight:950;color:#603cb0}
+#studyManagerView .planner-target-value span{font-size:12px;font-weight:900;color:#603cb0}
+#studyManagerView .planner-goal-track{height:9px;margin:15px 0 12px;background:#dfd0f2;border:1px solid #d9c6eb}
+#studyManagerView .planner-slider-row label{font-size:12px;font-weight:900;color:#67437e}
+#studyManagerView .planner-save-target{padding:12px;font-size:13px;font-weight:900;border:1px solid #7e53c9;box-shadow:0 5px 0 #d9c1ef,0 10px 18px #9460c22e}
+#studyManagerView .planner-log-card{margin-top:0;padding:23px;border:2px solid #e4cef0;border-radius:24px;background:linear-gradient(145deg,#fffafd 0%,#fff0f8 48%,#f1ebff 100%)!important;box-shadow:0 9px 0 #e8d9f3,0 17px 28px #8b62a611}
+#studyManagerView .planner-log-heading{padding-bottom:16px;margin-bottom:18px;border-bottom:2px solid #efd9f1}
+#studyManagerView .planner-log-heading .study-kicker{font-size:12px}
+#studyManagerView .planner-log-heading h2{font-size:23px;font-weight:950;color:#30203f;letter-spacing:-.4px}
+#studyManagerView .planner-log-heading p{font-size:13px;font-weight:750;color:#705883}
+#studyManagerView .planner-session-form .field{margin-bottom:14px}
+#studyManagerView .planner-session-form .field label{display:block;margin-bottom:7px;font-size:13px;font-weight:900;color:#513663}
+#studyManagerView .planner-session-form .field input,#studyManagerView .planner-session-form .field select,#studyManagerView .planner-session-form .field textarea{padding:13px 14px;min-height:47px;font-size:14px;font-weight:750;border:1.5px solid #d9c3ed;border-radius:13px;background:linear-gradient(110deg,#fff,#fff7fc);box-shadow:0 3px 8px #6f4a8b09;color:#342345}
+#studyManagerView .planner-session-form .field textarea{min-height:72px}
+#studyManagerView .planner-save-session{min-height:49px;font-size:14px;font-weight:950;border:1px solid #8457c5;box-shadow:0 6px 0 #d9c3ee,0 11px 20px #8954bb27}
+#studyManagerView .planner-session-form .message{font-size:13px;font-weight:850}
+#studyManagerView .take-test-button{border:2px solid #dfc4f0;background:linear-gradient(145deg,#ffe0f0,#e5dcff);box-shadow:0 5px 0 #e4d5f1,0 9px 16px #9269bc18}
+#studyManagerView .take-test-button small{font-size:11px;font-weight:900;color:#5b368e}
+#studyManagerView .planner-target-card .message{font-size:12px;font-weight:850}
+@media(max-width:720px){
+ #studyManagerView.study-planner{padding:13px;border-width:2px}
+ #studyManagerView .planner-heading{gap:9px;padding:2px 1px 14px;border-bottom-width:2px}
+ #studyManagerView .study-page-heading h1{font-size:28px;font-weight:950;letter-spacing:-.55px}
+ #studyManagerView .study-kicker{font-size:11px;font-weight:900}
+ #studyManagerView .planner-study-time{margin-top:13px;margin-bottom:17px;padding:18px 16px;min-height:170px;border-width:2px;box-shadow:0 8px 0 #e4d1f1,0 15px 24px #4f2d6932}
+ #studyManagerView .planner-label{font-size:11px;font-weight:950}
+ #studyManagerView .planner-big-time{font-size:clamp(43px,10vw,60px);letter-spacing:-1.2px}
+ #studyManagerView .planner-target-caption{font-size:12px}
+ #studyManagerView .planner-mini-grid{gap:13px;margin-bottom:17px}
+ #studyManagerView .planner-sessions-card,#studyManagerView .planner-target-card{border-width:2px;padding:15px;box-shadow:0 6px 0 #e7d5f1,0 11px 17px #7e51a511}
+ #studyManagerView .planner-sessions-card .planner-mini-label{font-size:11px;font-weight:950}
+ #studyManagerView .planner-session-number{font-size:39px}
+ #studyManagerView .planner-mini-caption{font-size:11px}
+ #studyManagerView .planner-target-card-head{gap:8px}
+ #studyManagerView .planner-target-card-head .planner-mini-label{font-size:11px}
+ #studyManagerView .planner-target-caption-small{font-size:11px}
+ #studyManagerView .planner-target-value strong{font-size:29px}
+ #studyManagerView .planner-slider-row{gap:8px}
+ #studyManagerView .planner-slider-row label{font-size:11px}
+ #studyManagerView .planner-save-target{font-size:12px;padding:11px}
+ #studyManagerView .planner-log-card{margin-top:0;padding:16px;border-width:2px;border-radius:21px;box-shadow:0 6px 0 #e8d9f3,0 13px 19px #8b62a610}
+ #studyManagerView .planner-log-heading{gap:9px;padding-bottom:13px;margin-bottom:15px}
+ #studyManagerView .planner-log-heading h2{font-size:19px;font-weight:950}
+ #studyManagerView .planner-log-heading p{font-size:12px}
+ #studyManagerView .planner-session-form .field label{font-size:12px;font-weight:950}
+ #studyManagerView .planner-session-form .field input,#studyManagerView .planner-session-form .field select,#studyManagerView .planner-session-form .field textarea{font-size:14px;padding:12px 11px;min-height:46px}
+ #studyManagerView .planner-save-session{min-height:49px;font-size:13px}
+}
+
 </style>
 </head>
 <body>
