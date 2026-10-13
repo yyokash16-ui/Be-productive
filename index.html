@@ -372,6 +372,25 @@
 }
 @media(max-width:380px){#studyManagerView .study-metric{padding:9px}#studyManagerView .study-metric .metric-value{font-size:21px}#studyManagerView .study-metric .metric-label{font-size:7px}#studyManagerView .study-hero{grid-template-columns:1fr}#studyManagerView .study-hero-art{position:absolute;right:6px;top:10px;opacity:.75}#studyManagerView .study-hero-copy{z-index:2}#studyManagerView .study-hero h2{font-size:25px}}
 
+
+/* Study Manager custom layout: daily target at top; no checklist, weekly consistency or recent sessions panels */
+#studyManagerView .study-metrics{grid-template-columns:minmax(0,1.08fr) minmax(0,.72fr) minmax(0,1.35fr);align-items:stretch}
+#studyManagerView .metric-daily-target{background:linear-gradient(135deg,#fff0dc 0%,#ffe0c9 48%,#dff7ed 100%)!important;border:1px solid #f1cfb5!important;color:#774b35;padding:15px 16px}
+#studyManagerView .study-target-topline{display:flex;align-items:center;justify-content:space-between;gap:7px;font-size:9px;letter-spacing:.4px;font-weight:950;color:#88513c}
+#studyManagerView .study-target-topline strong{font-size:18px;line-height:1;white-space:nowrap;letter-spacing:-.3px}
+#studyManagerView .study-target-topline strong b{font-size:24px;font-weight:950}
+#studyManagerView .study-target-topline strong small{font-size:9px;font-weight:900}
+#studyManagerView .metric-daily-target .study-target-track{margin:10px 0 8px;height:6px;background:#f0c9ad}
+#studyManagerView .study-top-target-controls{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+#studyManagerView .study-top-target-controls label{font-size:10px;font-weight:900;color:#805640;white-space:nowrap}
+#studyManagerView #targetSlider{flex:1;min-width:55px;accent-color:#0a8a7d;padding:0;margin:0}
+#studyManagerView .metric-daily-target .study-target-button{padding:8px 11px;width:100%;border-radius:10px;font-size:11px;background:linear-gradient(115deg,#087f78,#21a88d);color:#fff;font-weight:950;box-shadow:0 5px 13px #138e7e20}
+#studyManagerView .metric-daily-target .message{margin-top:5px;font-size:10px}
+#studyManagerView .study-layout{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+#studyManagerView .study-form-panel,#studyManagerView .study-subject-panel{height:fit-content}
+@media(max-width:920px){#studyManagerView .study-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#studyManagerView .metric-daily-target{grid-column:1/-1}#studyManagerView .study-layout{grid-template-columns:1fr}}
+@media(max-width:720px){#studyManagerView .study-metrics{grid-template-columns:1fr 1fr;gap:8px}#studyManagerView .metric-daily-target{grid-column:1/-1;padding:13px 14px}#studyManagerView .study-target-topline{font-size:10px}#studyManagerView .study-top-target-controls label{font-size:11px}#studyManagerView .metric-daily-target .study-target-button{padding:10px;font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -476,7 +495,7 @@
   <div class="study-page-heading">
     <button class="back-home study-back" type="button" data-back-home>← Home</button>
     <div class="study-title-wrap">
-      <div class="study-kicker">📚 YOUR CONSISTENCY COUNTS</div>
+      <div class="study-kicker">📚 YOUR STUDY SPACE</div>
       <h1>Study Manager</h1>
       <div class="study-title-chips"><span>CA INTER</span><span>FOCUS · PRACTICE · REVISE</span></div>
     </div>
@@ -497,18 +516,12 @@
     <div class="study-hero-side"><span class="mini-chip">🌿 One day at a time</span><span class="mini-chip">🎯 Progress over perfection</span></div>
   </section>
 
-  <section class="metrics study-metrics" aria-label="Study progress">
+  <section class="metrics study-metrics" aria-label="Study progress and daily target">
     <article class="metric study-metric metric-today">
       <div class="metric-label">⏱️ STUDY TIME TODAY</div>
       <div id="todayTime" class="metric-value">0h 00m</div>
       <div id="targetCaption" class="metric-foot">Target: 6 hours</div>
       <div class="track"><div id="targetBar"></div></div>
-    </article>
-    <article class="metric study-metric metric-week">
-      <div class="metric-label">🌤️ THIS WEEK</div>
-      <div id="studyWeekHero" class="metric-value">0h</div>
-      <div class="metric-foot">Study time recorded</div>
-      <div class="metric-deco">↗</div>
     </article>
     <article class="metric study-metric metric-sessions">
       <div class="metric-label">📖 SESSIONS TODAY</div>
@@ -516,11 +529,12 @@
       <div class="metric-foot">Every session matters</div>
       <div class="metric-deco">✦</div>
     </article>
-    <article class="metric study-metric metric-streak">
-      <div class="metric-label">🔥 STUDY STREAK</div>
-      <div id="taskCount" class="metric-value">0</div>
-      <div class="metric-foot">Days in a row</div>
-      <div class="metric-deco">♡</div>
+    <article class="metric study-metric metric-daily-target">
+      <div class="study-target-topline"><span>🎯 DAILY STUDY TARGET</span><strong><b id="targetValue">6</b> <small>hours</small></strong></div>
+      <div class="study-target-track"><div id="studyTargetPreview" style="width:0%"></div></div>
+      <div class="study-top-target-controls"><label for="targetSlider">Set hours per day</label><input id="targetSlider" type="range" min="1" max="14" value="6"></div>
+      <button id="saveTarget" class="button study-target-button" type="button">💚 Save target</button>
+      <div id="targetMessage" class="message"></div>
     </article>
   </section>
 
@@ -548,49 +562,19 @@
         </form>
       </section>
 
-      <section class="panel study-sessions-panel">
-        <div class="study-panel-heading">
-          <div class="study-panel-icon icon-history">🗂️</div>
-          <div><div class="study-kicker">YOUR JOURNEY SO FAR</div><h2>Recent sessions</h2><p>Each entry is progress.</p></div>
-        </div>
-        <div id="sessions" class="items study-session-items"></div>
-        <div id="sessionEmpty" class="empty study-empty">🌱 Your first study session starts here.</div>
-      </section>
     </div>
 
     <div class="study-column study-column-side">
-      <section class="panel study-week-panel">
-        <div class="study-panel-heading">
-          <div class="study-panel-icon icon-week">📈</div>
-          <div><div class="study-kicker">YOUR CONSISTENCY</div><h2>Weekly rhythm</h2><p>One week, one step stronger.</p></div>
-        </div>
-        <div class="study-week-total"><strong id="weekTotal">0h this week</strong><span>LAST 7 DAYS</span></div>
-        <div id="chart" class="chart study-chart"></div>
-        <div class="study-chart-legend"><span><i></i> Study minutes by day</span><span>🌱 Keep showing up</span></div>
-      </section>
 
       <section class="panel study-subject-panel">
         <div class="study-panel-heading">
           <div class="study-panel-icon icon-subject">🧩</div>
-          <div><div class="study-kicker">WHERE YOUR TIME GOES</div><h2>Subject focus</h2><p>Study time by subject.</p></div>
+          <div><div class="study-kicker">SUBJECT BREAKDOWN</div><h2>Study by subject</h2><p>See where your time goes.</p></div>
         </div>
         <div id="subjectBreakdown" class="subject-breakdown"></div>
         <div id="subjectBreakdownEmpty" class="empty study-empty">📚 Log a session to see your subject progress here.</div>
       </section>
 
-      <section class="panel study-target-panel">
-        <div class="study-panel-heading">
-          <div class="study-panel-icon icon-target">🎯</div>
-          <div><div class="study-kicker">A TARGET, NOT PRESSURE</div><h2>Daily study goal</h2><p>Choose what feels realistic.</p></div>
-          <strong class="study-target-number"><span id="targetValue">6</span><small>hrs/day</small></strong>
-        </div>
-        <div class="study-target-track"><div id="studyTargetPreview" style="width:0%"></div></div>
-        <div class="field study-range-field"><label for="targetSlider">Daily target · 1 to 14 hours</label><input id="targetSlider" type="range" min="1" max="14" value="6"></div>
-        <button id="saveTarget" class="button secondary full study-target-button" type="button">💚 Save daily target</button>
-        <div id="targetMessage" class="message"></div>
-      </section>
-
-      <div class="study-pep-talk"><span>🌼</span><div><strong>You're building a habit.</strong><small>Consistency beats one perfect day.</small></div></div>
     </div>
   </div>
 </section>
@@ -662,7 +646,7 @@ async function saveTarget(){let n=Number($('targetSlider').value);say('targetMes
 async function toggleTask(id,v){let {error}=await state.db.from('study_tasks').update({completed:v,completed_at:v?new Date().toISOString():null}).eq('id',id);if(error)alert(error.message);else await load()}
 async function removeRow(table,id){if(!confirm('Delete this item?'))return;let {error}=await state.db.from(table).delete().eq('id',id);if(error)alert(error.message);else await load()}
 function taskCreatedOn(task){if(task.created_at)return localDateKey(task.created_at);const event=state.taskHistory.find(row=>row.task_id===task.id&&row.event_type==='created');return event?localDateKey(event.task_created_at||event.event_at):''}
-function render(){renderWake();let t=today(),ss=state.sessions.filter(s=>s.study_date===t),mins=ss.reduce((n,s)=>n+Number(s.duration_minutes||0),0),tt=state.tasks.filter(x=>taskCreatedOn(x)===t),done=tt.filter(x=>x.completed).length;$('todayTime').textContent=time(mins);$('sessionCount').textContent=ss.length;$('taskCount').textContent=done+'/'+tt.length;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
+function render(){renderWake();let t=today(),ss=state.sessions.filter(s=>s.study_date===t),mins=ss.reduce((n,s)=>n+Number(s.duration_minutes||0),0);$('todayTime').textContent=time(mins);$('sessionCount').textContent=ss.length;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 const visibleTasks=[...state.tasks].filter(x=>taskCreatedOn(x)===t).sort((a,b)=>Number(a.completed)-Number(b.completed)||a.title.localeCompare(b.title));
 const caTasks=visibleTasks.filter(x=>x.subject!=='Personal'),personalTasks=visibleTasks.filter(x=>x.subject==='Personal');
 const openCount=visibleTasks.filter(x=>!x.completed).length,doneCount=visibleTasks.filter(x=>x.completed).length;$('taskOverviewCount').textContent=openCount;$('taskDoneTodayCount').textContent=doneCount;
@@ -671,13 +655,11 @@ function taskMarkup(x,kind){const legacy=['Cost & Management Accounting','Auditi
 $('caTasks').innerHTML=caTasks.map(x=>taskMarkup(x,'ca-task')).join('');$('personalTasks').innerHTML=personalTasks.map(x=>taskMarkup(x,'personal-task')).join('');
 $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpty').classList.toggle('hidden',personalTasks.length>0);
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
-$('sessions').innerHTML=state.sessions.slice(0,6).map(x=>'<div class="item"><div class="doticon">'+esc((x.subject||'?')[0])+'</div><div class="item-main"><div class="item-title">'+esc(x.topic||x.subject)+'</div><div class="item-sub">'+esc(x.subject)+' · '+date(x.study_date)+' · '+esc(x.study_type)+'</div></div><div class="item-time">'+time(x.duration_minutes)+'</div><button class="button danger" data-delsession="'+esc(x.id)+'" aria-label="Delete session">×</button></div>').join('');$('sessionEmpty').classList.toggle('hidden',state.sessions.length>0);document.querySelectorAll('[data-delsession]').forEach(x=>x.addEventListener('click',()=>removeRow('study_sessions',x.dataset.delsession)));
-const start=new Date();start.setHours(0,0,0,0);start.setDate(start.getDate()-6);let days=[],total=0;for(let i=0;i<7;i++){let d=new Date(start);d.setDate(start.getDate()+i);let iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),m=state.sessions.filter(s=>s.study_date===iso).reduce((n,s)=>n+Number(s.duration_minutes||0),0);total+=m;days.push({iso,m,label:d.toLocaleDateString('en-IN',{weekday:'short'}).slice(0,2),today:iso===t})}let max=Math.max(60,...days.map(d=>d.m));$('chart').innerHTML=days.map(d=>'<div class="day"><div class="barwrap"><div class="bar '+(d.today?'today':'')+'" title="'+time(d.m)+'" style="height:'+Math.max(4,d.m/max*100)+'%"></div></div><span>'+d.label+'</span></div>').join('');$('weekTotal').textContent=(total/60).toFixed(total%60?1:0)+'h this week';$('studyWeekHero').textContent=(total/60).toFixed(total%60?1:0)+'h';
-const sessionDays=new Set(state.sessions.map(x=>x.study_date));let streak=0,cursor=t;if(!sessionDays.has(cursor)){cursor=shiftDate(cursor,-1);if(!sessionDays.has(cursor))cursor=null}while(cursor&&sessionDays.has(cursor)){streak++;cursor=shiftDate(cursor,-1)}$('taskCount').textContent=streak;
 const subjectTotals={};for(const item of state.sessions){const name=item.subject||'Other';if(!subjectTotals[name])subjectTotals[name]={minutes:0,count:0};subjectTotals[name].minutes+=Number(item.duration_minutes||0);subjectTotals[name].count++}
 const subjectRows=Object.entries(subjectTotals).sort((a,b)=>b[1].minutes-a[1].minutes);const maxSubject=Math.max(1,...subjectRows.map(x=>x[1].minutes));
 $('subjectBreakdown').innerHTML=subjectRows.map(([name,data],i)=>{const hrs=(data.minutes/60).toFixed(data.minutes%60?1:0);const pct=Math.max(4,Math.round(data.minutes/maxSubject*100));return '<div class="subject-progress-row subject-tone-'+(i%5)+'"><div class="subject-progress-head"><span class="subject-progress-name">'+esc(name)+'</span><span class="subject-progress-meta">'+hrs+'h · '+data.count+' session'+(data.count===1?'':'s')+'</span></div><div class="subject-progress-track"><div class="subject-progress-fill" style="width:'+pct+'%"></div></div></div>'}).join('');$('subjectBreakdownEmpty').classList.toggle('hidden',subjectRows.length>0);
 $('studyTargetPreview').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
+$('targetValue').textContent=state.target;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 }
 document.addEventListener('DOMContentLoaded',init);
 })();
