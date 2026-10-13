@@ -503,6 +503,74 @@
  #studyManagerView .planner-win-chip{display:none}
 }
 
+
+/* Cleaner, simpler planner typography */
+#studyManagerView .study-kicker,#studyManagerView .planner-label,#studyManagerView .planner-mini-label{letter-spacing:.45px;font-weight:800;text-transform:none}
+#studyManagerView .study-page-heading h1{font-weight:850;letter-spacing:-.7px}
+#studyManagerView .planner-big-time{font-weight:900;letter-spacing:-1.3px}
+#studyManagerView .planner-mini-label{font-size:11px}
+#studyManagerView .planner-session-number{font-weight:900}
+#studyManagerView .planner-target-value strong{font-weight:900}
+#studyManagerView .planner-log-heading h2{font-weight:850;letter-spacing:-.25px}
+#studyManagerView .planner-session-form .field label{font-weight:800}
+#studyManagerView .take-test-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex:0 0 76px;width:76px;height:61px;border:1px solid #eccfe9;border-radius:16px;background:linear-gradient(145deg,#ffe7f3,#e9e1ff);color:#66439d;box-shadow:0 6px 15px #9269bc12;cursor:pointer;transition:transform .15s,box-shadow .15s}
+#studyManagerView .take-test-button:hover{transform:translateY(-2px);box-shadow:0 9px 20px #9269bc22}
+#studyManagerView .take-test-button span{font-size:19px;line-height:1}
+#studyManagerView .take-test-button small{font-size:10px;font-weight:850;white-space:nowrap}
+.take-test-view{margin:0 -8px 20px;padding:20px;border-radius:28px;background:linear-gradient(145deg,#fff8fc,#f8efff 50%,#fff1f6);border:1px solid #eadbf4;box-shadow:0 18px 45px #986ab114;color:#332346}
+.test-page-heading{display:flex;align-items:center;gap:14px;margin-bottom:19px}
+.test-back{background:linear-gradient(130deg,#fff,#ffe8f3)!important;border:1px solid #f0d6e7!important;color:#684a87!important;font-weight:850}
+.test-page-title{flex:1;min-width:0}
+.test-kicker{font-size:10px;color:#9e5c9c;font-weight:850;letter-spacing:.4px}
+.test-page-title h1{font-size:clamp(25px,3vw,34px);font-weight:850;letter-spacing:-.7px;margin:4px 0 0;color:#302341}
+.test-page-mark{display:grid;place-items:center;width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,#ffe1ef,#e8deff);border:1px solid #efd8f2;font-size:22px}
+.test-intro{display:flex;align-items:center;gap:11px;padding:13px 15px;margin-bottom:14px;border-radius:16px;background:linear-gradient(105deg,#ffe7f2,#eee6ff);border:1px solid #ead7f4}
+.test-intro>span{font-size:24px}
+.test-intro strong{display:block;font-size:13px;font-weight:850}
+.test-intro small{display:block;margin-top:3px;font-size:11px;line-height:1.5;color:#7a648d}
+.test-workspace{display:grid;gap:14px}
+.test-settings-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;padding:17px;border-radius:19px;background:linear-gradient(145deg,#fff,#fff0f7);border:1px solid #ead8f0}
+.test-settings-grid .field{margin:0}
+.test-settings-grid label{font-size:11px;font-weight:850;color:#674b82}
+.test-settings-grid input,.test-settings-grid select{width:100%;padding:12px;border-radius:12px;border:1px solid #e4d6ee;background:#fffafd;font-size:12px;font-weight:750;color:#352447}
+.test-clock-card{position:relative;overflow:hidden;padding:24px;border-radius:23px;background:linear-gradient(115deg,#24183f 0%,#382052 38%,#63305f 72%,#8a3e78 100%);border:1px solid #72518e;color:#fff;box-shadow:0 14px 30px #38204c2c}
+.test-clock-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;letter-spacing:.5px;font-weight:850;color:#ffd9ef}
+.test-state-pill{padding:6px 9px;border-radius:99px;background:#ffffff22;border:1px solid #ffffff38;font-size:10px;font-weight:850;color:#fff}
+.test-state-pill.running{background:#baf4d332;border-color:#baf4d375;color:#ddffed}
+.test-timer-display{text-align:center;font-size:clamp(56px,9vw,88px);font-weight:900;letter-spacing:-2px;line-height:1.1;margin:16px 0 5px;font-variant-numeric:tabular-nums;color:#fff}
+.test-timer-elapsed{text-align:center;font-size:11px;font-weight:750;color:#f9dff1}
+.test-timer-track{height:8px;border-radius:99px;background:#ffffff30;overflow:hidden;margin:18px auto 20px;max-width:620px}
+.test-timer-track>div{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#ffe7a8,#ffadd5);transition:width .2s}
+.test-timer-buttons{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.test-timer-buttons .button{min-width:105px;padding:11px 16px;border-radius:12px;font-size:12px;font-weight:850}
+.test-start-button{background:linear-gradient(120deg,#ffdfef,#f1dfff);color:#4d3475}
+.test-pause-button{background:#ffffff20;border:1px solid #ffffff40;color:#fff}
+.test-pause-button:disabled{opacity:.45;cursor:not-allowed}
+.test-reset-button{background:#ffffff10;border:1px solid #ffffff40;color:#fff}
+.test-result-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px;border-radius:18px;background:linear-gradient(110deg,#ffeaf4,#eee7ff);border:1px solid #e8d7f0}
+.test-result-copy h2{font-size:17px;letter-spacing:-.3px;font-weight:850;margin:4px 0}
+.test-result-copy p{font-size:11px;line-height:1.5;margin:0;color:#7b678c}
+.test-met-check{display:flex;align-items:center;gap:8px;white-space:nowrap;padding:11px 13px;border-radius:12px;background:#fff;border:1px solid #dfd1f0;font-size:12px;font-weight:850;color:#5d478b}
+.test-met-check input{width:18px;height:18px;accent-color:#8c58c9}
+.test-record-button{padding:14px;border-radius:14px;background:linear-gradient(110deg,#7354ca,#a467d0 58%,#e17eae)!important;color:#fff;font-size:13px;font-weight:900;box-shadow:0 8px 18px #9364c323}
+.test-record-button:disabled{opacity:.6;cursor:wait}
+.test-record-message{text-align:center;font-size:12px;font-weight:800}
+@media(max-width:700px){
+ .take-test-view{margin:0 -5px 15px;padding:12px;border-radius:22px}
+ #studyManagerView .take-test-button{flex-basis:66px;width:66px;height:56px;border-radius:14px}
+ #studyManagerView .take-test-button small{font-size:9px}
+ .test-page-heading{gap:9px;flex-wrap:wrap}
+ .test-back{padding:9px 10px;font-size:11px}
+ .test-settings-grid{grid-template-columns:1fr;padding:13px;gap:10px}
+ .test-clock-card{padding:18px 13px;border-radius:20px}
+ .test-timer-display{font-size:58px}
+ .test-timer-buttons{gap:7px}
+ .test-timer-buttons .button{flex:1;min-width:0;padding:11px 9px}
+ .test-result-card{align-items:flex-start;flex-direction:column;padding:14px}
+ .test-met-check{align-self:stretch;justify-content:center}
+}
+@media(max-width:390px){#studyManagerView .take-test-button{width:59px;flex-basis:59px}#studyManagerView .take-test-button small{font-size:8px}.test-timer-display{font-size:50px}.test-clock-top{font-size:9px}}
+
 </style>
 </head>
 <body>
@@ -607,15 +675,15 @@
   <div class="study-page-heading planner-heading">
     <button class="back-home study-back" type="button" data-back-home>← Home</button>
     <div class="study-title-wrap">
-      <div class="study-kicker">💗 YOUR CA INTER SPACE</div>
+      <div class="study-kicker">💗 CA Inter Study Planner</div>
       <h1>Study Planner</h1>
     </div>
-    <div class="planner-heading-art" aria-hidden="true">✿</div>
+    <button id="openTestView" class="take-test-button" type="button" title="Take a test"><span>✍️</span><small>Take a Test</small></button>
   </div>
 
   <section class="planner-study-time" aria-label="Study time today">
     <div class="planner-study-time-copy">
-      <span class="planner-label">⏳ STUDY TIME TODAY</span>
+      <span class="planner-label">⏳ Study time today</span>
       <div id="todayTime" class="planner-big-time">0h 00m</div>
       <div id="targetCaption" class="planner-target-caption">Target: 6 hours</div>
       <div class="planner-time-track"><div id="targetBar"></div></div>
@@ -629,7 +697,7 @@
   <div class="planner-mini-grid">
     <section class="planner-sessions-card" aria-label="Sessions logged today">
       <div class="planner-card-icon planner-sessions-icon">📝</div>
-      <div class="planner-mini-label">SESSIONS LOGGED TODAY</div>
+      <div class="planner-mini-label">Sessions today</div>
       <div id="sessionCount" class="planner-session-number">0</div>
       <div class="planner-mini-caption">Every session counts ✨</div>
       <div class="planner-card-sparkle" aria-hidden="true">✦</div>
@@ -638,7 +706,7 @@
     <section class="planner-target-card" aria-label="Daily study target">
       <div class="planner-target-card-head">
         <div class="planner-card-icon planner-goal-icon">🎯</div>
-        <div><div class="planner-mini-label">DAILY STUDY TARGET</div><p class="planner-target-caption-small">Make today count</p></div>
+        <div><div class="planner-mini-label">Daily study target</div><p class="planner-target-caption-small">Make today count</p></div>
         <div class="planner-target-value"><strong id="targetValue">6</strong><span>hrs</span></div>
       </div>
       <div class="planner-goal-track"><div id="studyTargetPreview" style="width:0%"></div></div>
@@ -651,8 +719,8 @@
   <section class="planner-log-card" aria-label="Log a study session">
     <div class="planner-log-heading">
       <div class="planner-card-icon planner-log-icon">✍️</div>
-      <div><div class="study-kicker">RECORD YOUR EFFORT</div><h2>Log a study session</h2><p>Capture what you studied today.</p></div>
-      <span class="planner-win-chip">+1 WIN 💗</span>
+      <div><div class="study-kicker">Study log</div><h2>Log a study session</h2><p>Capture what you studied today.</p></div>
+      
     </div>
     <form id="sessionForm" class="study-session-form planner-session-form">
       <div class="formgrid">
@@ -670,6 +738,37 @@
     </form>
   </section>
 </section>
+<section id="takeTestView" class="app-section manager-view hidden take-test-view">
+  <div class="test-page-heading">
+    <button id="backFromTest" class="back-home test-back" type="button">← Study Planner</button>
+    <div class="test-page-title"><div class="test-kicker">📝 FOCUS MODE</div><h1>Take a Test</h1></div>
+    <div class="test-page-mark">⏱️</div>
+  </div>
+  <div class="test-intro"><span>🎯</span><div><strong>One test. One clear goal.</strong><small>Set the subject and target, start the timer, then record your result.</small></div></div>
+  <section class="test-workspace">
+    <div class="test-settings-grid">
+      <div class="field"><label for="testSubject">📚 Subject of the test</label><select id="testSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+      <div class="field"><label for="testTargetMinutes">🎯 Target completion time (minutes)</label><input id="testTargetMinutes" type="number" min="1" max="1440" value="60" required></div>
+    </div>
+    <div class="test-clock-card">
+      <div class="test-clock-top"><span>⏳ TIME REMAINING</span><span id="testTimerState" class="test-state-pill">Ready</span></div>
+      <div id="testTimerDisplay" class="test-timer-display">60:00</div>
+      <div id="testTimerElapsed" class="test-timer-elapsed">Elapsed 00:00</div>
+      <div class="test-timer-track"><div id="testTimerBar"></div></div>
+      <div class="test-timer-buttons">
+        <button id="startTestTimer" class="button test-start-button" type="button">▶ Start</button>
+        <button id="pauseTestTimer" class="button test-pause-button" type="button" disabled>Ⅱ Pause</button>
+        <button id="resetTestTimer" class="button test-reset-button" type="button">↻ Reset</button>
+      </div>
+    </div>
+    <div class="test-result-card">
+      <div class="test-result-copy"><div class="test-kicker">AFTER THE TEST</div><h2>Did she meet the target?</h2><p>Mark the result and save it to the study record.</p></div>
+      <label class="test-met-check"><input id="testTargetMet" type="checkbox"><span>✅ Target met</span></label>
+    </div>
+    <button id="recordTest" class="button full test-record-button" type="button">💾 Record test result</button>
+    <div id="testRecordMessage" class="message test-record-message" role="status"></div>
+  </section>
+</section>
 <section id="reviewManagerView" class="app-section manager-view hidden">
   <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PAUSE · REFLECT · GROW</div><h1>Review Time</h1><p>Your quiet space to look back, reset, and plan what comes next.</p></div></div>
   <div class="review-hero"><div class="review-illustration"><div class="review-book">✧</div><span class="review-petal p1">✦</span><span class="review-petal p2">♡</span><span class="review-petal p3">✧</span></div><div class="review-copy"><div class="eyebrow">THIS SPACE IS YOURS</div><h2>Let’s build your review ritual.</h2><p>We’ve kept this section calm and ready. Tell me what you’d like to review here next, and we’ll add it one feature at a time—without disturbing your existing study records.</p><div class="review-promise"><span>♡</span> A gentle review can turn today’s effort into tomorrow’s confidence.</div></div></div>
@@ -683,18 +782,18 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),cfg=window.BE_PRODUCTIVE_CONFIG||{};
 const ready=!!(cfg.supabaseUrl&&cfg.supabaseAnonKey&&window.supabase);
-const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home'};
+const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,testRecords:[],testsReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home'};
 const today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=n=>Math.floor(Number(n||0)/60)+'h '+String(Math.round(Number(n||0)%60)).padStart(2,'0')+'m';
 const date=s=>s?new Date(s+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
 const say=(id,t,ok=false)=>{let e=$(id);e.textContent=t||'';e.classList.toggle('good',ok)};
 function show(name){$('authView').classList.toggle('hidden',name!=='auth');$('appView').classList.toggle('hidden',name!=='app');$('signOut').classList.toggle('hidden',name!=='app');}
-function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView',study:'studyManagerView',review:'reviewManagerView'};Object.entries(map).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==view));state.currentView=view;window.scrollTo({top:0,behavior:'smooth'});}
-function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));}
+function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView',study:'studyManagerView',test:'takeTestView',review:'reviewManagerView'};Object.entries(map).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==view));state.currentView=view;window.scrollTo({top:0,behavior:'smooth'});}
+function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));$('openTestView').addEventListener('click',()=>showAppSection('test'));$('backFromTest').addEventListener('click',()=>showAppSection('study'));}
 function init(){let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);
+wireNavigation();$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);
 let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -707,9 +806,9 @@ async function auth(e){e.preventDefault();let b=$('authSubmit');b.disabled=true;
 async function logout(){if(state.channel)await state.db.removeChannel(state.channel);await state.db.auth.signOut();state.user=null;show('auth')}
 async function boot(){show('app');$('syncStatus').textContent='Syncing…';try{await load();subscribe();showAppSection('home');}catch(e){$('syncStatus').textContent='Sync error';alert('Could not load study data: '+e.message)}}
 async function fetchAllTaskHistory(){const rows=[];let start=0,pageSize=1000;while(true){const r=await state.db.from('study_task_history').select('*').order('event_at',{ascending:false}).range(start,start+pageSize-1);if(r.error)return {data:[],error:r.error};const batch=r.data||[];rows.push(...batch);if(batch.length<pageSize)break;start+=pageSize}return {data:rows.sort((a,b)=>new Date(b.event_at)-new Date(a.event_at)||historyTieRank(b.event_type)-historyTieRank(a.event_type)),error:null}}
-async function load(){let [s,t,g]=await Promise.all([state.db.from('study_sessions').select('*').order('study_date',{ascending:false}).order('created_at',{ascending:false}).limit(500),state.db.from('study_tasks').select('*').order('due_date',{ascending:true}).order('created_at',{ascending:false}).limit(500),state.db.from('study_settings').select('daily_target').eq('user_id',state.user.id).maybeSingle()]);for(let r of [s,t,g])if(r.error)throw r.error;state.sessions=s.data||[];state.tasks=t.data||[];state.target=g.data?.daily_target||6;const d=today(),tom=shiftDate(d,1);const w=await state.db.from('wake_up_plans').select('*').gte('plan_date',d).lte('plan_date',tom).order('plan_date');state.wakeReady=!w.error;state.wakePlans=w.data||[];const h=await fetchAllTaskHistory();state.historyReady=!h.error;state.taskHistory=h.data||[];$('targetSlider').value=state.target;$('targetValue').textContent=state.target;render();$('syncStatus').textContent='Cloud synced'}
+async function load(){let [s,t,g]=await Promise.all([state.db.from('study_sessions').select('*').order('study_date',{ascending:false}).order('created_at',{ascending:false}).limit(500),state.db.from('study_tasks').select('*').order('due_date',{ascending:true}).order('created_at',{ascending:false}).limit(500),state.db.from('study_settings').select('daily_target').eq('user_id',state.user.id).maybeSingle()]);for(let r of [s,t,g])if(r.error)throw r.error;state.sessions=s.data||[];state.tasks=t.data||[];state.target=g.data?.daily_target||6;const d=today(),tom=shiftDate(d,1);const w=await state.db.from('wake_up_plans').select('*').gte('plan_date',d).lte('plan_date',tom).order('plan_date');state.wakeReady=!w.error;state.wakePlans=w.data||[];const h=await fetchAllTaskHistory();state.historyReady=!h.error;state.taskHistory=h.data||[];const tr=await state.db.from('study_test_records').select('*').order('recorded_at',{ascending:false}).limit(100);state.testsReady=!tr.error;state.testRecords=tr.data||[];$('targetSlider').value=state.target;$('targetValue').textContent=state.target;render();$('syncStatus').textContent='Cloud synced'}
 let timer;async function refresh(){clearTimeout(timer);timer=setTimeout(()=>load().catch(e=>$('syncStatus').textContent='Sync error'),300)}
-function subscribe(){if(state.channel)state.db.removeChannel(state.channel);state.channel=state.db.channel('study-progress-sync').on('postgres_changes',{event:'*',schema:'public',table:'study_sessions'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_tasks'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_settings'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'wake_up_plans'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_task_history'},refresh).subscribe(status=>{if(status==='SUBSCRIBED')$('syncStatus').textContent='Live sync on'})}
+function subscribe(){if(state.channel)state.db.removeChannel(state.channel);state.channel=state.db.channel('study-progress-sync').on('postgres_changes',{event:'*',schema:'public',table:'study_sessions'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_tasks'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_settings'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'wake_up_plans'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_task_history'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_test_records'},refresh).subscribe(status=>{if(status==='SUBSCRIBED')$('syncStatus').textContent='Live sync on'})}
 async function saveSession(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('sessionMessage','');try{let {error}=await state.db.from('study_sessions').insert({user_id:state.user.id,subject:$('subject').value,study_date:$('studyDate').value,duration_minutes:Number($('minutes').value),study_type:$('studyType').value,topic:$('topic').value.trim()||null,notes:$('notes').value.trim()||null});if(error)throw error;$('topic').value='';$('notes').value='';$('minutes').value=60;say('sessionMessage','Session saved and synced.',true);await load()}catch(e){say('sessionMessage',e.message)}finally{b.disabled=false}}
 function updateTaskCategory(){const isPersonal=$('taskCategory').value==='personal';$('taskSubjectWrap').classList.toggle('hidden',isPersonal);$('taskSubject').required=!isPersonal}
 async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:today(),priority:'normal',estimated_minutes:0,completed:false});if(error)throw error;$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
@@ -734,6 +833,16 @@ function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
 function exportTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const lines=[['BE PRODUCTIVE — DAILY TASK REPORT'],['Date',reportDayLabel(day)],[],['Task summary','Count'],['Tasks added',c.added],['Tasks completed',c.completed],['Incomplete at end of day',snap.remaining]];const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','CSV report downloaded.',true)}
 function exportTaskHistoryWord(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const escHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));const doc='<!doctype html><html><head><meta charset="utf-8"><title>Daily Task Report</title><style>body{font-family:Arial,sans-serif;color:#20233b;margin:35px}h1{color:#6553ce}p{color:#667085}table{border-collapse:collapse;width:100%;margin-top:22px}th,td{border:1px solid #d9ddec;padding:13px;text-align:left}th{background:#eeebff;color:#40378b}td:last-child{font-weight:bold;text-align:center}.note{margin-top:24px;font-size:11px;color:#788198}</style></head><body><h1>Be Productive</h1><h2>Daily Task Report</h2><p>'+escHtml(reportDayLabel(day))+'</p><table><thead><tr><th>Summary</th><th>Tasks</th></tr></thead><tbody><tr><td>Tasks added</td><td>'+c.added+'</td></tr><tr><td>Tasks completed</td><td>'+c.completed+'</td></tr><tr><td>Incomplete at end of day</td><td>'+snap.remaining+'</td></tr></tbody></table><p class="note">Report generated by Be Productive.</p></body></html>';const blob=new Blob(['\uFEFF',doc],{type:'application/msword;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.doc';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','Word-compatible report downloaded.',true)}
+const testTimer={running:false,startedAt:0,elapsedBeforeStart:0,interval:null};
+function testElapsedSeconds(){return Math.max(0,Math.floor(testTimer.elapsedBeforeStart+(testTimer.running?(Date.now()-testTimer.startedAt)/1000:0)))}
+function testClockText(total){const v=Math.max(0,Math.floor(total));return String(Math.floor(v/60)).padStart(2,'0')+':'+String(v%60).padStart(2,'0')}
+function testTargetSeconds(){return Math.max(1,Math.min(1440,Number($('testTargetMinutes').value)||60))*60}
+function renderTestClock(){const elapsed=testElapsedSeconds(),target=testTargetSeconds(),remaining=Math.max(0,target-elapsed);$('testTimerDisplay').textContent=testClockText(remaining);$('testTimerElapsed').textContent='Elapsed '+testClockText(elapsed);$('testTimerBar').style.width=Math.min(100,elapsed/target*100)+'%';if(elapsed>=target&&testTimer.running){pauseTestTimer();$('testTimerState').textContent='Target time reached';$('testTimerDisplay').textContent='00:00'}$('startTestTimer').disabled=testTimer.running;$('pauseTestTimer').disabled=!testTimer.running}
+function startTestTimer(){if(testTimer.running)return;if(testElapsedSeconds()>=testTargetSeconds()){testTimer.elapsedBeforeStart=0;testTimer.startedAt=0}testTimer.running=true;testTimer.startedAt=Date.now();$('testTimerState').textContent='Running';$('testTimerState').classList.add('running');clearInterval(testTimer.interval);testTimer.interval=setInterval(renderTestClock,250);renderTestClock()}
+function pauseTestTimer(){if(testTimer.running){testTimer.elapsedBeforeStart=testElapsedSeconds();testTimer.running=false;testTimer.startedAt=0;clearInterval(testTimer.interval);testTimer.interval=null}$('testTimerState').textContent=testElapsedSeconds()>=testTargetSeconds()?'Target time reached':'Paused';$('testTimerState').classList.remove('running');renderTestClock()}
+function resetTestTimer(){clearInterval(testTimer.interval);testTimer.interval=null;testTimer.running=false;testTimer.startedAt=0;testTimer.elapsedBeforeStart=0;$('testTimerState').textContent='Ready';$('testTimerState').classList.remove('running');$('testTargetMet').checked=false;say('testRecordMessage','');renderTestClock()}
+function updateTestTarget(){if(testTimer.running)pauseTestTimer();if(testElapsedSeconds()===0)$('testTimerState').textContent='Ready';renderTestClock()}
+async function recordTestResult(){const b=$('recordTest');b.disabled=true;say('testRecordMessage','');try{pauseTestTimer();const elapsed=testElapsedSeconds(),subject=$('testSubject').value.trim(),target=Number($('testTargetMinutes').value);if(!subject)throw new Error('Choose the test subject.');if(!Number.isInteger(target)||target<1||target>1440)throw new Error('Target time must be from 1 to 1440 minutes.');if(elapsed<1)throw new Error('Start the timer and record some test time first.');const {error}=await state.db.from('study_test_records').insert({user_id:state.user.id,subject,target_minutes:target,elapsed_seconds:elapsed,target_met:$('testTargetMet').checked});if(error)throw error;say('testRecordMessage','Test result saved to your study records. 💗',true);state.testRecords.unshift({subject,target_minutes:target,elapsed_seconds:elapsed,target_met:$('testTargetMet').checked,recorded_at:new Date().toISOString()});resetTestTimer();$('testRecordMessage').textContent='Test result saved to your study records. 💗';$('testRecordMessage').classList.add('good')}catch(e){say('testRecordMessage',e.message)}finally{b.disabled=false}}
 async function saveTarget(){let n=Number($('targetSlider').value);say('targetMessage','');try{let {error}=await state.db.from('study_settings').upsert({user_id:state.user.id,daily_target:n,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(error)throw error;state.target=n;say('targetMessage','Target saved and synced.',true);await load()}catch(e){say('targetMessage',e.message)}}
 async function toggleTask(id,v){let {error}=await state.db.from('study_tasks').update({completed:v,completed_at:v?new Date().toISOString():null}).eq('id',id);if(error)alert(error.message);else await load()}
 async function removeRow(table,id){if(!confirm('Delete this item?'))return;let {error}=await state.db.from(table).delete().eq('id',id);if(error)alert(error.message);else await load()}
