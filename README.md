@@ -7,7 +7,7 @@ Mobile-first study tracking PWA with Supabase cloud sync. Built for CA Inter: su
 - `config.js` — Supabase Project URL and browser-safe publishable key
 - `supabase_setup.sql` — original study tracker database setup
 - `wake_up_setup.sql` — safe add-on migration for planned wake-up targets (preserves existing study data)
-- `manifest.webmanifest`, `sw.js`, `icons/app-icon.svg` — PWA install and offline shell
+- `manifest.webmanifest`, `sw.js`, `icons/sow-ca-logo.svg` — Sow CA branding, PWA install icon and offline shell
 - `.github/workflows/pages.yml` — automatic GitHub Pages deployment
 
 ## Database and account setup
