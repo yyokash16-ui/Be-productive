@@ -36,3 +36,7 @@ The repository is public and contains browser app code, not passwords. Supabase 
 ## Task history and reports
 The `task_history_setup.sql` file keeps an idempotent backup of the history schema, Row Level Security policy, audit trigger, realtime registration and safe seeding logic. In the Task Manager, choose a calendar date to export a short report with tasks added, completed, and remaining at the end of that day as CSV or Word-compatible `.doc`. The app intentionally hides the activity log.
 Task activity is logged in the private `study_task_history` table. It records new tasks, completions, reopenings, edits and deletions, and the Task Manager can show a date-based summary and export that day as CSV. History is scoped to the signed-in user and is retained independently of task deletion.
+
+
+## Task Manager
+Task groups are **Professional Tasks** and **Personal Tasks**. Professional tasks capture a category and task title; personal tasks capture a title. Task lists do not display due dates, estimates, or priority badges. The Task Manager report area offers a date picker and CSV or Word-compatible downloads; the report totals are included in downloaded files, not shown as on-screen history cards. The underlying Supabase audit history remains stored to calculate date-based totals.
