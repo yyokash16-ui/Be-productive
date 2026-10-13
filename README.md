@@ -40,3 +40,7 @@ Task activity is logged in the private `study_task_history` table. It records ne
 
 ## Task Manager
 Task groups are **Professional Tasks** and **Personal Tasks**. Professional tasks capture a category and task title; personal tasks capture a title. Task lists do not display due dates, estimates, or priority badges. The Task Manager report area offers a date picker and CSV or Word-compatible downloads; the report totals are included in downloaded files, not shown as on-screen history cards. The underlying Supabase audit history remains stored to calculate date-based totals.
+
+
+## Daily task reset
+The Task Manager shows only tasks created on the current local calendar date. When a new local day begins, an open app detects the date change and refreshes within 30 seconds. Older tasks are retained in Supabase history for date-specific CSV and Word-compatible reports; no automatic task deletion is performed.
