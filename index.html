@@ -217,6 +217,161 @@
 #taskManagerView .report-csv-button,#taskManagerView .report-word-button{box-shadow:0 8px 16px #51438a18}
 #taskManagerView .wake-quote{background:linear-gradient(100deg,#fff0f7,#f5efff)!important;border-color:#f3d9eb!important;font-weight:800}
 
+
+/* Study Manager full dual-colour redesign: deep teal + warm coral */
+#studyManagerView.study-manager{--study-ink:#163b3b;--study-muted:#52706f;--study-teal:#087f78;--study-deep:#145d5a;--study-coral:#ef896b;--study-gold:#f3c56b;--study-mint:#ddf7ed;--study-line:#cce8df;position:relative;isolation:isolate;overflow:hidden;margin:0 -8px 20px;padding:18px;border-radius:30px;background:linear-gradient(145deg,#dff7f0 0%,#eef8f3 27%,#fff0e5 62%,#e4f5f8 100%);border:1px solid #cce9df;box-shadow:0 18px 48px #285f5912;color:var(--study-ink)}
+#studyManagerView.study-manager:before,#studyManagerView.study-manager:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(1px)}
+#studyManagerView.study-manager:before{width:360px;height:360px;top:280px;right:-190px;background:radial-gradient(circle,#f7c8aa77 0%,#f7c8aa00 72%)}
+#studyManagerView.study-manager:after{width:350px;height:350px;left:-190px;bottom:60px;background:radial-gradient(circle,#8ddcca55 0%,#8ddcca00 72%)}
+#studyManagerView .study-page-heading{display:flex;align-items:center;gap:15px;padding:7px 5px 17px}
+#studyManagerView .study-back{background:linear-gradient(125deg,#fff6ea,#d9f5ec);border:1px solid #cce8df;color:#185f5b;font-weight:900;box-shadow:0 5px 12px #23675d0b}
+#studyManagerView .study-title-wrap{flex:1;min-width:0}
+#studyManagerView .study-kicker{font-size:10px;font-weight:950;letter-spacing:1.55px;color:#087d75;text-transform:uppercase}
+#studyManagerView .study-page-heading h1{font-size:clamp(27px,3.5vw,39px);font-weight:950;letter-spacing:-1.35px;margin:4px 0;color:#163b3b}
+#studyManagerView .study-title-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+#studyManagerView .study-title-chips span{font-size:9px;font-weight:950;letter-spacing:.8px;color:#376764;background:#ffffffa8;border:1px solid #cce6dd;padding:6px 9px;border-radius:99px}
+#studyManagerView .study-heading-mark{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;border-radius:16px;background:linear-gradient(145deg,#f7c7a7,#fce9c5);color:#9c533e;font-size:24px;box-shadow:0 8px 18px #a95c3914}
+#studyManagerView .study-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;min-height:175px;margin-bottom:14px;padding:21px 25px;border-radius:25px;background:linear-gradient(112deg,#075e5b 0%,#12887d 47%,#db8a70 100%);color:#fff;box-shadow:0 15px 30px #17685d22}
+#studyManagerView .study-hero:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff23;border-radius:50%;right:5%;top:-74%;box-shadow:0 0 0 24px #ffffff0a,0 0 0 50px #ffffff07,0 0 0 76px #ffffff05}
+#studyManagerView .study-hero-copy{position:relative;z-index:1}
+#studyManagerView .study-hero-label{font-size:9px;font-weight:950;letter-spacing:2px;color:#d5fff1}
+#studyManagerView .study-hero h2{font-size:clamp(25px,3.5vw,39px);line-height:1.02;letter-spacing:-1.1px;font-weight:950;margin:9px 0 10px;color:#fff}
+#studyManagerView .study-hero h2 em{font-style:normal;color:#ffe0b9}
+#studyManagerView .study-hero-line{font-size:12px;font-weight:850;color:#fff5e7}
+#studyManagerView .study-hero-art{position:relative;display:grid;place-items:center;width:145px;height:125px;z-index:1}
+#studyManagerView .study-orbit{position:absolute;border:1px solid #ffffff5c;border-radius:50%;width:115px;height:115px}
+#studyManagerView .orbit-b{width:87px;height:87px;border-style:dashed;border-color:#ffe2bf88}
+#studyManagerView .study-book-stack{display:flex;align-items:flex-end;gap:0;filter:drop-shadow(0 8px 8px #083c342b);transform:rotate(-5deg);font-size:37px}
+#studyManagerView .study-book-stack span:nth-child(1){transform:rotate(-12deg) translateY(2px)}
+#studyManagerView .study-book-stack span:nth-child(2){transform:translateY(-10px) scale(1.1)}
+#studyManagerView .study-book-stack span:nth-child(3){transform:rotate(10deg) translateY(1px)}
+#studyManagerView .study-art-spark,#studyManagerView .study-art-heart{position:absolute;font-size:20px;color:#ffe4b8}
+#studyManagerView .spark-a{top:5px;right:7px}.study-art-heart{bottom:4px;left:12px;color:#ffd4c8!important}.study-art-spark.spark-b{bottom:5px;right:12px;color:#c5fff0}
+#studyManagerView .study-hero-side{grid-column:1/-1;display:flex;gap:7px;flex-wrap:wrap;position:relative;z-index:1}
+#studyManagerView .mini-chip{border-radius:99px;background:#ffffff20;border:1px solid #ffffff3b;padding:6px 10px;font-size:10px;font-weight:850;color:#fff}
+#studyManagerView .study-metrics{grid-template-columns:1.18fr 1fr 1fr 1fr;gap:11px;margin-bottom:15px}
+#studyManagerView .study-metric{position:relative;overflow:hidden;min-width:0;border-radius:19px;padding:15px 16px;border:1px solid transparent;box-shadow:0 9px 22px #2b63570c}
+#studyManagerView .study-metric .metric-label{font-size:9px;font-weight:950;letter-spacing:.7px;opacity:1}
+#studyManagerView .study-metric .metric-value{font-size:clamp(23px,2.6vw,31px);font-weight:950;letter-spacing:-1px;margin:9px 0 5px}
+#studyManagerView .study-metric .metric-foot{font-size:10px;font-weight:850;opacity:1}
+#studyManagerView .metric-today{background:linear-gradient(135deg,#075e5b,#148a7b)!important;color:#fff;border-color:#0b7c72!important}
+#studyManagerView .metric-today .metric-label{color:#cffff1}
+#studyManagerView .metric-today .metric-foot{color:#e1fff6}
+#studyManagerView .metric-today .track{background:#ffffff38;height:6px;margin-top:11px}
+#studyManagerView .metric-today .track div{background:linear-gradient(90deg,#f3c66d,#ffdfb5)}
+#studyManagerView .metric-week{background:linear-gradient(140deg,#fff0e3,#ffd9c5)!important;border-color:#f1c5aa!important;color:#8b4f3b}
+#studyManagerView .metric-week .metric-label{color:#a05d45}
+#studyManagerView .metric-sessions{background:linear-gradient(140deg,#dff8ef,#c9f0e6)!important;border-color:#b8e4d7!important;color:#17675e}
+#studyManagerView .metric-sessions .metric-label{color:#24756a}
+#studyManagerView .metric-streak{background:linear-gradient(140deg,#fff4d8,#fce3ad)!important;border-color:#efd39a!important;color:#875e19}
+#studyManagerView .metric-streak .metric-label{color:#94651b}
+#studyManagerView .metric-deco{position:absolute;right:13px;bottom:9px;font-size:28px;opacity:.19;font-weight:900}
+#studyManagerView .study-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:14px;align-items:start}
+#studyManagerView .study-column{display:grid;gap:14px;min-width:0;align-content:start}
+#studyManagerView .study-manager-panel{border-radius:22px}
+#studyManagerView .panel{border:1px solid #cfe7df;border-radius:22px;padding:18px;box-shadow:0 10px 25px #285f5910}
+#studyManagerView .study-form-panel{background:linear-gradient(145deg,#f1fff8 0%,#e3f7f1 54%,#eff9f7 100%);border-color:#bde3d7}
+#studyManagerView .study-sessions-panel{background:linear-gradient(145deg,#fff5ec 0%,#ffebe0 52%,#f8eee8 100%);border-color:#f1d1be}
+#studyManagerView .study-week-panel{background:linear-gradient(145deg,#e8f8f6 0%,#e5f2f8 58%,#e3f4f2 100%);border-color:#c6e4df}
+#studyManagerView .study-subject-panel{background:linear-gradient(145deg,#fff0e4 0%,#ffede6 50%,#f5e8dc 100%);border-color:#f0d2c1}
+#studyManagerView .study-target-panel{background:linear-gradient(145deg,#e1f8ed 0%,#d6f1e8 48%,#e3f4f8 100%);border-color:#bde2d6}
+#studyManagerView .study-panel-heading{display:flex;align-items:center;gap:10px;margin-bottom:15px;min-width:0}
+#studyManagerView .study-panel-heading>div:nth-child(2){flex:1;min-width:0}
+#studyManagerView .study-panel-heading h2{font-size:17px;font-weight:950;letter-spacing:-.45px;margin:3px 0 0;color:#183e3c}
+#studyManagerView .study-panel-heading p{font-size:10px;font-weight:700;color:#5c7773;line-height:1.4;margin:4px 0 0}
+#studyManagerView .study-panel-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:14px;font-size:19px;background:#ffffffb8;box-shadow:0 5px 14px #2e6c5d10;border:1px solid #ffffff}
+#studyManagerView .icon-log{background:linear-gradient(145deg,#fff0dc,#ffdbbb);border-color:#f9d9b6}
+#studyManagerView .icon-history{background:linear-gradient(145deg,#ffdecf,#ffefe5);border-color:#f7d2bd}
+#studyManagerView .icon-week{background:linear-gradient(145deg,#c9f5e6,#d7f0f6);border-color:#bce5dd}
+#studyManagerView .icon-subject{background:linear-gradient(145deg,#ffd9c8,#ffeacf);border-color:#f5d2b9}
+#studyManagerView .icon-target{background:linear-gradient(145deg,#c9f4df,#d5eff7);border-color:#bde7d9}
+#studyManagerView .study-panel-badge{flex:0 0 auto;font-size:8px;font-weight:950;letter-spacing:.6px;padding:7px 8px;border-radius:99px;color:#8a5538;background:#ffdfc4;border:1px solid #f0c7a4}
+#studyManagerView .study-session-form .field{margin-bottom:10px}
+#studyManagerView .study-session-form .field label{font-size:11px;font-weight:900;color:#315b56}
+#studyManagerView .study-session-form .field input,#studyManagerView .study-session-form .field select,#studyManagerView .study-session-form .field textarea{background:#fbfffd;border:1px solid #c7e4da;border-radius:12px;padding:11px 12px;color:#193e3a;font-size:12px;font-weight:750;box-shadow:0 3px 9px #28625208}
+#studyManagerView .study-session-form .field input:focus,#studyManagerView .study-session-form .field select:focus,#studyManagerView .study-session-form .field textarea:focus{border-color:#3cae98;box-shadow:0 0 0 3px #159e8c1a}
+#studyManagerView .study-save-button{background:linear-gradient(110deg,#087c73,#119d8b 55%,#df8c6d);box-shadow:0 9px 20px #0d8b792b;font-weight:950;letter-spacing:.1px}
+#studyManagerView .study-save-button:hover{filter:saturate(1.12) brightness(.98)}
+#studyManagerView .study-sessions-panel .item{background:linear-gradient(105deg,#fffaf6,#ffe9dc);border-color:#f2d2bd;border-radius:15px}
+#studyManagerView .study-sessions-panel .doticon{background:linear-gradient(145deg,#ffdbc8,#ffeecb);color:#865338}
+#studyManagerView .study-sessions-panel .item-title{color:#643f31;font-weight:900}
+#studyManagerView .study-sessions-panel .item-sub{color:#8b6a5e;font-weight:700}
+#studyManagerView .study-sessions-panel .item-time{color:#09796f;font-weight:950}
+#studyManagerView .study-sessions-panel .button.danger{background:#ffe0d8;color:#a44536}
+#studyManagerView .study-empty{border-color:#e7c6b2;background:#ffffff70;color:#8a6557;font-weight:800;border-radius:15px}
+#studyManagerView .study-week-total{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:-2px 0 13px;padding:10px 12px;background:#ffffff83;border:1px solid #c9e6df;border-radius:13px}
+#studyManagerView .study-week-total strong{font-size:14px;font-weight:950;color:#0f7169}
+#studyManagerView .study-week-total span{font-size:8px;font-weight:950;letter-spacing:1px;color:#4c7d76}
+#studyManagerView .study-chart{height:145px;gap:8px}
+#studyManagerView .study-chart .day{font-weight:900;color:#47736e}
+#studyManagerView .study-chart .barwrap{background:#d2ebe4;border:1px solid #c2e1d9;border-radius:11px}
+#studyManagerView .study-chart .bar{background:linear-gradient(180deg,#efb08f,#e27c67);border-radius:10px;min-height:5px}
+#studyManagerView .study-chart .bar.today{background:linear-gradient(180deg,#f4d17b,#0b8a80);box-shadow:0 0 0 2px #ffffffa8}
+#studyManagerView .study-chart-legend{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:9px;font-weight:850;color:#5d7a73}
+#studyManagerView .study-chart-legend span:first-child{display:flex;align-items:center;gap:6px}
+#studyManagerView .study-chart-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#df8b70}
+#studyManagerView .subject-breakdown{display:grid;gap:9px}
+#studyManagerView .subject-progress-row{padding:11px 12px;border:1px solid transparent;border-radius:14px;background:#ffffffa1}
+#studyManagerView .subject-progress-row.subject-tone-0{background:linear-gradient(105deg,#d7f5e9,#e6f9ef);border-color:#bce8d5}
+#studyManagerView .subject-progress-row.subject-tone-1{background:linear-gradient(105deg,#ffe2d1,#ffefe0);border-color:#f3d0ba}
+#studyManagerView .subject-progress-row.subject-tone-2{background:linear-gradient(105deg,#d8edf7,#e8f7fb);border-color:#c5e3ee}
+#studyManagerView .subject-progress-row.subject-tone-3{background:linear-gradient(105deg,#f9e4c2,#fff2dc);border-color:#efd8ab}
+#studyManagerView .subject-progress-row.subject-tone-4{background:linear-gradient(105deg,#d8f1e0,#e9f8ed);border-color:#c6e7cf}
+#studyManagerView .subject-progress-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#studyManagerView .subject-progress-name{font-size:11px;font-weight:950;color:#244e49;overflow-wrap:anywhere}
+#studyManagerView .subject-progress-meta{font-size:9px;color:#56766f;font-weight:850;white-space:nowrap}
+#studyManagerView .subject-progress-track{height:6px;background:#ffffffae;border-radius:99px;margin-top:9px;overflow:hidden}
+#studyManagerView .subject-progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#118b7d,#efa07f)}
+#studyManagerView .study-target-number{display:grid;text-align:right;color:#176b63;font-size:22px;font-weight:950;line-height:1}
+#studyManagerView .study-target-number small{font-size:9px;font-weight:900;margin-top:5px;color:#5b8079}
+#studyManagerView .study-target-track{height:7px;border-radius:99px;background:#bfdfd5;overflow:hidden;margin:-2px 0 14px}
+#studyManagerView .study-target-track>div{height:100%;border-radius:99px;background:linear-gradient(90deg,#0d847a,#f0a17b);transition:width .2s}
+#studyManagerView .study-range-field{margin-bottom:13px}
+#studyManagerView .study-range-field label{font-size:11px;font-weight:900;color:#356a61}
+#studyManagerView #targetSlider{accent-color:#0d9182;padding:0}
+#studyManagerView .study-target-button{background:linear-gradient(115deg,#0d8177,#25a78f);color:white;font-weight:950;box-shadow:0 8px 18px #138e7e21}
+#studyManagerView .study-pep-talk{display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid #efd2ad;border-radius:18px;background:linear-gradient(110deg,#fff0d7,#ffe7d7 55%,#dff5ed);box-shadow:0 8px 18px #986e4210}
+#studyManagerView .study-pep-talk>span{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:#fff7e9;font-size:21px}
+#studyManagerView .study-pep-talk strong{display:block;font-size:12px;font-weight:950;color:#754f39}
+#studyManagerView .study-pep-talk small{display:block;font-size:10px;font-weight:750;color:#8b7161;margin-top:4px}
+@media(max-width:920px){#studyManagerView .study-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#studyManagerView .study-layout{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+ #studyManagerView.study-manager{margin:0 -5px 15px;padding:11px;border-radius:23px}
+ #studyManagerView .study-page-heading{gap:9px;align-items:flex-start;padding:5px 1px 13px}
+ #studyManagerView .study-back{padding:9px 10px;font-size:11px}
+ #studyManagerView .study-page-heading h1{font-size:26px;letter-spacing:-.8px}
+ #studyManagerView .study-kicker{font-size:9px;letter-spacing:1px}
+ #studyManagerView .study-heading-mark{width:37px;height:37px;flex-basis:37px;border-radius:13px;font-size:20px}
+ #studyManagerView .study-hero{grid-template-columns:1fr auto;padding:17px 16px;min-height:0;gap:7px;border-radius:20px}
+ #studyManagerView .study-hero h2{font-size:28px}
+ #studyManagerView .study-hero-art{width:88px;height:90px}
+ #studyManagerView .study-orbit{width:79px;height:79px}
+ #studyManagerView .orbit-b{width:60px;height:60px}
+ #studyManagerView .study-book-stack{font-size:25px}
+ #studyManagerView .study-art-spark,#studyManagerView .study-art-heart{font-size:14px}
+ #studyManagerView .study-hero-side{gap:5px}
+ #studyManagerView .mini-chip{font-size:8px;padding:5px 7px}
+ #studyManagerView .study-metrics{gap:8px}
+ #studyManagerView .study-metric{padding:12px;border-radius:16px}
+ #studyManagerView .study-metric .metric-value{font-size:24px;margin:8px 0 4px}
+ #studyManagerView .study-metric .metric-label{font-size:8px;letter-spacing:.4px}
+ #studyManagerView .study-metric .metric-foot{font-size:9px}
+ #studyManagerView .study-layout{grid-template-columns:1fr;gap:12px}
+ #studyManagerView .panel{padding:14px;border-radius:19px}
+ #studyManagerView .study-panel-heading{gap:8px;margin-bottom:12px}
+ #studyManagerView .study-panel-heading h2{font-size:16px}
+ #studyManagerView .study-panel-icon{width:37px;height:37px;flex-basis:37px;border-radius:12px;font-size:17px}
+ #studyManagerView .study-panel-badge{font-size:7px;padding:6px}
+ #studyManagerView .study-session-form .field label{font-size:11px}
+ #studyManagerView .study-session-form .field input,#studyManagerView .study-session-form .field select,#studyManagerView .study-session-form .field textarea{font-size:12px;padding:11px 10px}
+ #studyManagerView .formgrid{gap:9px}
+ #studyManagerView .study-chart{height:120px}
+ #studyManagerView .study-week-total{padding:9px 10px}
+ #studyManagerView .subject-progress-row{padding:10px}
+ #studyManagerView .study-pep-talk{padding:11px 12px}
+}
+@media(max-width:380px){#studyManagerView .study-metric{padding:9px}#studyManagerView .study-metric .metric-value{font-size:21px}#studyManagerView .study-metric .metric-label{font-size:7px}#studyManagerView .study-hero{grid-template-columns:1fr}#studyManagerView .study-hero-art{position:absolute;right:6px;top:10px;opacity:.75}#studyManagerView .study-hero-copy{z-index:2}#studyManagerView .study-hero h2{font-size:25px}}
+
 </style>
 </head>
 <body>
@@ -317,17 +472,127 @@
 </section>
 
 </section>
-<section id="studyManagerView" class="app-section manager-view hidden">
-  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">YOUR EFFORT ADDS UP</div><h1>Study Manager</h1><p>Log each study session and keep track of your consistency.</p></div></div>
-<section class="metrics"><article class="metric primary"><div class="metric-label">STUDY TIME TODAY</div><div id="todayTime" class="metric-value">0h 00m</div><div id="targetCaption" class="metric-foot">Target: 6 hours</div><div class="track"><div id="targetBar"></div></div></article><article class="metric"><div class="metric-label">SESSIONS</div><div id="sessionCount" class="metric-value">0</div><div class="metric-foot">Logged today</div></article><article class="metric"><div class="metric-label">TASKS DONE</div><div id="taskCount" class="metric-value">0/0</div><div class="metric-foot">Today's checklist</div></article></section>
-<div class="grid"><div class="stack">
-<section class="panel"><div class="panel-head"><div><div class="eyebrow">STUDY LOG</div><h2>Log a study session</h2></div><span>◷</span></div>
-<form id="sessionForm"><div class="formgrid"><div class="field"><label for="subject">Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div><div class="field"><label for="studyDate">Study date</label><input id="studyDate" type="date" required></div></div><div class="formgrid"><div class="field"><label for="minutes">Duration (minutes)</label><input id="minutes" type="number" min="1" max="1440" value="60" required></div><div class="field"><label for="studyType">Study type</label><select id="studyType"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div></div><div class="field"><label for="topic">Chapter / topic</label><input id="topic" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div><div class="field"><label for="notes">Reflection (optional)</label><textarea id="notes" rows="2" maxlength="500" placeholder="What did you understand? What needs revision?"></textarea></div><button class="button full" type="submit">+ Save study session</button><div id="sessionMessage" class="message"></div></form></section>
-<section class="panel"><div class="panel-head"><div><div class="eyebrow">STUDY HISTORY</div><h2>Recent sessions</h2></div><span>↗</span></div><div id="sessions" class="items"></div><div id="sessionEmpty" class="empty">Your first study session will appear here.</div></section></div>
-<div class="stack">
-<section class="panel"><div class="panel-head"><div><div class="eyebrow">CONSISTENCY, NOT PERFECTION</div><h2>Last 7 days</h2></div><strong id="weekTotal">0h this week</strong></div><div id="chart" class="chart"></div><p class="muted" style="font-size:12px;margin-bottom:0">Study hours recorded each day.</p></section>
-<section class="panel"><div class="panel-head"><div><div class="eyebrow">YOUR ROUTINE</div><h2>Daily study target</h2></div><strong><span id="targetValue">6</span> h</strong></div><div class="field"><label for="targetSlider">Hours per day</label><input id="targetSlider" type="range" min="1" max="14" value="6" style="accent-color:var(--accent);padding:0"></div><button id="saveTarget" class="button secondary full" type="button">Save daily target</button><div id="targetMessage" class="message"></div></section>
-</div></div>
+<section id="studyManagerView" class="app-section manager-view hidden study-manager">
+  <div class="study-page-heading">
+    <button class="back-home study-back" type="button" data-back-home>← Home</button>
+    <div class="study-title-wrap">
+      <div class="study-kicker">📚 YOUR CONSISTENCY COUNTS</div>
+      <h1>Study Manager</h1>
+      <div class="study-title-chips"><span>CA INTER</span><span>FOCUS · PRACTICE · REVISE</span></div>
+    </div>
+    <div class="study-heading-mark" aria-hidden="true">✦</div>
+  </div>
+
+  <section class="study-hero">
+    <div class="study-hero-copy">
+      <div class="study-hero-label">YOUR STUDY JOURNEY</div>
+      <h2>Small sessions.<br><em>Big results.</em></h2>
+      <div class="study-hero-line">✨ Every focused minute counts.</div>
+    </div>
+    <div class="study-hero-art" aria-hidden="true">
+      <div class="study-orbit orbit-a"></div><div class="study-orbit orbit-b"></div>
+      <div class="study-book-stack"><span>📘</span><span>📙</span><span>📗</span></div>
+      <span class="study-art-spark spark-a">✦</span><span class="study-art-spark spark-b">✧</span><span class="study-art-heart">♡</span>
+    </div>
+    <div class="study-hero-side"><span class="mini-chip">🌿 One day at a time</span><span class="mini-chip">🎯 Progress over perfection</span></div>
+  </section>
+
+  <section class="metrics study-metrics" aria-label="Study progress">
+    <article class="metric study-metric metric-today">
+      <div class="metric-label">⏱️ STUDY TIME TODAY</div>
+      <div id="todayTime" class="metric-value">0h 00m</div>
+      <div id="targetCaption" class="metric-foot">Target: 6 hours</div>
+      <div class="track"><div id="targetBar"></div></div>
+    </article>
+    <article class="metric study-metric metric-week">
+      <div class="metric-label">🌤️ THIS WEEK</div>
+      <div id="studyWeekHero" class="metric-value">0h</div>
+      <div class="metric-foot">Study time recorded</div>
+      <div class="metric-deco">↗</div>
+    </article>
+    <article class="metric study-metric metric-sessions">
+      <div class="metric-label">📖 SESSIONS TODAY</div>
+      <div id="sessionCount" class="metric-value">0</div>
+      <div class="metric-foot">Every session matters</div>
+      <div class="metric-deco">✦</div>
+    </article>
+    <article class="metric study-metric metric-streak">
+      <div class="metric-label">🔥 STUDY STREAK</div>
+      <div id="taskCount" class="metric-value">0</div>
+      <div class="metric-foot">Days in a row</div>
+      <div class="metric-deco">♡</div>
+    </article>
+  </section>
+
+  <div class="study-layout">
+    <div class="study-column study-column-main">
+      <section class="panel study-form-panel">
+        <div class="study-panel-heading">
+          <div class="study-panel-icon icon-log">✍️</div>
+          <div><div class="study-kicker">SAVE YOUR EFFORT</div><h2>Log a study session</h2><p>Record it now. Be proud later.</p></div>
+          <span class="study-panel-badge">+1 WIN</span>
+        </div>
+        <form id="sessionForm" class="study-session-form">
+          <div class="formgrid">
+            <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+            <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
+          </div>
+          <div class="formgrid">
+            <div class="field"><label for="minutes">⏱️ Duration (minutes)</label><input id="minutes" type="number" min="1" max="1440" value="60" required></div>
+            <div class="field"><label for="studyType">🎯 Study method</label><select id="studyType"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
+          </div>
+          <div class="field"><label for="topic">📝 Chapter / topic</label><input id="topic" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div>
+          <div class="field"><label for="notes">💭 Quick reflection (optional)</label><textarea id="notes" rows="2" maxlength="500" placeholder="What clicked today? What needs another look?"></textarea></div>
+          <button class="button full study-save-button" type="submit">✨ Save study session</button>
+          <div id="sessionMessage" class="message"></div>
+        </form>
+      </section>
+
+      <section class="panel study-sessions-panel">
+        <div class="study-panel-heading">
+          <div class="study-panel-icon icon-history">🗂️</div>
+          <div><div class="study-kicker">YOUR JOURNEY SO FAR</div><h2>Recent sessions</h2><p>Each entry is progress.</p></div>
+        </div>
+        <div id="sessions" class="items study-session-items"></div>
+        <div id="sessionEmpty" class="empty study-empty">🌱 Your first study session starts here.</div>
+      </section>
+    </div>
+
+    <div class="study-column study-column-side">
+      <section class="panel study-week-panel">
+        <div class="study-panel-heading">
+          <div class="study-panel-icon icon-week">📈</div>
+          <div><div class="study-kicker">YOUR CONSISTENCY</div><h2>Weekly rhythm</h2><p>One week, one step stronger.</p></div>
+        </div>
+        <div class="study-week-total"><strong id="weekTotal">0h this week</strong><span>LAST 7 DAYS</span></div>
+        <div id="chart" class="chart study-chart"></div>
+        <div class="study-chart-legend"><span><i></i> Study minutes by day</span><span>🌱 Keep showing up</span></div>
+      </section>
+
+      <section class="panel study-subject-panel">
+        <div class="study-panel-heading">
+          <div class="study-panel-icon icon-subject">🧩</div>
+          <div><div class="study-kicker">WHERE YOUR TIME GOES</div><h2>Subject focus</h2><p>Study time by subject.</p></div>
+        </div>
+        <div id="subjectBreakdown" class="subject-breakdown"></div>
+        <div id="subjectBreakdownEmpty" class="empty study-empty">📚 Log a session to see your subject progress here.</div>
+      </section>
+
+      <section class="panel study-target-panel">
+        <div class="study-panel-heading">
+          <div class="study-panel-icon icon-target">🎯</div>
+          <div><div class="study-kicker">A TARGET, NOT PRESSURE</div><h2>Daily study goal</h2><p>Choose what feels realistic.</p></div>
+          <strong class="study-target-number"><span id="targetValue">6</span><small>hrs/day</small></strong>
+        </div>
+        <div class="study-target-track"><div id="studyTargetPreview" style="width:0%"></div></div>
+        <div class="field study-range-field"><label for="targetSlider">Daily target · 1 to 14 hours</label><input id="targetSlider" type="range" min="1" max="14" value="6"></div>
+        <button id="saveTarget" class="button secondary full study-target-button" type="button">💚 Save daily target</button>
+        <div id="targetMessage" class="message"></div>
+      </section>
+
+      <div class="study-pep-talk"><span>🌼</span><div><strong>You're building a habit.</strong><small>Consistency beats one perfect day.</small></div></div>
+    </div>
+  </div>
 </section>
 <section id="reviewManagerView" class="app-section manager-view hidden">
   <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PAUSE · REFLECT · GROW</div><h1>Review Time</h1><p>Your quiet space to look back, reset, and plan what comes next.</p></div></div>
@@ -407,7 +672,12 @@ $('caTasks').innerHTML=caTasks.map(x=>taskMarkup(x,'ca-task')).join('');$('perso
 $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpty').classList.toggle('hidden',personalTasks.length>0);
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
 $('sessions').innerHTML=state.sessions.slice(0,6).map(x=>'<div class="item"><div class="doticon">'+esc((x.subject||'?')[0])+'</div><div class="item-main"><div class="item-title">'+esc(x.topic||x.subject)+'</div><div class="item-sub">'+esc(x.subject)+' · '+date(x.study_date)+' · '+esc(x.study_type)+'</div></div><div class="item-time">'+time(x.duration_minutes)+'</div><button class="button danger" data-delsession="'+esc(x.id)+'" aria-label="Delete session">×</button></div>').join('');$('sessionEmpty').classList.toggle('hidden',state.sessions.length>0);document.querySelectorAll('[data-delsession]').forEach(x=>x.addEventListener('click',()=>removeRow('study_sessions',x.dataset.delsession)));
-const start=new Date();start.setHours(0,0,0,0);start.setDate(start.getDate()-6);let days=[],total=0;for(let i=0;i<7;i++){let d=new Date(start);d.setDate(start.getDate()+i);let iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),m=state.sessions.filter(s=>s.study_date===iso).reduce((n,s)=>n+Number(s.duration_minutes||0),0);total+=m;days.push({iso,m,label:d.toLocaleDateString('en-IN',{weekday:'short'}).slice(0,2),today:iso===t})}let max=Math.max(60,...days.map(d=>d.m));$('chart').innerHTML=days.map(d=>'<div class="day"><div class="barwrap"><div class="bar '+(d.today?'today':'')+'" title="'+time(d.m)+'" style="height:'+Math.max(4,d.m/max*100)+'%"></div></div><span>'+d.label+'</span></div>').join('');$('weekTotal').textContent=(total/60).toFixed(total%60?1:0)+'h this week'
+const start=new Date();start.setHours(0,0,0,0);start.setDate(start.getDate()-6);let days=[],total=0;for(let i=0;i<7;i++){let d=new Date(start);d.setDate(start.getDate()+i);let iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),m=state.sessions.filter(s=>s.study_date===iso).reduce((n,s)=>n+Number(s.duration_minutes||0),0);total+=m;days.push({iso,m,label:d.toLocaleDateString('en-IN',{weekday:'short'}).slice(0,2),today:iso===t})}let max=Math.max(60,...days.map(d=>d.m));$('chart').innerHTML=days.map(d=>'<div class="day"><div class="barwrap"><div class="bar '+(d.today?'today':'')+'" title="'+time(d.m)+'" style="height:'+Math.max(4,d.m/max*100)+'%"></div></div><span>'+d.label+'</span></div>').join('');$('weekTotal').textContent=(total/60).toFixed(total%60?1:0)+'h this week';$('studyWeekHero').textContent=(total/60).toFixed(total%60?1:0)+'h';
+const sessionDays=new Set(state.sessions.map(x=>x.study_date));let streak=0,cursor=t;if(!sessionDays.has(cursor)){cursor=shiftDate(cursor,-1);if(!sessionDays.has(cursor))cursor=null}while(cursor&&sessionDays.has(cursor)){streak++;cursor=shiftDate(cursor,-1)}$('taskCount').textContent=streak;
+const subjectTotals={};for(const item of state.sessions){const name=item.subject||'Other';if(!subjectTotals[name])subjectTotals[name]={minutes:0,count:0};subjectTotals[name].minutes+=Number(item.duration_minutes||0);subjectTotals[name].count++}
+const subjectRows=Object.entries(subjectTotals).sort((a,b)=>b[1].minutes-a[1].minutes);const maxSubject=Math.max(1,...subjectRows.map(x=>x[1].minutes));
+$('subjectBreakdown').innerHTML=subjectRows.map(([name,data],i)=>{const hrs=(data.minutes/60).toFixed(data.minutes%60?1:0);const pct=Math.max(4,Math.round(data.minutes/maxSubject*100));return '<div class="subject-progress-row subject-tone-'+(i%5)+'"><div class="subject-progress-head"><span class="subject-progress-name">'+esc(name)+'</span><span class="subject-progress-meta">'+hrs+'h · '+data.count+' session'+(data.count===1?'':'s')+'</span></div><div class="subject-progress-track"><div class="subject-progress-fill" style="width:'+pct+'%"></div></div></div>'}).join('');$('subjectBreakdownEmpty').classList.toggle('hidden',subjectRows.length>0);
+$('studyTargetPreview').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 }
 document.addEventListener('DOMContentLoaded',init);
 })();
