@@ -1,1 +1,32 @@
-# Be-productive
+# Be Productive — CA Inter Study Tracker
+
+Mobile-first study tracking PWA with Supabase cloud sync. Built for CA Inter: subject-wise sessions, chapter/topic notes, revision and practice tracking, assignments, daily target and a seven-day study chart.
+
+## Included files
+- `index.html` — responsive app UI and JavaScript
+- `config.js` — Supabase Project URL and browser-safe publishable key
+- `supabase_setup.sql` — database tables, Row Level Security (RLS) and realtime publication
+- `manifest.webmanifest`, `sw.js`, `icons/app-icon.svg` — PWA install and offline shell
+- `.github/workflows/pages.yml` — automatic GitHub Pages deployment
+
+## Database and account setup
+1. The Supabase tables should already exist if you successfully ran `supabase_setup.sql`: `study_sessions`, `study_tasks`, and `study_settings`.
+2. Supabase URL and publishable key are set in `config.js`. Never put a `service_role` or secret key in browser-side code.
+3. In Supabase Authentication, keep Email enabled. For the simplest personal setup, create one account from the app and use the same account on both your laptop and phone. If signup requires email confirmation, open the confirmation link first.
+4. The SQL uses RLS so rows are scoped to the signed-in account. Anyone with the same shared login can view/edit the tracker.
+
+## Publish using GitHub Pages
+1. Open this repository → **Settings → Pages**.
+2. Under build and deployment, select **GitHub Actions** as the source if it is not already selected.
+3. The workflow deploys the app on pushes to `main`. In **Actions**, wait for **Deploy Be Productive PWA to GitHub Pages** to finish successfully.
+4. Your Pages URL will appear in Settings → Pages. Open that HTTPS URL, create/sign in to your account, then install it from your browser menu.
+5. On Android/Chrome, use **Install app** or **Add to Home Screen**. On iPhone/Safari, use **Share → Add to Home Screen**.
+
+## Verification checklist
+- Log a test study session from the phone.
+- Confirm the entry appears on the laptop using the same account.
+- Confirm the sync badge changes to **Live sync on**.
+- The app requires internet for authentication and cloud writes. Its interface shell may be cached offline; offline writes are not queued.
+
+## Privacy and cost
+The repository is public and contains browser app code, not passwords. Supabase publishable keys are designed for client use, with RLS policies enforcing row access. Do not commit passwords, personal exports, or service-role/secret keys. Free hosting/database tiers are subject to provider quotas and can change.
