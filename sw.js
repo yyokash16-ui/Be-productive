@@ -2,7 +2,6 @@ const CACHE_NAME = 'be-productive-v1';
 const APP_SHELL = [
   './',
   './index.html',
-  './styles.css',
   './config.js',
   './manifest.webmanifest',
   './icons/app-icon.svg'
