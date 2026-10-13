@@ -48,3 +48,7 @@ The Task Manager shows only tasks created on the current local calendar date. Wh
 
 ## Study Manager redesign
 The Study Manager uses a deep-teal and warm-coral visual theme, study-time cards, weekly activity, a study streak indicator, subject-wise session totals, a daily target control, the original study-session form, and recent study history. It uses the existing study_sessions and study_settings data and requires no database migration.
+
+
+## Take a Test
+The Study Planner header includes a compact Take a Test button. The separate test page lets the signed-in user choose a subject, set a target duration, use a start/pause/reset countdown timer, mark whether the target was met, and save the test record to Supabase `study_test_records`. The table is protected by row-level security and has a matching migration in Supabase.
