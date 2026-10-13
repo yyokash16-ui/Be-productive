@@ -152,6 +152,54 @@
  .report-stats{grid-template-columns:1fr;gap:7px}.report-stats .history-stat{display:flex;align-items:center;justify-content:space-between;gap:12px}.report-stats .history-stat strong{font-size:24px;margin:0}
 }
 
+
+/* Elegant colour and readable type for Home + Task Manager */
+.home-view{position:relative}
+.home-view .manager-card{position:relative;overflow:hidden;isolation:isolate;box-shadow:0 14px 28px #45386612}
+.home-view .manager-card:before{content:"";position:absolute;z-index:-1;right:-24px;top:-33px;width:125px;height:125px;border-radius:50%;background:#ffffff79;box-shadow:0 0 0 15px #ffffff32,0 0 0 31px #ffffff20}
+.home-view .manager-tasks{background:linear-gradient(145deg,#fff0f4 0%,#fbe5f1 50%,#f3e9ff 100%)!important;border-color:#edcbe0!important}
+.home-view .manager-study{background:linear-gradient(145deg,#f2efff 0%,#e7e9ff 55%,#e2f4ff 100%)!important;border-color:#d5d5fb!important}
+.home-view .manager-review{background:linear-gradient(145deg,#e8fbf5 0%,#e3f7f5 50%,#eff8ff 100%)!important;border-color:#c8eade!important}
+.home-view .manager-chip{background:#ffffffc9!important;color:#3f4564!important;border:1px solid #ffffff!important;font-weight:850}
+.home-view .manager-card-title{font-weight:950;color:#22223d}
+.home-view .home-hero{background:linear-gradient(115deg,#24213e 0%,#4b3e72 57%,#9a6d91 100%)!important}
+.home-view .home-hero:before{content:"";position:absolute;width:220px;height:220px;left:36%;bottom:-170px;background:#d8c0ff32;border-radius:50%;box-shadow:0 0 0 22px #d8c0ff13,0 0 0 45px #d8c0ff0a}
+.home-view .home-heading-caption{color:#6b5e91;font-weight:800}
+.manager-view#taskManagerView{background:linear-gradient(180deg,#f0edff 0%,#fff7fc 32%,#f0fbff 68%,#f4f2ff 100%);border-radius:27px;padding:16px;margin:0 -8px 18px}
+#taskManagerView .wake-card{box-shadow:0 13px 28px #55417a12;border-width:1px;border-radius:22px;padding:17px}
+#taskManagerView #wakeTodayCard{background:linear-gradient(145deg,#e6faef 0%,#f1fffa 50%,#eff5ff 100%);border-color:#bce8d3}
+#taskManagerView #wakePlanCard{background:linear-gradient(145deg,#fff0f7 0%,#f9efff 52%,#eef3ff 100%);border-color:#edd0e6}
+#taskManagerView .wake-fact{background:#ffffffbd;border-color:#ffffff}
+#taskManagerView .wake-form{border-color:#d9d5eb}
+#taskManagerView .task-board{background:linear-gradient(145deg,#fff 0%,#fbf5ff 42%,#eef8ff 100%)!important;border-color:#ddd5fb!important;box-shadow:0 14px 32px #51438a12!important}
+#taskManagerView .task-two-stats .stat-open{background:linear-gradient(120deg,#e7e4ff,#dfeaff)!important}
+#taskManagerView .task-two-stats .stat-done{background:linear-gradient(120deg,#d7f9eb,#dff7ff)!important}
+#taskManagerView .task-board .ca-lane{background:linear-gradient(145deg,#e9e4ff,#f1eaff 60%,#e2eeff)!important;border-color:#d6cbff!important}
+#taskManagerView .task-board .personal-lane{background:linear-gradient(145deg,#dcf9ee,#e5fff7 55%,#ddf3ff)!important;border-color:#bfe9df!important}
+#taskManagerView .task-board .task-lane-icon{background:linear-gradient(140deg,#fff,#ffffffa0)!important;border:1px solid #fff!important}
+#taskManagerView .task-board .task-row{background:linear-gradient(115deg,#ffffffef,#ffffffbb)!important;border:1px solid #d8d5f7!important;box-shadow:0 4px 12px #4c457d0a}
+#taskManagerView .task-board .personal-lane .task-row{border-color:#c8eade!important}
+#taskManagerView .task-board .task-row .item-title{font-size:14px;font-weight:950;color:#24213f}
+#taskManagerView .task-board .task-category-label{font-size:11px;font-weight:850;color:#6557a7;margin-top:5px;line-height:1.4}
+#taskManagerView .task-board .personal-lane .task-category-label{color:#15785f}
+#taskManagerView .task-board .task-row.completed{background:linear-gradient(120deg,#e2f9ec,#ebfff6)!important;border-color:#aee4c2!important}
+#taskManagerView .daily-report-panel{background:linear-gradient(135deg,#f1edff 0%,#edf8ff 47%,#e8fff5 100%)!important;border-color:#d7dff5!important;box-shadow:0 12px 27px #51438a10!important}
+#taskManagerView .report-heading-icon{background:linear-gradient(135deg,#e1dbff,#e0fbf1)!important}
+#taskManagerView .report-csv-button{background:linear-gradient(120deg,#6245d7,#8970f7)!important}
+#taskManagerView .report-word-button{background:linear-gradient(120deg,#0e9b8d,#33c8a9)!important}
+#taskManagerView .task-board-top h2,#taskManagerView .report-heading-copy h2{font-weight:950}
+#taskManagerView .manager-page-heading h1{font-weight:950}
+#taskManagerView .task-lane-heading h3{font-weight:950}
+@media(max-width:760px){
+ .manager-view#taskManagerView{margin:0 -5px 15px;padding:10px;border-radius:23px}
+ #taskManagerView .wake-grid{gap:11px}
+ #taskManagerView .wake-card{padding:14px}
+ #taskManagerView .wake-card h2{font-size:19px;font-weight:950}
+ #taskManagerView .task-board .task-row .item-title{font-size:14px}
+ #taskManagerView .task-board .task-category-label{font-size:11px}
+ .home-view .manager-card{min-height:0}
+}
+
 </style>
 </head>
 <body>
@@ -211,7 +259,7 @@
 
 <section class="today-tasks panel task-board" aria-label="Today's tasks">
   <div class="task-board-top">
-    <div><div class="eyebrow">✅ TODAY'S PLAN</div><h2>Task Board</h2><p class="task-subtitle">Pick the next thing. Finish strong.</p></div>
+    <div><div class="eyebrow">✅ TODAY'S PLAN</div><h2>Task Board</h2></div>
     <button id="showTaskForm" class="button task-add-button" type="button">＋ Add task</button>
   </div>
   <div class="task-quick-stats task-two-stats">
@@ -221,41 +269,32 @@
   <form id="taskForm" class="task-form hidden">
     <div class="field"><label for="taskTitle">✍️ Task name</label><input id="taskTitle" maxlength="140" placeholder="What will you finish?" required></div>
     <div class="formgrid">
-      <div class="field"><label for="taskCategory">📂 Category</label><select id="taskCategory"><option value="ca">📚 CA Study</option><option value="personal">🌿 Personal</option></select></div>
-      <div id="taskSubjectWrap" class="field"><label for="taskSubject">📖 CA subject</label><select id="taskSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
-    </div>
-    <div class="formgrid">
-      <div class="field"><label for="dueDate">📅 Due date</label><input id="dueDate" type="date" required></div>
-      <div class="field"><label for="estimate">⏱️ Expected time (min)</label><input id="estimate" type="number" min="0" max="1440" value="45"></div>
+      <div class="field"><label for="taskCategory">📂 Category</label><select id="taskCategory"><option value="professional">💼 Professional Tasks</option><option value="personal">🌿 Personal Tasks</option></select></div>
+      <div id="taskSubjectWrap" class="field"><label for="taskSubject">🗂️ Professional category</label><select id="taskSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
     </div>
     <div class="task-form-actions"><button class="button" type="submit">Save task</button><button id="cancelTask" class="button secondary" type="button">Cancel</button></div>
     <div id="taskMessage" class="message" role="status"></div>
   </form>
   <div class="task-lanes">
     <section class="task-lane ca-lane">
-      <div class="task-lane-heading"><div class="task-lane-icon">📚</div><div><h3>CA Study</h3><p>Study · Practice · Revision</p></div><span id="caTaskCount" class="lane-count">0 open</span></div>
-      <div id="caTasks" class="task-items"></div><div id="caTaskEmpty" class="task-empty">✨ Add your first CA goal.</div>
+      <div class="task-lane-heading"><div class="task-lane-icon">💼</div><div><h3>Professional Tasks</h3></div><span id="caTaskCount" class="lane-count">0 open</span></div>
+      <div id="caTasks" class="task-items"></div><div id="caTaskEmpty" class="task-empty">✨ Add your first professional task.</div>
     </section>
     <section class="task-lane personal-lane">
-      <div class="task-lane-heading"><div class="task-lane-icon">🌿</div><div><h3>Personal</h3><p>Life · Self-care · Breaks</p></div><span id="personalTaskCount" class="lane-count">0 open</span></div>
-      <div id="personalTasks" class="task-items"></div><div id="personalTaskEmpty" class="task-empty">🌸 Keep room for yourself, too.</div>
+      <div class="task-lane-heading"><div class="task-lane-icon">🌿</div><div><h3>Personal Tasks</h3></div><span id="personalTaskCount" class="lane-count">0 open</span></div>
+      <div id="personalTasks" class="task-items"></div><div id="personalTaskEmpty" class="task-empty">🌸 Add a personal task.</div>
     </section>
   </div>
 </section>
 <section class="panel task-history-panel daily-report-panel" aria-label="Date-wise task report export">
   <div class="report-heading">
     <div class="report-heading-icon">📅</div>
-    <div class="report-heading-copy"><div class="eyebrow">📊 DAILY REPORT</div><h2>Export task report</h2><p>Choose a date. Download just the daily totals.</p></div>
+    <div class="report-heading-copy"><div class="eyebrow">📊 DAILY REPORT</div><h2>Export task report</h2><p>Select a date, then download your report.</p></div>
   </div>
   <div class="report-controls">
     <div class="field report-date-field"><label for="historyDate">📆 Select date</label><input id="historyDate" type="date"></div>
     <button id="exportTaskHistory" class="button report-csv-button" type="button">⬇ Download CSV</button>
     <button id="exportTaskHistoryWord" class="button report-word-button" type="button">📝 Download Word</button>
-  </div>
-  <div class="history-stats report-stats">
-    <div class="history-stat report-added"><span>➕ Tasks added</span><strong id="historyAddedCount">0</strong></div>
-    <div class="history-stat report-completed"><span>✅ Tasks completed</span><strong id="historyCompletedCount">0</strong></div>
-    <div class="history-stat report-incomplete"><span>⏳ Remaining at day end</span><strong id="historyOpenCount">0</strong></div>
   </div>
   <p id="historyMessage" class="message report-message" role="status"></p>
 </section>
@@ -295,7 +334,7 @@ const say=(id,t,ok=false)=>{let e=$(id);e.textContent=t||'';e.classList.toggle('
 function show(name){$('authView').classList.toggle('hidden',name!=='auth');$('appView').classList.toggle('hidden',name!=='app');$('signOut').classList.toggle('hidden',name!=='app');}
 function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView',study:'studyManagerView',review:'reviewManagerView'};Object.entries(map).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==view));state.currentView=view;window.scrollTo({top:0,behavior:'smooth'});}
 function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));}
-function init(){let t=today(),h=new Date().getHours();$('studyDate').value=t;$('dueDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
+function init(){let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
 wireNavigation();$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');$('dueDate').value=today();updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
@@ -314,7 +353,7 @@ let timer;async function refresh(){clearTimeout(timer);timer=setTimeout(()=>load
 function subscribe(){if(state.channel)state.db.removeChannel(state.channel);state.channel=state.db.channel('study-progress-sync').on('postgres_changes',{event:'*',schema:'public',table:'study_sessions'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_tasks'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_settings'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'wake_up_plans'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_task_history'},refresh).subscribe(status=>{if(status==='SUBSCRIBED')$('syncStatus').textContent='Live sync on'})}
 async function saveSession(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('sessionMessage','');try{let {error}=await state.db.from('study_sessions').insert({user_id:state.user.id,subject:$('subject').value,study_date:$('studyDate').value,duration_minutes:Number($('minutes').value),study_type:$('studyType').value,topic:$('topic').value.trim()||null,notes:$('notes').value.trim()||null});if(error)throw error;$('topic').value='';$('notes').value='';$('minutes').value=60;say('sessionMessage','Session saved and synced.',true);await load()}catch(e){say('sessionMessage',e.message)}finally{b.disabled=false}}
 function updateTaskCategory(){const isPersonal=$('taskCategory').value==='personal';$('taskSubjectWrap').classList.toggle('hidden',isPersonal);$('taskSubject').required=!isPersonal}
-async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:$('dueDate').value,priority:'normal',estimated_minutes:Number($('estimate').value||0),completed:false});if(error)throw error;$('taskForm').reset();$('dueDate').value=today();$('estimate').value=45;$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
+async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:today(),priority:'normal',estimated_minutes:0,completed:false});if(error)throw error;$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
 function shiftDate(iso,offset){const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+offset);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function prettyTime(value){if(!value)return '—';const [h,m]=value.slice(0,5).split(':').map(Number);const d=new Date();d.setHours(h,m,0,0);return d.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'})}
 function byDate(iso){return state.wakePlans.find(x=>x.plan_date===iso)}
@@ -331,7 +370,7 @@ function priorityRank(value){return value==='high'?0:value==='normal'?1:2}
 function historyTieRank(value){return ({created:0,edited:1,completed:2,reopened:3,deleted:4})[value]||0}
 function historyCountsForDay(day){const rows=state.taskHistory.filter(x=>localDateKey(x.event_at)===day);const unique=type=>new Set(rows.filter(x=>x.event_type===type).map(x=>x.task_id)).size;return {added:unique('created'),completed:unique('completed')}}
 function taskSnapshotAtEndOfDay(day){const latest=new Map();const rows=[...state.taskHistory].sort((a,b)=>new Date(b.event_at)-new Date(a.event_at)||historyTieRank(b.event_type)-historyTieRank(a.event_type));for(const row of rows){if(localDateKey(row.event_at)>day)continue;if(!latest.has(row.task_id))latest.set(row.task_id,row)}let remaining=0;for(const row of latest.values()){if(row.event_type==='deleted')continue;const done=typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed';if(!done)remaining++}return {remaining,latest}}
-function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyAddedCount').textContent='—';$('historyCompletedCount').textContent='—';$('historyOpenCount').textContent='—';$('historyMessage').textContent='Task report history is not available.';return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);$('historyAddedCount').textContent=c.added;$('historyCompletedCount').textContent=c.completed;$('historyOpenCount').textContent=snap.remaining;$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
+function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyMessage').textContent='';return}$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
 function exportTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const lines=[['BE PRODUCTIVE — DAILY TASK REPORT'],['Date',reportDayLabel(day)],[],['Task summary','Count'],['Tasks added',c.added],['Tasks completed',c.completed],['Incomplete at end of day',snap.remaining]];const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','CSV report downloaded.',true)}
@@ -342,9 +381,9 @@ async function removeRow(table,id){if(!confirm('Delete this item?'))return;let {
 function render(){renderWake();let t=today(),ss=state.sessions.filter(s=>s.study_date===t),mins=ss.reduce((n,s)=>n+Number(s.duration_minutes||0),0),tt=state.tasks.filter(x=>x.due_date===t),done=tt.filter(x=>x.completed).length;$('todayTime').textContent=time(mins);$('sessionCount').textContent=ss.length;$('taskCount').textContent=done+'/'+tt.length;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 const visibleTasks=[...state.tasks].filter(x=>!x.completed||x.due_date>=t).sort((a,b)=>Number(a.completed)-Number(b.completed)||a.due_date.localeCompare(b.due_date));
 const caTasks=visibleTasks.filter(x=>x.subject!=='Personal'),personalTasks=visibleTasks.filter(x=>x.subject==='Personal');
-const openCount=visibleTasks.filter(x=>!x.completed).length,doneToday=new Set(state.taskHistory.filter(x=>x.event_type==='completed'&&localDateKey(x.event_at)===t).map(x=>x.task_id)).size;$('taskOverviewCount').textContent=openCount;$('taskDoneTodayCount').textContent=doneToday;
+const openCount=visibleTasks.filter(x=>!x.completed).length,doneCount=visibleTasks.filter(x=>x.completed).length;$('taskOverviewCount').textContent=openCount;$('taskDoneTodayCount').textContent=doneCount;
 $('caTaskCount').textContent=caTasks.filter(x=>!x.completed).length+' open';$('personalTaskCount').textContent=personalTasks.filter(x=>!x.completed).length+' open';
-function taskMarkup(x,kind){const overdue=!x.completed&&x.due_date<t,dueLabel=x.due_date===t?'📅 TODAY':overdue?'⚠️ OVERDUE':'📅 '+date(x.due_date);return '<div class="task-row '+(x.completed?'completed':'')+' '+kind+'"><input class="check" type="checkbox" aria-label="Complete task" data-check="'+esc(x.id)+'" '+(x.completed?'checked':'')+'><div class="item-main"><div class="item-title">'+(x.subject==='Personal'?'🌿 ':'📚 ')+esc(x.title)+'</div><div class="item-sub">'+(x.subject!=='Personal'?esc(x.subject)+' · ':'')+'<span class="due-pill '+(overdue?'overdue':'')+'">'+dueLabel+'</span> '+(x.estimated_minutes?'<span>⏱️ '+x.estimated_minutes+' min</span>':'')+'</div></div><button class="button danger" data-deltask="'+esc(x.id)+'" aria-label="Delete task">🗑️</button></div>'}
+function taskMarkup(x,kind){const category=x.subject==='Personal'?'Personal task':(x.subject||'Professional task');return '<div class="task-row '+(x.completed?'completed':'')+' '+kind+'"><input class="check" type="checkbox" aria-label="Complete task" data-check="'+esc(x.id)+'" '+(x.completed?'checked':'')+'><div class="item-main"><div class="item-title">'+esc(x.title)+'</div><div class="item-sub task-category-label">'+(x.subject==='Personal'?'🌿 ':'💼 ')+esc(category)+'</div></div><button class="button danger" data-deltask="'+esc(x.id)+'" aria-label="Delete task">🗑️</button></div>'}
 $('caTasks').innerHTML=caTasks.map(x=>taskMarkup(x,'ca-task')).join('');$('personalTasks').innerHTML=personalTasks.map(x=>taskMarkup(x,'personal-task')).join('');
 $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpty').classList.toggle('hidden',personalTasks.length>0);
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
