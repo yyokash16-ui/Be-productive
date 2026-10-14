@@ -1596,6 +1596,127 @@ body.night-mode #studyManagerView.study-planner .planner-session-form textarea::
   color:#ffffff!important;opacity:.62
 }
 
+
+/* Review Time: task efficiency visual dashboard */
+#reviewManagerView.review-dashboard{border:1px solid #dcd5f0;border-radius:27px;padding:17px;background:linear-gradient(180deg,#f0edff 0%,#fff7fc 36%,#effaf7 100%);box-shadow:0 15px 32px #51438a12}
+#reviewManagerView .review-page-heading{border:1px solid #d8d5f3;border-radius:19px;padding:13px 15px;margin-bottom:16px;background:linear-gradient(110deg,#f0eaff,#fff2f8 55%,#e8faf4);box-shadow:0 7px 0 #e6def3,0 10px 18px #51438a0d}
+#reviewManagerView .review-page-heading h1{font-size:clamp(27px,3.5vw,36px);font-weight:950;letter-spacing:-.8px;color:#20213d;margin:4px 0}
+#reviewManagerView .review-page-heading p{font-size:12px;font-weight:750;color:#667085;margin:4px 0 0}
+#reviewManagerView .review-page-heading .eyebrow{font-size:11px;font-weight:900;letter-spacing:.5px;color:#6553ce}
+#reviewManagerView .review-efficiency-hero{position:relative;overflow:hidden;display:flex;align-items:center;gap:23px;margin-bottom:16px;padding:23px 25px;border:1px solid #3b345b;border-radius:23px;background:linear-gradient(120deg,#25233f 0%,#38345a 58%,#66517f 100%);color:#fff;box-shadow:0 9px 0 #ded5ec,0 17px 28px #25233f20}
+#reviewManagerView .review-efficiency-hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #ffffff20;border-radius:50%;right:6%;top:-92%;box-shadow:0 0 0 20px #ffffff07,0 0 0 42px #ffffff05}
+#reviewManagerView .review-gauge-wrap{position:relative;z-index:1;flex:0 0 142px;display:grid;place-items:center}
+#reviewManagerView .review-efficiency-gauge{--review-efficiency:0%;width:136px;height:136px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#a6f3cc var(--review-efficiency),#ffffff25 0);position:relative;box-shadow:0 0 0 7px #ffffff0a}
+#reviewManagerView .review-efficiency-gauge:before{content:"";position:absolute;inset:11px;border-radius:50%;background:linear-gradient(145deg,#26223f,#383050);border:1px solid #ffffff21}
+#reviewManagerView .review-gauge-center{position:relative;z-index:1;display:grid;justify-items:center;gap:4px}
+#reviewManagerView .review-gauge-center strong{font-size:34px;line-height:1;font-weight:950;letter-spacing:-1px;color:#fff}
+#reviewManagerView .review-gauge-center small{font-size:9px;font-weight:900;letter-spacing:.9px;color:#e6dff4}
+#reviewManagerView .review-efficiency-main{position:relative;z-index:1;flex:1;min-width:0}
+#reviewManagerView .review-eyebrow{font-size:10px;letter-spacing:.8px;font-weight:900;color:#6553ce}
+#reviewManagerView .review-efficiency-hero .review-eyebrow{color:#b9f6dc}
+#reviewManagerView .review-efficiency-main h2{font-size:clamp(22px,3vw,30px);font-weight:950;letter-spacing:-.6px;line-height:1.1;color:#fff;margin:7px 0}
+#reviewManagerView .review-efficiency-main p{font-size:12px;line-height:1.5;font-weight:650;color:#e1d9ed;margin:0 0 14px}
+#reviewManagerView .review-hero-counts{display:flex;gap:9px;flex-wrap:wrap}
+#reviewManagerView .review-hero-counts>div{min-width:75px;display:grid;gap:3px;padding:9px 12px;border:1px solid #ffffff24;border-radius:12px;background:#ffffff12}
+#reviewManagerView .review-hero-counts strong{font-size:22px;font-weight:950;line-height:1;color:#fff}
+#reviewManagerView .review-hero-counts span{font-size:10px;font-weight:800;color:#e3dcee}
+#reviewManagerView .review-hero-spark{position:absolute;right:22px;bottom:14px;color:#c6f7df;font-size:31px;opacity:.45}
+#reviewManagerView .review-no-data{display:grid;justify-items:center;gap:7px;padding:18px;margin-bottom:16px;border:1px dashed #c8b9ed;border-radius:17px;background:linear-gradient(120deg,#fff,#f2efff);text-align:center}
+#reviewManagerView .review-no-data>span{font-size:25px}
+#reviewManagerView .review-no-data strong{font-size:13px;font-weight:900;color:#2b2541}
+#reviewManagerView .review-no-data small{font-size:11px;font-weight:650;color:#69748a}
+#reviewManagerView .review-panel{margin-bottom:16px;padding:19px;border:1px solid #dcd5f0;border-radius:22px;background:linear-gradient(145deg,#fff 0%,#fbfaff 54%,#f1f9ff 100%);box-shadow:0 8px 0 #e8e0f3,0 14px 25px #51438a0e}
+#reviewManagerView .review-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px;padding-bottom:13px;border-bottom:1px solid #e4def2}
+#reviewManagerView .review-panel-heading h2{font-size:20px;font-weight:950;letter-spacing:-.4px;color:#21213d;margin:4px 0 0}
+#reviewManagerView .review-panel-icon{display:grid;place-items:center;width:42px;height:42px;border:1px solid #fff;border-radius:13px;background:linear-gradient(145deg,#e9e4ff,#dbf8ef);font-size:20px;box-shadow:0 4px 12px #322f5910}
+#reviewManagerView .review-daily-chart{display:grid;gap:12px}
+#reviewManagerView .review-day-row{display:grid;grid-template-columns:82px minmax(0,1fr) 54px;align-items:center;gap:13px;padding:10px 12px;border:1px solid #e5e1f3;border-radius:14px;background:linear-gradient(105deg,#fff,#faf9ff);box-shadow:0 3px 9px #51438a07}
+#reviewManagerView .review-day-label{display:grid;gap:3px}
+#reviewManagerView .review-day-label strong{font-size:12px;font-weight:900;color:#292440}
+#reviewManagerView .review-day-label small{font-size:10px;font-weight:750;color:#778097}
+#reviewManagerView .review-day-bar-area{min-width:0;display:grid;gap:6px}
+#reviewManagerView .review-day-bar-track{height:13px;border:1px solid #dcd5ee;border-radius:99px;background:linear-gradient(90deg,#e6e1f1,#eaf5f1);overflow:hidden}
+#reviewManagerView .review-day-bar-done{height:100%;min-width:0;border-radius:99px;background:linear-gradient(90deg,#6553ce,#7fcfae);transition:width .35s}
+#reviewManagerView .review-day-subcounts{display:flex;justify-content:space-between;gap:8px;font-size:10px;font-weight:800;color:#667085}
+#reviewManagerView .review-day-percent{font-size:13px;font-weight:950;text-align:right;color:#6553ce}
+#reviewManagerView .review-chart-legend{display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;margin-top:14px;font-size:10px;font-weight:800;color:#667085}
+#reviewManagerView .review-chart-legend span{display:flex;align-items:center;gap:6px}
+#reviewManagerView .review-chart-legend i{display:inline-block;width:9px;height:9px;border-radius:50%}
+#reviewManagerView .review-chart-legend .legend-done{background:#6553ce}
+#reviewManagerView .review-chart-legend .legend-open{background:#c8c0df}
+#reviewManagerView .review-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+#reviewManagerView .review-category-card{padding:16px;border:1px solid #d6cef4;border-radius:18px;background:linear-gradient(145deg,#f0eaff,#e9eaff 60%,#eff4ff);box-shadow:0 6px 0 #e3daf3,0 12px 20px #51438a0c}
+#reviewManagerView .review-category-card.personal{border-color:#b4e5d4;background:linear-gradient(145deg,#e1f9f0,#e8fbf7 60%,#e7f4ff)}
+#reviewManagerView .review-category-top{display:flex;align-items:center;gap:9px}
+#reviewManagerView .review-category-emoji{display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px;border:1px solid #fff;border-radius:12px;background:#ffffffc9;font-size:19px}
+#reviewManagerView .review-category-name{flex:1;min-width:0;font-size:14px;font-weight:950;color:#26213f}
+#reviewManagerView .review-category-percent{font-size:23px;font-weight:950;color:#6553ce;white-space:nowrap}
+#reviewManagerView .review-category-card.personal .review-category-percent{color:#137858}
+#reviewManagerView .review-category-track{height:9px;margin:14px 0 12px;border:1px solid #d7d1e8;border-radius:99px;background:#ffffffc7;overflow:hidden}
+#reviewManagerView .review-category-track>div{height:100%;border-radius:99px;background:linear-gradient(90deg,#6553ce,#a6f3cc)}
+#reviewManagerView .review-category-card.personal .review-category-track>div{background:linear-gradient(90deg,#149b80,#90dfbd)}
+#reviewManagerView .review-category-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:10px;font-weight:850;color:#667085}
+@media(max-width:760px){
+ #reviewManagerView.review-dashboard{margin:0 -5px 15px;padding:11px;border-radius:22px}
+ #reviewManagerView .review-page-heading{gap:9px;padding:11px!important;margin-bottom:14px!important;border-radius:16px!important}
+ #reviewManagerView .review-page-heading h1{font-size:27px!important;letter-spacing:-.5px!important}
+ #reviewManagerView .review-page-heading p{font-size:11px}
+ #reviewManagerView .review-efficiency-hero{gap:14px;padding:18px 15px;border-radius:20px;margin-bottom:15px;box-shadow:0 7px 0 #ded5ec,0 12px 21px #25233f20}
+ #reviewManagerView .review-gauge-wrap{flex-basis:105px}
+ #reviewManagerView .review-efficiency-gauge{width:100px;height:100px}
+ #reviewManagerView .review-efficiency-gauge:before{inset:9px}
+ #reviewManagerView .review-gauge-center strong{font-size:27px}
+ #reviewManagerView .review-gauge-center small{font-size:8px}
+ #reviewManagerView .review-efficiency-main h2{font-size:21px}
+ #reviewManagerView .review-efficiency-main p{font-size:10px;margin-bottom:10px}
+ #reviewManagerView .review-hero-counts{gap:6px}
+ #reviewManagerView .review-hero-counts>div{min-width:54px;padding:7px 8px;border-radius:10px}
+ #reviewManagerView .review-hero-counts strong{font-size:18px}
+ #reviewManagerView .review-hero-counts span{font-size:9px}
+ #reviewManagerView .review-panel{padding:13px;border-radius:18px;margin-bottom:13px;box-shadow:0 6px 0 #e8e0f3,0 10px 17px #51438a0d}
+ #reviewManagerView .review-panel-heading{margin-bottom:12px;padding-bottom:10px}
+ #reviewManagerView .review-panel-heading h2{font-size:17px}
+ #reviewManagerView .review-panel-icon{width:36px;height:36px;flex-basis:36px}
+ #reviewManagerView .review-daily-chart{gap:8px}
+ #reviewManagerView .review-day-row{grid-template-columns:64px minmax(0,1fr) 42px;gap:8px;padding:9px;border-radius:12px}
+ #reviewManagerView .review-day-label strong{font-size:11px}
+ #reviewManagerView .review-day-label small{font-size:9px}
+ #reviewManagerView .review-day-bar-track{height:11px}
+ #reviewManagerView .review-day-subcounts{font-size:9px}
+ #reviewManagerView .review-day-percent{font-size:12px}
+ #reviewManagerView .review-category-grid{grid-template-columns:1fr;gap:11px}
+ #reviewManagerView .review-category-card{padding:14px;border-radius:16px}
+ #reviewManagerView .review-category-name{font-size:13px}
+}
+@media(max-width:400px){
+ #reviewManagerView .review-efficiency-hero{align-items:flex-start;gap:10px;padding:15px 11px}
+ #reviewManagerView .review-gauge-wrap{flex-basis:83px}
+ #reviewManagerView .review-efficiency-gauge{width:80px;height:80px}
+ #reviewManagerView .review-efficiency-gauge:before{inset:7px}
+ #reviewManagerView .review-gauge-center strong{font-size:22px}
+ #reviewManagerView .review-efficiency-main h2{font-size:18px}
+ #reviewManagerView .review-hero-counts>div{min-width:46px;padding:6px}
+ #reviewManagerView .review-hero-counts strong{font-size:16px}
+ #reviewManagerView .review-day-row{grid-template-columns:55px minmax(0,1fr) 37px;gap:6px;padding:7px}
+ #reviewManagerView .review-day-subcounts{font-size:8px}
+}
+body.night-mode #reviewManagerView.review-dashboard{background:linear-gradient(180deg,#21192d,#292038 48%,#172d31)!important;border-color:#4a385d;color:#f7efff}
+body.night-mode #reviewManagerView .review-page-heading{background:linear-gradient(110deg,#332342,#39243b 50%,#183c38)!important;border-color:#5e4267}
+body.night-mode #reviewManagerView .review-page-heading h1,body.night-mode #reviewManagerView .review-panel-heading h2{color:#fff5ff}
+body.night-mode #reviewManagerView .review-page-heading p,body.night-mode #reviewManagerView .review-day-subcounts,body.night-mode #reviewManagerView .review-day-label small,body.night-mode #reviewManagerView .review-category-bottom{color:#d1c3df}
+body.night-mode #reviewManagerView .review-panel{background:linear-gradient(145deg,#272132,#211d2e)!important;border-color:#4b405c;box-shadow:0 6px 0 #181420,0 12px 20px #0003}
+body.night-mode #reviewManagerView .review-day-row{background:linear-gradient(105deg,#1c1827,#282237)!important;border-color:#514361}
+body.night-mode #reviewManagerView .review-day-label strong,body.night-mode #reviewManagerView .review-category-name{color:#fff4ff}
+body.night-mode #reviewManagerView .review-day-bar-track{background:#3c334b;border-color:#5e4e71}
+body.night-mode #reviewManagerView .review-day-bar-done{background:linear-gradient(90deg,#9f87ff,#a6f3cc)}
+body.night-mode #reviewManagerView .review-category-card{background:linear-gradient(145deg,#352a50,#30243e 60%,#242d45)!important;border-color:#6b56a1;box-shadow:0 6px 0 #1c1829,0 12px 20px #0003}
+body.night-mode #reviewManagerView .review-category-card.personal{background:linear-gradient(145deg,#1d4039,#203b42 55%,#22354a)!important;border-color:#398a76}
+body.night-mode #reviewManagerView .review-category-percent,body.night-mode #reviewManagerView .review-category-card.personal .review-category-percent{color:#fff3ff}
+body.night-mode #reviewManagerView .review-category-track{background:#211a2d;border-color:#514360}
+body.night-mode #reviewManagerView .review-no-data{background:#211c2c;border-color:#514361}
+body.night-mode #reviewManagerView .review-no-data strong{color:#fff4ff}
+body.night-mode #reviewManagerView .review-no-data small{color:#d1c3df}
+
 </style>
 </head>
 <body>
@@ -1792,10 +1913,34 @@ body.night-mode #studyManagerView.study-planner .planner-session-form textarea::
     <div id="testRecordMessage" class="message test-record-message" role="status"></div>
   </section>
 </section>
-<section id="reviewManagerView" class="app-section manager-view hidden">
-  <div class="manager-page-heading"><button class="back-home" type="button" data-back-home>← Home</button><div><div class="eyebrow">PAUSE · REFLECT · GROW</div><h1>Review Time</h1><p>Your quiet space to look back, reset, and plan what comes next.</p></div></div>
-  <div class="review-hero"><div class="review-illustration"><div class="review-book">✧</div><span class="review-petal p1">✦</span><span class="review-petal p2">♡</span><span class="review-petal p3">✧</span></div><div class="review-copy"><div class="eyebrow">THIS SPACE IS YOURS</div><h2>Let’s build your review ritual.</h2><p>We’ve kept this section calm and ready. Tell me what you’d like to review here next, and we’ll add it one feature at a time—without disturbing your existing study records.</p><div class="review-promise"><span>♡</span> A gentle review can turn today’s effort into tomorrow’s confidence.</div></div></div>
-  <div class="review-ready-card"><span class="review-ready-icon">✧</span><div><strong>Ready for your ideas</strong><p>Revision plans, weekly reflections, chapter recall, mock-test reviews—whatever you decide, we’ll shape it around your routine.</p></div><span class="ready-spark">✦</span></div>
+<section id="reviewManagerView" class="app-section manager-view hidden review-dashboard">
+  <div class="manager-page-heading review-page-heading">
+    <button class="back-home" type="button" data-back-home>← Home</button>
+    <div><div class="eyebrow">📊 TASK PROGRESS</div><h1>Review Time</h1><p>Your task efficiency, at a glance.</p></div>
+  </div>
+  <section class="review-efficiency-hero">
+    <div class="review-gauge-wrap"><div id="reviewEfficiencyGauge" class="review-efficiency-gauge" style="--review-efficiency:0%"><div class="review-gauge-center"><strong id="reviewEfficiencyPercent">0%</strong><small>EFFICIENCY</small></div></div></div>
+    <div class="review-efficiency-main">
+      <div class="review-eyebrow">LAST 7 DAYS</div><h2>Task efficiency</h2>
+      <p>Tasks completed from tasks added in the last 7 days.</p>
+      <div class="review-hero-counts">
+        <div><strong id="reviewDoneTasks">0</strong><span>Done</span></div>
+        <div><strong id="reviewTotalTasks">0</strong><span>Added</span></div>
+        <div><strong id="reviewOpenTasks">0</strong><span>Open</span></div>
+      </div>
+    </div>
+    <div class="review-hero-spark" aria-hidden="true">✦</div>
+  </section>
+  <div id="reviewNoData" class="review-no-data hidden"><span>📈</span><strong>Your charts will appear here</strong><small>Add tasks in Task Manager to start building your efficiency chart.</small></div>
+  <section class="review-panel review-daily-panel">
+    <div class="review-panel-heading"><div><div class="review-eyebrow">7-DAY VIEW</div><h2>Daily efficiency</h2></div><span class="review-panel-icon">📊</span></div>
+    <div id="reviewDailyChart" class="review-daily-chart"></div>
+    <div class="review-chart-legend"><span><i class="legend-done"></i> Completed</span><span><i class="legend-open"></i> Remaining</span></div>
+  </section>
+  <section class="review-panel review-category-panel">
+    <div class="review-panel-heading"><div><div class="review-eyebrow">TASK TYPE</div><h2>Where progress happens</h2></div><span class="review-panel-icon">🎯</span></div>
+    <div id="reviewCategoryGrid" class="review-category-grid"></div>
+  </section>
 </section>
 <div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
 </main>
@@ -1854,6 +1999,9 @@ function priorityRank(value){return value==='high'?0:value==='normal'?1:2}
 function historyTieRank(value){return ({created:0,edited:1,completed:2,reopened:3,deleted:4})[value]||0}
 function historyCountsForDay(day){const rows=state.taskHistory.filter(x=>localDateKey(x.event_at)===day);const added=new Set(rows.filter(x=>x.event_type==='created'&&localDateKey(x.task_created_at||x.event_at)===day).map(x=>x.task_id)).size;const completed=new Set(rows.filter(x=>x.event_type==='completed'&&localDateKey(x.task_created_at||x.event_at)===day).map(x=>x.task_id)).size;return {added,completed}}
 function taskSnapshotAtEndOfDay(day){const latest=new Map();const rows=[...state.taskHistory].sort((a,b)=>new Date(b.event_at)-new Date(a.event_at)||historyTieRank(b.event_type)-historyTieRank(a.event_type));for(const row of rows){if(localDateKey(row.event_at)>day||localDateKey(row.task_created_at||row.event_at)!==day)continue;if(!latest.has(row.task_id))latest.set(row.task_id,row)}let remaining=0;for(const row of latest.values()){if(row.event_type==='deleted')continue;const done=typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed';if(!done)remaining++}return {remaining,latest}}
+function reviewProgressData(){const days=Array.from({length:7},(_,i)=>shiftDate(today(),i-6));const daySet=new Set(days);const history=state.taskHistory||[];const sorted=[...history].sort((a,b)=>new Date(b.event_at)-new Date(a.event_at)||historyTieRank(b.event_type)-historyTieRank(a.event_type));const latestById=new Map();const metaById=new Map();for(const row of sorted){const id=row.task_id;if(!id)continue;if(!latestById.has(id))latestById.set(id,row);if(!metaById.has(id)){const createdDate=localDateKey(row.task_created_at||row.event_at);metaById.set(id,{date:createdDate,subject:row.task_subject||'Other',title:row.task_title||''})}if(row.event_type==='created')metaById.set(id,{date:localDateKey(row.task_created_at||row.event_at),subject:row.task_subject||'Other',title:row.task_title||''})}for(const task of state.tasks||[]){if(!latestById.has(task.id)){latestById.set(task.id,{event_type:task.completed?'completed':'created',is_completed:!!task.completed,task_subject:task.subject||'Other',task_title:task.title||''});metaById.set(task.id,{date:localDateKey(task.created_at||task.due_date),subject:task.subject||'Other',title:task.title||''})}}const active=[];for(const [id,row] of latestById){const meta=metaById.get(id)||{};if(!daySet.has(meta.date)||row.event_type==='deleted')continue;const isDone=typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed';active.push({id,date:meta.date,subject:meta.subject||row.task_subject||'Other',done:isDone})}const daysData=days.map(day=>{const tasks=active.filter(x=>x.date===day);const done=tasks.filter(x=>x.done).length;const total=tasks.length;return {day,total,done,open:total-done,efficiency:total?Math.round(done/total*100):0}});const total=active.length;const done=active.filter(x=>x.done).length;const personal=active.filter(x=>x.subject==='Personal');const professional=active.filter(x=>x.subject!=='Personal');const categoryStats=items=>{const complete=items.filter(x=>x.done).length;return {total:items.length,done:complete,open:items.length-complete,efficiency:items.length?Math.round(complete/items.length*100):0}};return {days:daysData,total,done,open:total-done,efficiency:total?Math.round(done/total*100):0,personal:categoryStats(personal),professional:categoryStats(professional)}}
+function reviewDayLabel(day){if(day===today())return 'Today';if(day===shiftDate(today(),-1))return 'Yesterday';return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short'})}
+function renderReview(){const root=$('reviewManagerView');if(!root)return;const data=reviewProgressData();$('reviewEfficiencyPercent').textContent=data.efficiency+'%';$('reviewEfficiencyGauge').style.setProperty('--review-efficiency',data.efficiency+'%');$('reviewDoneTasks').textContent=data.done;$('reviewTotalTasks').textContent=data.total;$('reviewOpenTasks').textContent=data.open;$('reviewNoData').classList.toggle('hidden',data.total>0);$('reviewDailyChart').innerHTML=data.days.map(x=>'<div class="review-day-row"><div class="review-day-label"><strong>'+esc(reviewDayLabel(x.day))+'</strong><small>'+esc(date(x.day))+'</small></div><div class="review-day-bar-area"><div class="review-day-bar-track"><div class="review-day-bar-done" style="width:'+x.efficiency+'%"></div></div><div class="review-day-subcounts"><span>'+x.done+' done</span><span>'+x.open+' open</span></div></div><div class="review-day-percent">'+(x.total?x.efficiency+'%':'—')+'</div></div>').join('');const categoryMarkup=(label,emoji,data,cls)=>'<article class="review-category-card '+cls+'"><div class="review-category-top"><span class="review-category-emoji">'+emoji+'</span><div class="review-category-name">'+label+'</div><strong class="review-category-percent">'+(data.total?data.efficiency+'%':'—')+'</strong></div><div class="review-category-track"><div style="width:'+data.efficiency+'%"></div></div><div class="review-category-bottom"><span>'+data.done+' completed</span><span>'+data.open+' remaining</span><span>'+data.total+' total</span></div></article>';$('reviewCategoryGrid').innerHTML=categoryMarkup('Professional','💼',data.professional,'professional')+categoryMarkup('Personal','🌿',data.personal,'personal')}
 function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyMessage').textContent='';return}$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
@@ -1884,6 +2032,8 @@ $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpt
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
 $('studyTargetPreview').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 $('targetValue').textContent=state.target;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
+renderReview();
+renderReview();
 }
 document.addEventListener('DOMContentLoaded',init);
 })();
