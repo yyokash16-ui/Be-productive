@@ -1233,6 +1233,282 @@ body.night-mode #takeTestView .test-record-button{background:linear-gradient(110
  #takeTestView .test-timer-display{font-size:49px!important}
 }
 
+
+/* Task Manager: distinct cards with a single combined wake-time facts panel */
+.manager-view#taskManagerView{
+  border:1.5px solid #ded6f0!important;
+  box-shadow:0 16px 38px #51438a14!important;
+}
+#taskManagerView .manager-page-heading{
+  border:1.5px solid #d8c9f0!important;
+  box-shadow:0 7px 0 #e9def5,0 12px 22px #51438a0e!important;
+  margin-bottom:18px!important;
+}
+#taskManagerView .wake-grid{
+  gap:17px!important;
+  margin:0 0 20px!important;
+  align-items:start;
+}
+#taskManagerView .wake-card{
+  border-width:2px!important;
+  border-radius:22px!important;
+  padding:18px!important;
+  box-shadow:0 7px 0 #ded4eb,0 15px 27px #51438a15!important;
+  position:relative;
+  min-width:0;
+}
+#taskManagerView #wakeTodayCard{
+  border-color:#8dd9bd!important;
+  background:linear-gradient(145deg,#e6faef 0%,#f1fffa 57%,#edf4ff 100%)!important;
+}
+#taskManagerView #wakeTodayCard.missed{
+  border-color:#ed9aa2!important;
+  background:linear-gradient(145deg,#fff0f0 0%,#fff5f8 58%,#f0f3ff 100%)!important;
+  box-shadow:0 7px 0 #f0d5dd,0 15px 27px #b05b7619!important;
+}
+#taskManagerView #wakeTodayCard.success{
+  border-color:#60c796!important;
+  background:linear-gradient(145deg,#dff9e9 0%,#edfff7 58%,#e9f5ff 100%)!important;
+  box-shadow:0 7px 0 #c6ecd7,0 15px 27px #2b916a18!important;
+}
+#taskManagerView #wakeTodayCard.pending{
+  border-color:#e2bd66!important;
+  background:linear-gradient(145deg,#fff6df 0%,#fffaf0 58%,#f4f1ff 100%)!important;
+}
+#taskManagerView #wakePlanCard{
+  border-color:#dfaee0!important;
+  background:linear-gradient(145deg,#fff0f7 0%,#f9efff 52%,#eef3ff 100%)!important;
+  box-shadow:0 7px 0 #ead7ed,0 15px 27px #8a4f9c14!important;
+}
+#taskManagerView .wake-card .panel-head h2{
+  font-size:22px!important;
+  font-weight:950!important;
+  letter-spacing:-.45px!important;
+  color:#21213d!important;
+}
+#taskManagerView .wake-card .eyebrow{
+  font-size:11px!important;
+  letter-spacing:.6px!important;
+  font-weight:950!important;
+}
+#taskManagerView .wake-title{
+  font-size:17px!important;
+  font-weight:900!important;
+  line-height:1.4;
+  color:#25213d!important;
+  margin:9px 0 7px!important;
+}
+#taskManagerView .wake-message{
+  font-size:13px!important;
+  line-height:1.55;
+  font-weight:650!important;
+  color:#4d536b!important;
+}
+/* Target + actual time are now one shared card, with a single divider inside. */
+#taskManagerView .wake-facts{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:0!important;
+  margin:11px 0 12px!important;
+  padding:0!important;
+  border:1.5px solid #b8d7d0!important;
+  border-radius:13px!important;
+  overflow:hidden!important;
+  background:linear-gradient(100deg,#ffffffd9,#f8fcffdd)!important;
+  box-shadow:inset 0 1px #ffffff;
+}
+#taskManagerView .wake-fact,
+#taskManagerView .wake-card.success .wake-fact,
+#taskManagerView .wake-card.missed .wake-fact{
+  min-width:0;
+  padding:10px 12px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#taskManagerView .wake-fact+.wake-fact{
+  border-left:1.5px solid #c8d9df!important;
+}
+#taskManagerView .wake-fact small{
+  display:block;
+  font-size:10px!important;
+  font-weight:850!important;
+  letter-spacing:.3px!important;
+  color:#63708a!important;
+  line-height:1.35;
+  text-transform:uppercase;
+  margin-bottom:5px!important;
+}
+#taskManagerView .wake-fact strong{
+  display:block;
+  font-size:17px!important;
+  font-weight:950!important;
+  letter-spacing:-.25px!important;
+  line-height:1.25;
+  color:#292543!important;
+  overflow-wrap:anywhere;
+}
+#taskManagerView .wake-form{
+  border-top:1.5px solid #cbd2e8!important;
+  padding-top:12px!important;
+  margin-top:12px!important;
+}
+#taskManagerView .wake-form .field label{
+  font-size:12px!important;
+  font-weight:900!important;
+  color:#343650!important;
+}
+#taskManagerView .wake-form .field input{
+  min-height:46px;
+  border:1.5px solid #d0d5eb!important;
+  border-radius:13px!important;
+  background:#fff!important;
+  font-size:14px!important;
+  font-weight:750!important;
+  color:#25243f!important;
+  padding:11px 12px!important;
+}
+#taskManagerView .wake-check{
+  align-items:center!important;
+  font-size:12px!important;
+  font-weight:850!important;
+  color:#343650!important;
+  margin:10px 0 12px!important;
+}
+#taskManagerView .wake-check input{
+  width:20px!important;height:20px!important;flex:0 0 20px;
+}
+#taskManagerView #saveWakeToday,
+#taskManagerView #saveTomorrowWake{
+  min-height:47px;
+  border-radius:13px!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  box-shadow:0 6px 0 #ddd4f1,0 10px 17px #6d5ce823!important;
+}
+#taskManagerView .wake-note{
+  border:1.5px solid #e6c6d2!important;
+  border-radius:12px!important;
+  margin-top:10px!important;
+  font-size:12px!important;
+  font-weight:750!important;
+}
+#taskManagerView #wakeTodayCard.missed .wake-note{
+  border-color:#e99aa1!important;
+  background:#ffdede!important;
+  color:#912929!important;
+}
+#taskManagerView #wakeTodayCard.success .wake-note{
+  border-color:#7dcea1!important;
+  background:#d9f8e5!important;
+  color:#12683e!important;
+}
+#taskManagerView .wake-quote{
+  border:1.5px solid #eccde9!important;
+  border-radius:13px!important;
+  padding:11px 12px!important;
+  margin-top:12px!important;
+  background:linear-gradient(110deg,#fff0f7,#f3efff)!important;
+  color:#654276!important;
+  font-size:12px!important;
+  line-height:1.5;
+  font-weight:850!important;
+}
+/* Visually separate the task board, the two task groups, and the form. */
+#taskManagerView .task-board{
+  padding:20px!important;
+  border:2px solid #d7cef2!important;
+  border-radius:24px!important;
+  background:linear-gradient(145deg,#ffffff 0%,#faf6ff 48%,#f0f8ff 100%)!important;
+  box-shadow:0 8px 0 #e4d9f3,0 17px 32px #51438a18!important;
+}
+#taskManagerView .task-board-top{
+  border:1.5px solid #d7d2f5!important;
+  border-radius:17px!important;
+  padding:14px 15px!important;
+  background:linear-gradient(110deg,#eeeaff 0%,#f5f2ff 50%,#e9faf5 100%)!important;
+  box-shadow:0 5px 0 #e8e2f4!important;
+}
+#taskManagerView .task-two-stats .task-stat{
+  border-width:1.5px!important;
+  box-shadow:0 4px 0 #e5def2!important;
+}
+#taskManagerView .task-board .task-lanes{gap:16px!important}
+#taskManagerView .task-board .ca-lane,
+#taskManagerView .task-board .personal-lane{
+  padding:15px!important;
+  border-width:2px!important;
+  border-radius:20px!important;
+  box-shadow:0 6px 0 #e6def3,0 12px 22px #51438a0e!important;
+}
+#taskManagerView .task-board .ca-lane{
+  background:linear-gradient(145deg,#f0eaff 0%,#e9eaff 55%,#f4efff 100%)!important;
+  border-color:#c8bafa!important;
+}
+#taskManagerView .task-board .personal-lane{
+  background:linear-gradient(145deg,#e0f9ef 0%,#e5fbf7 55%,#e8f5ff 100%)!important;
+  border-color:#9dddc8!important;
+}
+#taskManagerView .task-board .task-lane-heading{
+  padding:9px!important;
+  margin-bottom:12px!important;
+  border:1px solid #ffffffd9!important;
+  border-radius:14px!important;
+  background:#ffffffad!important;
+}
+#taskManagerView .task-board .task-lane-heading h3{
+  font-size:16px!important;font-weight:950!important;color:#24213f!important
+}
+#taskManagerView .task-board .lane-count{
+  border:1px solid #ded6fb!important;
+  background:#fff!important;
+  font-size:11px!important;font-weight:950!important;
+}
+#taskManagerView .task-board .task-row{
+  border:1.5px solid #cfc6f3!important;
+  border-radius:14px!important;
+  padding:12px!important;
+  background:linear-gradient(115deg,#fff,#fbfaff)!important;
+  box-shadow:0 4px 10px #51438a0c!important;
+}
+#taskManagerView .task-board .personal-lane .task-row{border-color:#b7e5d6!important}
+#taskManagerView .task-board .task-empty{
+  border:1.5px dashed #bcb0e7!important;
+  border-radius:13px!important;
+  background:#ffffff9c!important;
+  color:#675a88!important;
+}
+#taskManagerView .task-board .personal-lane .task-empty{
+  border-color:#9ed8c4!important;color:#3f7d6f!important;background:#ffffffaa!important;
+}
+#taskManagerView .task-board .task-form{
+  border:1.5px solid #cdc4f0!important;
+  border-radius:17px!important;
+  box-shadow:0 6px 0 #e6def3!important;
+  padding:16px!important;
+}
+@media(max-width:760px){
+  .manager-view#taskManagerView{padding:12px!important;border-radius:24px!important}
+  #taskManagerView .manager-page-heading{padding:12px!important;border-radius:17px!important;margin-bottom:16px!important}
+  #taskManagerView .wake-grid{gap:15px!important;margin-bottom:18px!important}
+  #taskManagerView .wake-card{padding:15px!important;border-radius:19px!important}
+  #taskManagerView .wake-card .panel-head h2{font-size:20px!important}
+  #taskManagerView .wake-facts{margin:10px 0!important}
+  #taskManagerView .wake-fact,#taskManagerView .wake-card.success .wake-fact,#taskManagerView .wake-card.missed .wake-fact{padding:9px!important}
+  #taskManagerView .wake-fact small{font-size:9px!important}
+  #taskManagerView .wake-fact strong{font-size:15px!important}
+  #taskManagerView .task-board{padding:13px!important;border-radius:20px!important}
+  #taskManagerView .task-board-top{padding:11px!important;border-radius:14px!important}
+  #taskManagerView .task-board .ca-lane,#taskManagerView .task-board .personal-lane{padding:12px!important;border-radius:17px!important}
+  #taskManagerView .task-board .task-lane-heading{padding:8px!important}
+}
+@media(max-width:370px){
+  #taskManagerView .wake-fact{padding:8px 7px!important}
+  #taskManagerView .wake-fact small{font-size:8px!important;letter-spacing:0!important}
+  #taskManagerView .wake-fact strong{font-size:14px!important}
+}
+
 </style>
 </head>
 <body>
