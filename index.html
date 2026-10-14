@@ -1008,6 +1008,231 @@ body.night-mode #takeTestView .test-result-copy p{color:#d8c5e6}
 body.night-mode #takeTestView .test-met-check{background:#211a2d;border-color:#685076;color:#fff0ff}
 body.night-mode #takeTestView .test-record-button{background:linear-gradient(110deg,#6942bc,#9953ba 58%,#ce639c)!important;box-shadow:0 6px 0 #1e1728}
 
+
+/* Match Study Planner + Take a Test to the Task Manager design system */
+#studyManagerView.study-planner,
+#takeTestView.take-test-view{
+  background:linear-gradient(180deg,#f0edff 0%,#fff7fc 32%,#f0fbff 68%,#f4f2ff 100%)!important;
+  border:1px solid #ddd5fb!important;border-radius:27px!important;padding:16px!important;
+  margin:0 -8px 18px!important;color:#20213a!important;
+  box-shadow:0 14px 32px #51438a12!important;
+  font-family:inherit;
+}
+#studyManagerView .planner-heading,
+#takeTestView .test-page-heading{
+  display:flex;align-items:center;gap:18px;margin:2px 0 19px!important;
+  padding:14px 16px!important;border:1px solid #e7dff8!important;border-radius:20px!important;
+  background:linear-gradient(110deg,#f6f0ff 0%,#fff4f8 50%,#edfbf7 100%)!important;
+  box-shadow:0 8px 22px #54427c0c;
+}
+#studyManagerView .study-page-heading h1,
+#takeTestView .test-page-title h1{
+  font-size:clamp(28px,4vw,37px)!important;font-weight:950!important;
+  letter-spacing:-1.2px!important;line-height:1.12!important;margin:5px 0!important;color:#20213a!important
+}
+#studyManagerView .study-kicker,
+#takeTestView .test-kicker{
+  font-size:11px!important;font-weight:900!important;letter-spacing:.55px!important;
+  color:#6553ce!important;text-transform:uppercase
+}
+#studyManagerView .study-back,
+#takeTestView .test-back{
+  padding:10px 13px!important;border:1px solid #e5e7f1!important;border-radius:12px!important;
+  background:#fff!important;color:#4e5470!important;font-size:12px!important;font-weight:900!important;
+  box-shadow:none!important;white-space:nowrap
+}
+#studyManagerView .planner-heading .take-test-button{
+  width:76px!important;height:61px!important;flex:0 0 76px!important;border:1px solid #d8d1ff!important;
+  border-radius:15px!important;background:linear-gradient(145deg,#eee9ff,#e5edff)!important;
+  color:#5748bc!important;box-shadow:0 6px 15px #51438a12!important
+}
+#studyManagerView .planner-heading .take-test-button small{font-size:10px!important;font-weight:900!important;color:#5748bc!important}
+#studyManagerView .planner-study-time{
+  margin:0 0 17px!important;min-height:205px;padding:25px 28px!important;
+  border:1px solid #41355f!important;border-radius:22px!important;
+  background:linear-gradient(120deg,#25233f 0%,#38345a 58%,#66517f 100%)!important;
+  color:#fff!important;box-shadow:0 14px 28px #25233f2b!important
+}
+#studyManagerView .planner-label{font-size:12px!important;font-weight:900!important;letter-spacing:.5px!important;color:#f5eaff!important}
+#studyManagerView .planner-big-time{font-size:clamp(48px,6.2vw,70px)!important;font-weight:950!important;letter-spacing:-1.5px!important}
+#studyManagerView .planner-target-caption{font-size:13px!important;font-weight:850!important;color:#f1eafa!important}
+#studyManagerView .planner-time-track{height:9px!important;background:#ffffff2d!important;border:1px solid #ffffff22!important}
+#studyManagerView .planner-time-track>div{background:linear-gradient(90deg,#a6f3cc,#d7fff0)!important}
+#studyManagerView .planner-mini-grid{gap:15px!important;margin-bottom:17px!important}
+#studyManagerView .planner-sessions-card,
+#studyManagerView .planner-target-card{
+  border:1px solid #d8d0ff!important;border-radius:18px!important;padding:17px!important;
+  box-shadow:0 10px 24px #2936530c!important
+}
+#studyManagerView .planner-sessions-card{
+  background:linear-gradient(150deg,#f2edff 0%,#e8edff 62%,#e6f1ff 100%)!important
+}
+#studyManagerView .planner-target-card{
+  background:linear-gradient(145deg,#fff0f7 0%,#f9efff 52%,#eef3ff 100%)!important;border-color:#edd0e6!important
+}
+#studyManagerView .planner-card-icon{width:43px!important;height:43px!important;border-radius:14px!important;font-size:22px!important;box-shadow:0 4px 12px #322f5910!important}
+#studyManagerView .planner-sessions-icon{background:#ffffffd9!important;border:1px solid #fff!important}
+#studyManagerView .planner-goal-icon{background:#ffffffd9!important;border:1px solid #fff!important}
+#studyManagerView .planner-mini-label{font-size:12px!important;font-weight:900!important;letter-spacing:.2px!important;color:#353650!important}
+#studyManagerView .planner-session-number{font-size:42px!important;font-weight:950!important;color:#6553ce!important}
+#studyManagerView .planner-mini-caption{font-size:11px!important;font-weight:800!important;color:#677187!important}
+#studyManagerView .planner-target-caption-small{font-size:11px!important;font-weight:750!important;color:#667085!important}
+#studyManagerView .planner-target-value{color:#6553ce!important}
+#studyManagerView .planner-target-value strong{font-size:30px!important;font-weight:950!important;color:#6553ce!important}
+#studyManagerView .planner-target-value span{font-size:11px!important;font-weight:900!important;color:#6553ce!important}
+#studyManagerView .planner-goal-track{height:8px!important;margin:14px 0 11px!important;background:#e0dafe!important;border:0!important}
+#studyManagerView .planner-goal-track>div{background:linear-gradient(90deg,#6553ce,#a6f3cc)!important}
+#studyManagerView .planner-slider-row{gap:10px!important;margin-bottom:10px!important}
+#studyManagerView .planner-slider-row label{font-size:12px!important;font-weight:900!important;color:#353650!important}
+#studyManagerView .planner-slider-row input{accent-color:#6553ce!important}
+#studyManagerView .planner-save-target{
+  width:100%!important;padding:12px!important;border:0!important;border-radius:12px!important;
+  background:#6553ce!important;color:#fff!important;font-size:12px!important;font-weight:900!important;
+  box-shadow:0 7px 16px #6d5ce82b!important
+}
+#studyManagerView .planner-save-target:hover{background:#5140bc!important}
+#studyManagerView .planner-log-card{
+  margin:0!important;padding:20px!important;border:1px solid #e4e3f2!important;border-radius:22px!important;
+  background:linear-gradient(135deg,#fff 0%,#fbfaff 55%,#f3faff 100%)!important;
+  box-shadow:0 14px 32px #51438a12!important
+}
+#studyManagerView .planner-log-heading{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px!important;padding-bottom:14px;
+  border-bottom:1px solid #e7e3f5!important
+}
+#studyManagerView .planner-log-icon{background:linear-gradient(140deg,#e9e4ff,#dbf8ef)!important;border:1px solid #fff!important}
+#studyManagerView .planner-log-heading h2{font-size:23px!important;font-weight:950!important;letter-spacing:-.6px!important;color:#21213d!important;margin:4px 0 0!important}
+#studyManagerView .planner-log-heading p{font-size:12px!important;font-weight:700!important;line-height:1.45!important;color:#667085!important}
+#studyManagerView .planner-session-form .field{margin-bottom:13px!important}
+#studyManagerView .planner-session-form .field label{font-size:12px!important;font-weight:900!important;color:#353650!important;margin-bottom:6px!important}
+#studyManagerView .planner-session-form .field input,
+#studyManagerView .planner-session-form .field select,
+#studyManagerView .planner-session-form .field textarea{
+  background:#fff!important;border:1px solid #d9d6f8!important;border-radius:12px!important;
+  color:#272940!important;font-size:14px!important;font-weight:750!important;padding:12px 13px!important;
+  box-shadow:none!important;min-height:46px
+}
+#studyManagerView .planner-session-form .field input:focus,
+#studyManagerView .planner-session-form .field select:focus,
+#studyManagerView .planner-session-form .field textarea:focus{border-color:#9c91ef!important;box-shadow:0 0 0 3px #6553ce1c!important}
+#studyManagerView .planner-save-session{
+  min-height:47px!important;border:0!important;border-radius:13px!important;
+  background:#25233f!important;color:#fff!important;font-size:13px!important;font-weight:900!important;
+  box-shadow:0 7px 16px #25233f24!important
+}
+#studyManagerView .planner-save-session:hover{background:#403b63!important}
+
+/* Test page uses the Task Manager's same light shell and pastel panel palette */
+#takeTestView .test-page-mark{width:45px;height:45px;border:1px solid #d8d1ff!important;border-radius:14px!important;background:linear-gradient(140deg,#eee9ff,#dbf8ef)!important;box-shadow:0 5px 12px #322f5910!important}
+#takeTestView .test-intro{
+  padding:15px 17px!important;margin-bottom:17px!important;border-radius:17px!important;
+  border:1px solid #e0dafe!important;background:linear-gradient(120deg,#f0edff,#fff4f8 55%,#eefbf7)!important;
+  box-shadow:0 8px 20px #51438a0c!important
+}
+#takeTestView .test-intro strong{font-size:14px!important;font-weight:900!important;color:#21213d!important}
+#takeTestView .test-intro small{font-size:12px!important;font-weight:700!important;line-height:1.5!important;color:#667085!important}
+#takeTestView .test-workspace{gap:16px!important}
+#takeTestView .test-settings-grid{
+  grid-template-columns:1.1fr .9fr!important;gap:13px!important;padding:20px!important;
+  border:1px solid #e4e3f2!important;border-radius:22px!important;
+  background:linear-gradient(135deg,#fff 0%,#fbfaff 55%,#f3faff 100%)!important;
+  box-shadow:0 14px 32px #51438a12!important
+}
+#takeTestView .test-settings-grid .field{margin:0!important}
+#takeTestView .test-settings-grid label{font-size:12px!important;font-weight:900!important;color:#353650!important}
+#takeTestView .test-settings-grid input,
+#takeTestView .test-settings-grid select{
+  width:100%;min-height:46px;padding:12px 13px!important;border-radius:12px!important;
+  border:1px solid #d9d6f8!important;background:#fff!important;color:#272940!important;
+  font-size:14px!important;font-weight:750!important;box-shadow:none!important
+}
+#takeTestView .test-clock-card{
+  padding:25px!important;border-radius:22px!important;border:1px solid #41355f!important;
+  background:linear-gradient(120deg,#25233f 0%,#38345a 58%,#66517f 100%)!important;
+  color:#fff!important;box-shadow:0 14px 28px #25233f2b!important
+}
+#takeTestView .test-clock-top{font-size:12px!important;font-weight:900!important;letter-spacing:.3px!important;color:#f1eafa!important}
+#takeTestView .test-state-pill{padding:6px 10px!important;background:#ffffff1e!important;border:1px solid #ffffff45!important;border-radius:99px!important;font-size:11px!important;font-weight:900!important}
+#takeTestView .test-timer-display{font-size:clamp(60px,8vw,82px)!important;font-weight:950!important;letter-spacing:-1.5px!important;color:#fff!important}
+#takeTestView .test-timer-elapsed{font-size:13px!important;font-weight:800!important;color:#f1eafa!important}
+#takeTestView .test-timer-track{height:9px!important;background:#ffffff2d!important;border:1px solid #ffffff18!important}
+#takeTestView .test-timer-track>div{background:linear-gradient(90deg,#a6f3cc,#d7fff0)!important}
+#takeTestView .test-timer-buttons{gap:10px!important}
+#takeTestView .test-timer-buttons .button{min-width:112px;min-height:44px;border-radius:12px!important;font-size:12px!important;font-weight:900!important}
+#takeTestView .test-start-button{background:#e8e6ff!important;border:1px solid #d8d1ff!important;color:#5140bc!important;box-shadow:none!important}
+#takeTestView .test-pause-button{background:#ffffff20!important;border:1px solid #ffffff60!important;color:#fff!important;box-shadow:none!important}
+#takeTestView .test-reset-button{background:#ffffff10!important;border:1px solid #ffffff60!important;color:#fff!important;box-shadow:none!important}
+#takeTestView .test-result-card{
+  display:flex;align-items:center;justify-content:space-between;gap:13px;padding:19px!important;
+  border:1px solid #bcebdc!important;border-radius:19px!important;
+  background:linear-gradient(120deg,#e8f8f0,#eefbf7 52%,#e8f6ff)!important;
+  box-shadow:0 10px 24px #2936530c!important
+}
+#takeTestView .test-result-copy h2{font-size:21px!important;font-weight:950!important;letter-spacing:-.5px!important;color:#21213d!important}
+#takeTestView .test-result-copy p{font-size:12px!important;font-weight:700!important;line-height:1.5!important;color:#58677d!important}
+#takeTestView .test-met-check{
+  display:flex;align-items:center;gap:8px;white-space:nowrap;padding:12px 14px!important;
+  border-radius:13px!important;background:#fff!important;border:1px solid #bcebdc!important;
+  font-size:12px!important;font-weight:900!important;color:#137858!important
+}
+#takeTestView .test-met-check input{width:19px;height:19px;accent-color:#19a982}
+#takeTestView .test-record-button{
+  padding:13px!important;min-height:47px;border:0!important;border-radius:13px!important;
+  background:#25233f!important;color:#fff!important;font-size:13px!important;font-weight:900!important;
+  box-shadow:0 7px 16px #25233f24!important
+}
+#takeTestView .test-record-button:hover{background:#403b63!important}
+#takeTestView .test-record-message{font-size:12px!important;font-weight:850!important;color:#6553ce!important}
+
+/* The shared task manager mobile sizing/typography, adapted to Study + Test pages */
+@media(max-width:760px){
+ #studyManagerView.study-planner,#takeTestView.take-test-view{margin:0 -5px 15px!important;padding:10px!important;border-radius:23px!important}
+ #studyManagerView .planner-heading,#takeTestView .test-page-heading{gap:9px;padding:12px!important;margin:0 0 14px!important;border-radius:17px!important}
+ #studyManagerView .study-page-heading h1,#takeTestView .test-page-title h1{font-size:27px!important;font-weight:950!important;letter-spacing:-.6px!important}
+ #studyManagerView .planner-heading .take-test-button{width:67px!important;height:57px!important;flex-basis:67px!important}
+ #studyManagerView .planner-study-time{min-height:165px;padding:17px 15px!important;margin-bottom:15px!important;border-radius:19px!important}
+ #studyManagerView .planner-big-time{font-size:clamp(41px,10vw,57px)!important;letter-spacing:-1px!important}
+ #studyManagerView .planner-label{font-size:10px!important}
+ #studyManagerView .planner-target-caption{font-size:12px!important}
+ #studyManagerView .planner-time-art{width:68px;height:76px;flex-basis:68px}
+ #studyManagerView .planner-time-art>span{font-size:29px}
+ #studyManagerView .planner-time-ring{width:66px;height:66px}
+ #studyManagerView .planner-time-ring.ring-two{width:49px;height:49px}
+ #studyManagerView .planner-mini-grid{grid-template-columns:1fr!important;gap:12px!important;margin-bottom:15px!important}
+ #studyManagerView .planner-sessions-card,#studyManagerView .planner-target-card{min-height:0;padding:14px!important;border-radius:17px!important}
+ #studyManagerView .planner-session-number{font-size:38px!important}
+ #studyManagerView .planner-mini-label{font-size:12px!important}
+ #studyManagerView .planner-target-value strong{font-size:29px!important}
+ #studyManagerView .planner-log-card{padding:15px!important;border-radius:19px!important}
+ #studyManagerView .planner-log-heading{gap:9px;padding-bottom:13px;margin-bottom:14px}
+ #studyManagerView .planner-log-heading h2{font-size:20px!important;font-weight:950!important}
+ #studyManagerView .planner-log-heading p{font-size:12px!important}
+ #studyManagerView .planner-session-form .field label{font-size:12px!important;font-weight:900!important}
+ #studyManagerView .planner-session-form .field input,#studyManagerView .planner-session-form .field select,#studyManagerView .planner-session-form .field textarea{min-height:46px;padding:11px!important;font-size:14px!important;font-weight:750!important}
+ #studyManagerView .planner-save-session{min-height:46px;font-size:13px!important}
+ #takeTestView .test-page-heading{gap:9px;flex-wrap:wrap}
+ #takeTestView .test-back{padding:10px!important;font-size:11px!important}
+ #takeTestView .test-settings-grid{grid-template-columns:1fr!important;padding:14px!important;gap:12px!important;border-radius:18px!important}
+ #takeTestView .test-settings-grid label{font-size:12px!important;font-weight:900!important}
+ #takeTestView .test-settings-grid input,#takeTestView .test-settings-grid select{min-height:46px;font-size:14px!important;padding:11px!important}
+ #takeTestView .test-clock-card{padding:19px 14px!important;border-radius:19px!important}
+ #takeTestView .test-timer-display{font-size:clamp(55px,14vw,72px)!important}
+ #takeTestView .test-timer-buttons{gap:7px!important}
+ #takeTestView .test-timer-buttons .button{flex:1;min-width:0;min-height:43px;padding:10px 7px!important;font-size:12px!important}
+ #takeTestView .test-result-card{align-items:stretch;flex-direction:column;gap:12px;padding:14px!important;border-radius:17px!important}
+ #takeTestView .test-result-copy h2{font-size:19px!important}
+ #takeTestView .test-met-check{justify-content:center}
+}
+@media(max-width:390px){
+ #studyManagerView .planner-heading .take-test-button{width:60px!important;flex-basis:60px!important}
+ #studyManagerView .planner-heading .take-test-button small{font-size:9px!important}
+ #studyManagerView .planner-time-art{width:52px;height:59px;flex-basis:52px}
+ #studyManagerView .planner-time-ring{width:52px;height:52px}
+ #studyManagerView .planner-time-ring.ring-two{width:38px;height:38px}
+ #studyManagerView .planner-big-time{font-size:36px!important}
+ #takeTestView .test-timer-display{font-size:49px!important}
+}
+
 </style>
 </head>
 <body>
