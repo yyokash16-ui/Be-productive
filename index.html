@@ -2438,12 +2438,71 @@ function reviewReportRows(day){
 }
 function downloadReviewFile(name,content,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportReviewDayCsv(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day);const csv='\uFEFF'+report.rows.map(reviewCsvLine).join('\r\n');downloadReviewFile('be-productive-review-'+day+'.csv',csv,'text/csv;charset=utf-8;');say('reviewExportMessage','Daily task detail CSV downloaded.',true)}
-function exportReviewDayWord(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day),d=report.data;const eh=v=>esc(String(v??''));const taskRows=d.tasks.map(t=>'<tr><td>'+eh(t.title)+'</td><td>'+eh(t.category)+'</td><td><strong>'+eh(reviewStatusLabel(t.status))+'</strong></td><td>'+eh(reviewClock(t.createdAt))+'</td><td>'+eh(t.completedAt?reviewClock(t.completedAt):'—')+'</td><td>'+eh(reviewActionLabel(t.lastAction))+'</td><td>'+eh(reviewClock(t.lastActivityAt))+'</td></tr>').join('');const html='<!doctype html><html><head><meta charset="utf-8"><title>Daily Review '+day+'</title><style>body{font-family:Arial,sans-serif;color:#20213d;margin:30px}h1{color:#6553ce}h2{margin-top:28px}p{line-height:1.6}table{border-collapse:collapse;width:100%;font-size:12px;margin-top:14px}th,td{border:1px solid #d8d5eb;padding:8px;text-align:left}th{background:#eeeaff}td{vertical-align:top}.summary{background:#f5f1ff;padding:14px;border:1px solid #d8d0f0;border-radius:10px}.note{font-size:11px;color:#667085}</style></head><body><h1>Be Productive — Daily Review</h1><p>'+eh(reviewLongDate(day))+'<br><span class="note">'+eh(d.currentDay?'Snapshot of current progress':'End-of-day snapshot')+'</span></p><div class="summary"><h2>Efficiency: '+eh(d.efficiency===null?'Not measurable':d.efficiency+'%')+'</h2><p>Planned: '+d.planned+' · Completed: '+d.completed+' · Remaining: '+d.remaining+' · Removed: '+d.removed+'</p></div><h2>Task-by-task detail</h2><table><thead><tr><th>Task name</th><th>Category</th><th>Status at snapshot</th><th>Added</th><th>Completed</th><th>Last action</th><th>Last activity</th></tr></thead><tbody>'+taskRows+'</tbody></table><p class="note">Removed tasks are shown separately from incomplete tasks.</p></body></html>';downloadReviewFile('be-productive-review-'+day+'.doc','\uFEFF'+html,'application/msword;charset=utf-8;');say('reviewExportMessage','Daily review Word report downloaded.',true)}
+function exportReviewDayWord(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day),d=report.data;const eh=v=>esc(String(v??''));const taskRows=d.tasks.map(t=>'<tr><td>'+eh(t.title)+'</td><td>'+eh(t.category)+'</td><td><strong>'+eh(reviewStatusLabel(t.status))+'</strong></td><td>'+eh(reviewClock(t.createdAt))+'</td><td>'+eh(t.completedAt?reviewClock(t.completedAt):'—')+'</td><td>'+eh(reviewActionLabel(t.lastAction))+'</td><td>'+eh(reviewClock(t.lastActivityAt))+'</td></tr>').join('');const html='<!doctype html><html><head><meta charset="utf-8"><title>Daily Review '+day+'</title><style>@page { size: A4 portrait; margin: 18mm 16mm; } @page Section1 { size: 595.3pt 841.9pt; mso-page-orientation: portrait; margin: 51pt 45pt 51pt 45pt; } div.Section1 { page: Section1; } body{font-family:Arial,sans-serif;font-size:10.5pt;color:#20213d;margin:0}h1{color:#6553ce}h2{margin-top:28px}p{line-height:1.6}table{border-collapse:collapse;width:100%;font-size:12px;margin-top:14px}th,td{border:1px solid #d8d5eb;padding:8px;text-align:left}th{background:#eeeaff}td{vertical-align:top}.summary{background:#f5f1ff;padding:14px;border:1px solid #d8d0f0;border-radius:10px}.note{font-size:11px;color:#667085}</style></head><body><div class="Section1"><h1>Be Productive — Daily Review</h1><p>'+eh(reviewLongDate(day))+'<br><span class="note">'+eh(d.currentDay?'Snapshot of current progress':'End-of-day snapshot')+'</span></p><div class="summary"><h2>Efficiency: '+eh(d.efficiency===null?'Not measurable':d.efficiency+'%')+'</h2><p>Planned: '+d.planned+' · Completed: '+d.completed+' · Remaining: '+d.remaining+' · Removed: '+d.removed+'</p></div><h2>Task-by-task detail</h2><table><thead><tr><th>Task name</th><th>Category</th><th>Status at snapshot</th><th>Added</th><th>Completed</th><th>Last action</th><th>Last activity</th></tr></thead><tbody>'+taskRows+'</tbody></table><p class="note">Removed tasks are shown separately from incomplete tasks.</p></div></body></html>';downloadReviewFile('be-productive-review-'+day+'.doc','\uFEFF'+html,'application/msword;charset=utf-8;');say('reviewExportMessage','Daily review Word report downloaded.',true)}
 function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyMessage').textContent='';return}$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
-function exportTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const lines=[['BE PRODUCTIVE — DAILY TASK REPORT'],['Date',reportDayLabel(day)],[],['Task summary','Count'],['Tasks added',c.added],['Tasks completed',c.completed],['Incomplete at end of day',snap.remaining]];const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','CSV report downloaded.',true)}
-function exportTaskHistoryWord(){const day=$('historyDate').value||today();if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}const c=historyCountsForDay(day),snap=taskSnapshotAtEndOfDay(day);const escHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));const doc='<!doctype html><html><head><meta charset="utf-8"><title>Daily Task Report</title><style>body{font-family:Arial,sans-serif;color:#20233b;margin:35px}h1{color:#6553ce}p{color:#667085}table{border-collapse:collapse;width:100%;margin-top:22px}th,td{border:1px solid #d9ddec;padding:13px;text-align:left}th{background:#eeebff;color:#40378b}td:last-child{font-weight:bold;text-align:center}.note{margin-top:24px;font-size:11px;color:#788198}</style></head><body><h1>Be Productive</h1><h2>Daily Task Report</h2><p>'+escHtml(reportDayLabel(day))+'</p><table><thead><tr><th>Summary</th><th>Tasks</th></tr></thead><tbody><tr><td>Tasks added</td><td>'+c.added+'</td></tr><tr><td>Tasks completed</td><td>'+c.completed+'</td></tr><tr><td>Incomplete at end of day</td><td>'+snap.remaining+'</td></tr></tbody></table><p class="note">Report generated by Be Productive.</p></body></html>';const blob=new Blob(['\uFEFF',doc],{type:'application/msword;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='be-productive-task-report-'+day+'.doc';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);say('historyMessage','Word-compatible report downloaded.',true)}
+function taskReportDetailsForDay(day){
+ const snap=taskSnapshotAtEndOfDay(day),details=new Map();
+ const cutoff=new Date(day+'T23:59:59.999').getTime();
+ for(const [id,row] of snap.latest){
+  if(!id)continue;
+  const historyRows=state.taskHistory.filter(item=>item.task_id===id&&Number.isFinite(new Date(item.event_at).getTime())&&new Date(item.event_at).getTime()<=cutoff);
+  const created=historyRows.find(item=>item.event_type==='created');
+  const removed=row.event_type==='deleted';
+  const done=removed?false:(typeof row.is_completed==='boolean'?row.is_completed:row.event_type==='completed');
+  details.set(id,{
+   id,
+   title:row.task_title||created?.task_title||'Unnamed task',
+   category:(row.task_subject||created?.task_subject)==='Personal'?'Personal':'Professional',
+   createdAt:created?.task_created_at||created?.event_at||row.task_created_at||row.event_at,
+   status:removed?'Removed':done?'Completed':'Incomplete',
+   lastActivity:row.event_at||''
+  });
+ }
+ for(const task of state.tasks||[]){
+  if(taskCreatedOn(task)!==day||details.has(task.id))continue;
+  details.set(task.id,{
+   id:task.id,title:task.title||'Unnamed task',category:task.subject==='Personal'?'Personal':'Professional',
+   createdAt:task.created_at||day+'T00:00:00',status:task.completed?'Completed':'Incomplete',lastActivity:task.updated_at||task.created_at||''
+  });
+ }
+ const tasks=[...details.values()].sort((a,b)=>new Date(a.createdAt)-new Date(b.createdAt));
+ return {tasks,completed:tasks.filter(t=>t.status==='Completed'),incomplete:tasks.filter(t=>t.status==='Incomplete'),removed:tasks.filter(t=>t.status==='Removed')};
+}
+function exportTaskHistory(){
+ const day=$('historyDate').value||today();
+ if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}
+ const details=taskReportDetailsForDay(day),total=details.tasks.length;
+ const lines=[
+  ['BE PRODUCTIVE — DAILY TASK REPORT'],['Date',reportDayLabel(day)],[],
+  ['Task summary','Count'],['Tasks added',total],['Tasks completed',details.completed.length],
+  ['Incomplete at end of day',details.incomplete.length],['Tasks removed',details.removed.length],[],
+  ['COMPLETED TASKS'],['Task name','Category','Status'],
+  ...details.completed.map(t=>[t.title,t.category,'Completed']),[],
+  ['INCOMPLETE TASKS'],['Task name','Category','Status'],
+  ...details.incomplete.map(t=>[t.title,t.category,'Incomplete']),[],
+  ['REMOVED TASKS'],['Task name','Category','Status'],
+  ...details.removed.map(t=>[t.title,t.category,'Removed'])
+ ];
+ const csv='\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='be-productive-task-report-'+day+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ say('historyMessage','Detailed task CSV downloaded.',true);
+}
+function exportTaskHistoryWord(){
+ const day=$('historyDate').value||today();
+ if(!state.historyReady){say('historyMessage','Task report history is not available yet.');return}
+ const details=taskReportDetailsForDay(day),total=details.tasks.length;
+ const escHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ const table=(tasks,status)=>tasks.length
+  ?'<table><thead><tr><th>Task name</th><th>Category</th><th>Status</th></tr></thead><tbody>'+tasks.map(t=>'<tr><td>'+escHtml(t.title)+'</td><td>'+escHtml(t.category)+'</td><td>'+escHtml(status)+'</td></tr>').join('')+'</tbody></table>'
+  :'<p class="empty">No tasks in this section.</p>';
+ const doc='<!doctype html><html><head><meta charset="utf-8"><title>Daily Task Report</title><style>@page { size: A4 portrait; margin: 18mm 16mm; } @page Section1 { size: 595.3pt 841.9pt; mso-page-orientation: portrait; margin: 51pt 45pt 51pt 45pt; } div.Section1 { page: Section1; } body{font-family:Arial,sans-serif;font-size:10.5pt;color:#20233b;margin:0}h1{font-size:21pt;color:#6553ce;margin:0 0 7pt}h2{font-size:14pt;color:#282442;margin:19pt 0 8pt}p{font-size:10.5pt;color:#4e5870;margin:5pt 0 12pt}table{border-collapse:collapse;width:100%;margin-top:8pt;table-layout:fixed;page-break-inside:auto}tr{page-break-inside:avoid}th,td{border:1px solid #d9ddec;padding:7pt;text-align:left;vertical-align:top;overflow-wrap:break-word}th{background:#eeebff;color:#40378b;font-weight:bold}.summary td:first-child{width:72%}.summary td:last-child{width:28%;font-weight:bold;text-align:center}.empty{padding:9pt;border:1px dashed #d9ddec;color:#667085}.note{margin-top:20pt;font-size:9pt;color:#788198}</style></head><body><div class="Section1"><h1>Be Productive</h1><h2>Daily Task Report</h2><p>'+escHtml(reportDayLabel(day))+'</p><table class="summary"><thead><tr><th>Daily summary</th><th>Tasks</th></tr></thead><tbody><tr><td>Tasks added</td><td>'+total+'</td></tr><tr><td>Tasks completed</td><td>'+details.completed.length+'</td></tr><tr><td>Incomplete at end of day</td><td>'+details.incomplete.length+'</td></tr><tr><td>Tasks removed</td><td>'+details.removed.length+'</td></tr></tbody></table><h2>Completed tasks ('+details.completed.length+')</h2>'+table(details.completed,'Completed')+'<h2>Incomplete tasks ('+details.incomplete.length+')</h2>'+table(details.incomplete,'Incomplete')+'<h2>Removed tasks ('+details.removed.length+')</h2>'+table(details.removed,'Removed')+'<p class="note">Report generated by Be Productive.</p></div></body></html>';
+ const blob=new Blob(['\uFEFF',doc],{type:'application/msword;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='be-productive-task-report-'+day+'.doc';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ say('historyMessage','A4 Word report with task names downloaded.',true);
+}
 const testTimer={running:false,startedAt:0,elapsedBeforeStart:0,interval:null};
 function testElapsedSeconds(){return Math.max(0,Math.floor(testTimer.elapsedBeforeStart+(testTimer.running?(Date.now()-testTimer.startedAt)/1000:0)))}
 function testClockText(total){const v=Math.max(0,Math.floor(total));return String(Math.floor(v/60)).padStart(2,'0')+':'+String(v%60).padStart(2,'0')}
