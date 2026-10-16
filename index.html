@@ -1952,6 +1952,70 @@ body.night-mode #reviewManagerView .review-incomplete-group .review-task-group-h
 body.night-mode #reviewManagerView .review-task-group .review-task-detail-row{background:#211d2c;border-color:#514361}
 body.night-mode #reviewManagerView .review-task-group .review-day-empty{background:#211d2c;border-color:#514361}
 
+
+/* Review Time: clean vertical pillars + Today / Weekly / Monthly efficiency rings */
+#reviewManagerView .review-efficiency-main p#reviewEfficiencyFormula{display:none!important}
+#reviewManagerView .review-tap-hint{font-size:12px;font-weight:850;color:#25233f;padding:10px 12px;margin-bottom:14px;border-radius:12px;background:linear-gradient(100deg,#eeeaff,#fff0f7);border:1px solid #ded5f3}
+#reviewManagerView .review-daily-chart{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(5px,1.4vw,15px);min-height:225px;padding:14px 7px 2px;overflow-x:auto}
+#reviewManagerView .review-day-bar-button{appearance:none;border:0!important;outline:0;background:transparent!important;box-shadow:none!important;transform:none!important;flex:1 0 0;min-width:0;max-width:125px;padding:0 3px 6px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;border-radius:14px;cursor:pointer;color:#24213d;font-family:inherit}
+#reviewManagerView .review-day-bar-button:focus-visible{outline:2px solid #6553ce!important;outline-offset:2px}
+#reviewManagerView .review-day-bar-button.selected{background:linear-gradient(180deg,#eeeaff58,#fff0f755)!important;box-shadow:inset 0 0 0 1.5px #8d7ce2!important}
+#reviewManagerView .review-bar-percent{font-size:12px;font-weight:950;color:#25233f;line-height:1.1;min-height:14px}
+#reviewManagerView .review-day-pillar{display:flex;align-items:flex-end;justify-content:center;width:min(68%,54px);height:145px;border-radius:13px 13px 7px 7px;overflow:hidden;background:linear-gradient(180deg,#f0edfb,#e6e1f3);box-shadow:inset 0 0 0 1px #d9d2ee}
+#reviewManagerView .review-day-pillar-fill{display:block;width:100%;min-height:0;border-radius:12px 12px 5px 5px;background:linear-gradient(180deg,#8b7ce8 0%,#6553ce 100%);transition:height .3s}
+#reviewManagerView .review-day-bar-button.selected .review-day-pillar-fill{background:linear-gradient(180deg,#a69afa,#5e4ac8)}
+#reviewManagerView .review-day-bar-label{display:grid;gap:3px;justify-items:center;text-align:center}
+#reviewManagerView .review-day-bar-label strong{font-size:12px;font-weight:950;color:#24213d}
+#reviewManagerView .review-day-bar-label small{font-size:10px;font-weight:800;color:#657089}
+#reviewManagerView .review-day-bar-counts{font-size:10px;font-weight:900;color:#68718a}
+#reviewManagerView .review-chart-legend{display:flex;justify-content:center;gap:10px;margin-top:8px;font-size:10px;font-weight:850;color:#657089}
+#reviewManagerView .review-chart-legend .legend-done{background:#6553ce}
+#reviewManagerView .review-period-efficiency{padding:18px 17px;border-color:#d8d2f0;background:linear-gradient(145deg,#fff 0%,#f5f1ff 50%,#f0fbf7 100%)}
+#reviewManagerView .review-period-circles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start;padding:7px 0 2px}
+#reviewManagerView .review-period-item{display:grid;justify-items:center;align-content:start;gap:10px;min-width:0}
+#reviewManagerView .review-period-gauge{--period-efficiency:0%;width:clamp(76px,10vw,112px);height:clamp(76px,10vw,112px);border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(#6553ce var(--period-efficiency),#e3def1 0);box-shadow:0 0 0 5px #ffffff9c,inset 0 0 0 1px #ffffff;transition:background .3s}
+#reviewManagerView .review-period-gauge:before{content:"";position:absolute;inset:8px;border-radius:50%;background:linear-gradient(145deg,#fff,#f7f3ff);box-shadow:inset 0 0 0 1px #e2dcf3}
+#reviewManagerView .review-period-gauge-centre{position:relative;z-index:1;display:grid;place-items:center}
+#reviewManagerView .review-period-gauge-centre strong{font-size:clamp(17px,2.3vw,24px);font-weight:950;letter-spacing:-.45px;color:#22213d}
+#reviewManagerView .review-period-title{font-size:13px;font-weight:950;text-align:center;color:#25233f}
+#reviewManagerView .review-period-item.today .review-period-gauge{background:conic-gradient(#6553ce var(--period-efficiency),#e3def1 0)}
+#reviewManagerView .review-period-item.week .review-period-gauge{background:conic-gradient(#14a184 var(--period-efficiency),#dcece7 0)}
+#reviewManagerView .review-period-item.month .review-period-gauge{background:conic-gradient(#d979ac var(--period-efficiency),#f0dfe9 0)}
+#reviewManagerView .review-category-panel{display:none!important}
+@media(max-width:760px){
+ #reviewManagerView .review-daily-chart{min-height:205px;gap:5px;padding:12px 1px 3px}
+ #reviewManagerView .review-day-bar-button{padding:0 1px 5px;gap:7px;border-radius:10px}
+ #reviewManagerView .review-bar-percent{font-size:10px}
+ #reviewManagerView .review-day-pillar{height:123px;width:min(68%,42px);border-radius:10px 10px 5px 5px}
+ #reviewManagerView .review-day-bar-label strong{font-size:11px}
+ #reviewManagerView .review-day-bar-label small{font-size:9px}
+ #reviewManagerView .review-day-bar-counts{font-size:9px}
+ #reviewManagerView .review-period-efficiency{padding:14px 10px}
+ #reviewManagerView .review-period-circles{gap:4px;padding-top:5px}
+ #reviewManagerView .review-period-gauge{width:clamp(70px,23vw,92px);height:clamp(70px,23vw,92px);box-shadow:0 0 0 3px #ffffff9c}
+ #reviewManagerView .review-period-gauge:before{inset:6px}
+ #reviewManagerView .review-period-gauge-centre strong{font-size:19px}
+ #reviewManagerView .review-period-title{font-size:11px}
+}
+@media(max-width:360px){
+ #reviewManagerView .review-period-gauge{width:66px;height:66px}
+ #reviewManagerView .review-period-gauge-centre strong{font-size:17px}
+ #reviewManagerView .review-period-title{font-size:10px}
+ #reviewManagerView .review-day-pillar{height:108px;width:70%}
+ #reviewManagerView .review-day-bar-label small{font-size:8px}
+}
+body.night-mode #reviewManagerView .review-tap-hint{background:linear-gradient(100deg,#332744,#3d263a);border-color:#574366;color:#fff}
+body.night-mode #reviewManagerView .review-day-bar-button.selected{background:#ffffff0c!important;box-shadow:inset 0 0 0 1.5px #a69afa!important}
+body.night-mode #reviewManagerView .review-bar-percent,body.night-mode #reviewManagerView .review-day-bar-label strong,body.night-mode #reviewManagerView .review-period-title{color:#fff}
+body.night-mode #reviewManagerView .review-day-bar-label small,body.night-mode #reviewManagerView .review-day-bar-counts{color:#c9bdd8}
+body.night-mode #reviewManagerView .review-day-pillar{background:linear-gradient(180deg,#342d45,#282236);box-shadow:inset 0 0 0 1px #5b4c70}
+body.night-mode #reviewManagerView .review-period-efficiency{background:linear-gradient(145deg,#272132,#292239 50%,#1c3934)!important;border-color:#514361}
+body.night-mode #reviewManagerView .review-period-gauge:before{background:linear-gradient(145deg,#292238,#211b2f);box-shadow:inset 0 0 0 1px #5a4a70}
+body.night-mode #reviewManagerView .review-period-gauge-centre strong{color:#fff}
+body.night-mode #reviewManagerView .review-period-item.today .review-period-gauge{background:conic-gradient(#a69afa var(--period-efficiency),#483d5a 0)}
+body.night-mode #reviewManagerView .review-period-item.week .review-period-gauge{background:conic-gradient(#75dbbc var(--period-efficiency),#304942 0)}
+body.night-mode #reviewManagerView .review-period-item.month .review-period-gauge{background:conic-gradient(#f0a2cf var(--period-efficiency),#4a3547 0)}
+
 </style>
 </head>
 <body>
@@ -2170,9 +2234,26 @@ body.night-mode #reviewManagerView .review-task-group .review-day-empty{backgrou
   <div id="reviewNoData" class="review-no-data hidden"><span>📈</span><strong>No task data yet</strong><small>Add tasks in Task Manager. Each day’s saved tasks will appear here.</small></div>
   <section class="review-panel review-daily-panel">
     <div class="review-panel-heading"><div><div class="review-eyebrow">SELECT A DAY</div><h2>Daily progress</h2></div><span class="review-panel-icon">📅</span></div>
-    <div class="review-tap-hint">Tap a day to open its complete report ↓</div>
+    <div class="review-tap-hint">Tap a day to view completed and incomplete tasks. Tap it again to hide.</div>
     <div id="reviewDailyChart" class="review-daily-chart"></div>
-    <div class="review-chart-legend"><span><i class="legend-done"></i> Completed</span><span><i class="legend-open"></i> Remaining</span><span><i class="legend-removed"></i> Removed</span></div>
+    <div class="review-chart-legend"><span><i class="legend-done"></i> Daily efficiency</span></div>
+  </section>
+  <section class="review-panel review-period-efficiency">
+    <div class="review-panel-heading"><div><div class="review-eyebrow">AT A GLANCE</div><h2>Efficiency overview</h2></div><span class="review-panel-icon">◎</span></div>
+    <div class="review-period-circles">
+      <div class="review-period-item today">
+        <div id="reviewTodayGauge" class="review-period-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewTodayEfficiency">—</strong></div></div>
+        <strong class="review-period-title">Today</strong>
+      </div>
+      <div class="review-period-item week">
+        <div id="reviewWeekGauge" class="review-period-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewWeekEfficiency">—</strong></div></div>
+        <strong class="review-period-title">Weekly</strong>
+      </div>
+      <div class="review-period-item month">
+        <div id="reviewMonthGauge" class="review-period-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewMonthEfficiency">—</strong></div></div>
+        <strong class="review-period-title">Monthly</strong>
+      </div>
+    </div>
   </section>
   <section id="reviewSelectedDetail" class="review-panel review-selected-panel hidden">
     <div class="review-panel-heading review-detail-heading">
@@ -2192,10 +2273,6 @@ body.night-mode #reviewManagerView .review-task-group .review-day-empty{backgrou
       <button id="downloadReviewWord" class="button review-download-word" type="button">📝 Download Word</button>
     </div>
     <div id="reviewExportMessage" class="message" role="status"></div>
-  </section>
-  <section class="review-panel review-category-panel">
-    <div class="review-panel-heading"><div><div class="review-eyebrow">TASK TYPE</div><h2>Personal vs Professional</h2></div><span class="review-panel-icon">🎯</span></div>
-    <div id="reviewCategoryGrid" class="review-category-grid"></div>
   </section>
 </section>
 <div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
@@ -2295,12 +2372,18 @@ function reviewDaySnapshot(day){
  const planned=tasks.length,completed=tasks.filter(x=>x.status==='completed').length,removed=tasks.filter(x=>x.status==='removed').length,remaining=tasks.filter(x=>x.status==='remaining').length;
  return {day,cutoff,currentDay,tasks,planned,completed,remaining,removed,efficiency:planned?Math.round(completed/planned*100):null};
 }
+function reviewRangeProgress(startDay,endDay){
+ const dates=[];for(let day=startDay;day<=endDay;day=shiftDate(day,1))dates.push(day);
+ const snapshots=dates.map(reviewDaySnapshot);
+ const planned=snapshots.reduce((n,d)=>n+d.planned,0),completed=snapshots.reduce((n,d)=>n+d.completed,0),remaining=snapshots.reduce((n,d)=>n+d.remaining,0),removed=snapshots.reduce((n,d)=>n+d.removed,0);
+ return {startDay,endDay,days:snapshots,planned,completed,remaining,removed,efficiency:planned?Math.round(completed/planned*100):null};
+}
 function reviewProgressData(){
  const days=Array.from({length:7},(_,i)=>shiftDate(today(),i-6)).map(reviewDaySnapshot);
- const planned=days.reduce((n,d)=>n+d.planned,0),completed=days.reduce((n,d)=>n+d.completed,0),remaining=days.reduce((n,d)=>n+d.remaining,0),removed=days.reduce((n,d)=>n+d.removed,0);
- const all=days.flatMap(d=>d.tasks);
- const categoryStats=items=>{const planned=items.length,completed=items.filter(x=>x.status==='completed').length,remaining=items.filter(x=>x.status==='remaining').length,removed=items.filter(x=>x.status==='removed').length;return {planned,completed,remaining,removed,efficiency:planned?Math.round(completed/planned*100):null}};
- return {days,planned,completed,remaining,removed,efficiency:planned?Math.round(completed/planned*100):null,personal:categoryStats(all.filter(x=>x.category==='Personal')),professional:categoryStats(all.filter(x=>x.category==='Professional'))};
+ const weekly=reviewRangeProgress(shiftDate(today(),-6),today());
+ const monthly=reviewRangeProgress(today().slice(0,8)+'01',today());
+ const todayData=reviewDaySnapshot(today());
+ return {days,planned:weekly.planned,completed:weekly.completed,remaining:weekly.remaining,removed:weekly.removed,efficiency:weekly.efficiency,today:todayData,weekly,monthly};
 }
 function reviewDayLabel(day){if(day===today())return 'Today';if(day===shiftDate(today(),-1))return 'Yesterday';return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short'})}
 function reviewLongDate(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
@@ -2313,13 +2396,18 @@ function renderReview(){
  $('reviewEfficiencyPercent').textContent=data.efficiency===null?'—':data.efficiency+'%';
  $('reviewEfficiencyGauge').style.setProperty('--review-efficiency',(data.efficiency||0)+'%');
  $('reviewDoneTasks').textContent=data.completed;$('reviewTotalTasks').textContent=data.planned;$('reviewOpenTasks').textContent=data.remaining;$('reviewRemovedTasks').textContent=data.removed;
- $('reviewEfficiencyFormula').textContent=data.planned?data.completed+' completed ÷ '+data.planned+' planned × 100 = '+data.efficiency+'%':'No tasks recorded in the last 7 days.';
+ $('reviewEfficiencyFormula').textContent='Overall task completion';
  $('reviewNoData').classList.toggle('hidden',data.planned>0);
- $('reviewDailyChart').innerHTML=data.days.map(x=>'<button type="button" class="review-day-row '+(x.day===state.reviewExpandedDay?'selected':'')+'" data-review-day="'+x.day+'" aria-pressed="'+(x.day===state.reviewExpandedDay)+'"><div class="review-day-label"><strong>'+esc(reviewDayLabel(x.day))+'</strong><small>'+esc(date(x.day))+'</small></div><div class="review-day-bar-area"><div class="review-day-bar-track"><div class="review-day-bar-completed" style="width:'+(x.planned?x.completed/x.planned*100:0)+'%"></div><div class="review-day-bar-removed" style="width:'+(x.planned?x.removed/x.planned*100:0)+'%"></div></div><div class="review-day-subcounts"><span>'+x.completed+' done</span><span>'+x.remaining+' left</span>'+(x.removed?'<span>'+x.removed+' removed</span>':'')+'</div></div><div class="review-day-percent">'+(x.efficiency===null?'—':x.efficiency+'%')+'<small>'+(x.day===state.reviewExpandedDay?'hide ↑':'view ↗')+'</small></div></button>').join('');
+ const setPeriod=(gaugeId,labelId,stats)=>{$(labelId).textContent=stats.efficiency===null?'—':stats.efficiency+'%';$(gaugeId).style.setProperty('--period-efficiency',(stats.efficiency||0)+'%')};
+ setPeriod('reviewTodayGauge','reviewTodayEfficiency',data.today);
+ setPeriod('reviewWeekGauge','reviewWeekEfficiency',data.weekly);
+ setPeriod('reviewMonthGauge','reviewMonthEfficiency',data.monthly);
+ $('reviewDailyChart').innerHTML=data.days.map(x=>{
+  const pct=x.efficiency===null?0:x.efficiency;
+  return '<button type="button" class="review-day-bar-button '+(x.day===state.reviewExpandedDay?'selected':'')+'" data-review-day="'+x.day+'" aria-pressed="'+(x.day===state.reviewExpandedDay)+'" aria-label="'+esc(reviewLongDate(x.day))+', '+(x.efficiency===null?'no tasks':x.efficiency+' percent efficiency')+'"><span class="review-bar-percent">'+(x.efficiency===null?'—':x.efficiency+'%')+'</span><span class="review-day-pillar"><span class="review-day-pillar-fill" style="height:'+pct+'%"></span></span><span class="review-day-bar-label"><strong>'+esc(reviewDayLabel(x.day))+'</strong><small>'+esc(date(x.day))+'</small></span><span class="review-day-bar-counts">'+x.completed+'/'+x.planned+'</span></button>';
+ }).join('');
  $('reviewSelectedDetail').classList.toggle('hidden',!state.reviewExpandedDay);
  if(state.reviewExpandedDay)renderSelectedReviewDay();
- const categoryMarkup=(label,emoji,stats,cls)=>'<article class="review-category-card '+cls+'"><div class="review-category-top"><span class="review-category-emoji">'+emoji+'</span><div class="review-category-name">'+label+'</div><strong class="review-category-percent">'+(stats.efficiency===null?'—':stats.efficiency+'%')+'</strong></div><div class="review-category-track"><div style="width:'+(stats.efficiency||0)+'%"></div></div><div class="review-category-bottom"><span>'+stats.completed+' completed</span><span>'+stats.remaining+' left</span><span>'+stats.planned+' planned</span></div></article>';
- $('reviewCategoryGrid').innerHTML=categoryMarkup('Professional','💼',data.professional,'professional')+categoryMarkup('Personal','🌿',data.personal,'personal');
 }
 function renderSelectedReviewDay(){
  const day=state.reviewExpandedDay;if(!day)return;const data=reviewDaySnapshot(day);
@@ -2340,12 +2428,8 @@ function reviewReportRows(day){
  const rows=[
   ['BE PRODUCTIVE — DAILY REVIEW REPORT'],
   ['Date',reviewLongDate(day)],
-  ['Snapshot',cutoffLabel],
-  ['Efficiency formula','Completed tasks / tasks planned × 100'],
-  ['Tasks planned',data.planned],['Tasks completed',data.completed],['Tasks remaining',data.remaining],['Tasks removed',data.removed],
-  ['Efficiency',data.efficiency===null?'Not measurable':data.efficiency+'%'],
-  ['Calculation',data.planned?data.completed+' / '+data.planned+' × 100 = '+data.efficiency+'%':'No tasks were planned'],
-  [],
+  ['Snapshot',cutoffLabel],  ['Tasks planned',data.planned],['Tasks completed',data.completed],['Tasks remaining',data.remaining],['Tasks removed',data.removed],
+  ['Efficiency',data.efficiency===null?'Not measurable':data.efficiency+'%'],  [],
   ['TASK-BY-TASK DETAIL'],
   ['Task name','Category','Status at snapshot','Added at','Completion time','Last recorded action','Last activity time']
  ];
@@ -2354,7 +2438,7 @@ function reviewReportRows(day){
 }
 function downloadReviewFile(name,content,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportReviewDayCsv(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day);const csv='\uFEFF'+report.rows.map(reviewCsvLine).join('\r\n');downloadReviewFile('be-productive-review-'+day+'.csv',csv,'text/csv;charset=utf-8;');say('reviewExportMessage','Daily task detail CSV downloaded.',true)}
-function exportReviewDayWord(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day),d=report.data;const eh=v=>esc(String(v??''));const taskRows=d.tasks.map(t=>'<tr><td>'+eh(t.title)+'</td><td>'+eh(t.category)+'</td><td><strong>'+eh(reviewStatusLabel(t.status))+'</strong></td><td>'+eh(reviewClock(t.createdAt))+'</td><td>'+eh(t.completedAt?reviewClock(t.completedAt):'—')+'</td><td>'+eh(reviewActionLabel(t.lastAction))+'</td><td>'+eh(reviewClock(t.lastActivityAt))+'</td></tr>').join('');const html='<!doctype html><html><head><meta charset="utf-8"><title>Daily Review '+day+'</title><style>body{font-family:Arial,sans-serif;color:#20213d;margin:30px}h1{color:#6553ce}h2{margin-top:28px}p{line-height:1.6}table{border-collapse:collapse;width:100%;font-size:12px;margin-top:14px}th,td{border:1px solid #d8d5eb;padding:8px;text-align:left}th{background:#eeeaff}td{vertical-align:top}.summary{background:#f5f1ff;padding:14px;border:1px solid #d8d0f0;border-radius:10px}.note{font-size:11px;color:#667085}</style></head><body><h1>Be Productive — Daily Review</h1><p>'+eh(reviewLongDate(day))+'<br><span class="note">'+eh(d.currentDay?'Snapshot of current progress':'End-of-day snapshot')+'</span></p><div class="summary"><h2>Efficiency: '+eh(d.efficiency===null?'Not measurable':d.efficiency+'%')+'</h2><p>Completed '+d.completed+' ÷ planned '+d.planned+' × 100 = '+eh(d.efficiency===null?'—':d.efficiency+'%')+'</p><p>Planned: '+d.planned+' · Completed: '+d.completed+' · Remaining: '+d.remaining+' · Removed: '+d.removed+'</p></div><h2>Task-by-task detail</h2><table><thead><tr><th>Task name</th><th>Category</th><th>Status at snapshot</th><th>Added</th><th>Completed</th><th>Last action</th><th>Last activity</th></tr></thead><tbody>'+taskRows+'</tbody></table><p class="note">Efficiency is completed tasks divided by tasks planned that day, multiplied by 100. Removed tasks remain in the planned total and are shown separately.</p></body></html>';downloadReviewFile('be-productive-review-'+day+'.doc','\uFEFF'+html,'application/msword;charset=utf-8;');say('reviewExportMessage','Daily review Word report downloaded.',true)}
+function exportReviewDayWord(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day),d=report.data;const eh=v=>esc(String(v??''));const taskRows=d.tasks.map(t=>'<tr><td>'+eh(t.title)+'</td><td>'+eh(t.category)+'</td><td><strong>'+eh(reviewStatusLabel(t.status))+'</strong></td><td>'+eh(reviewClock(t.createdAt))+'</td><td>'+eh(t.completedAt?reviewClock(t.completedAt):'—')+'</td><td>'+eh(reviewActionLabel(t.lastAction))+'</td><td>'+eh(reviewClock(t.lastActivityAt))+'</td></tr>').join('');const html='<!doctype html><html><head><meta charset="utf-8"><title>Daily Review '+day+'</title><style>body{font-family:Arial,sans-serif;color:#20213d;margin:30px}h1{color:#6553ce}h2{margin-top:28px}p{line-height:1.6}table{border-collapse:collapse;width:100%;font-size:12px;margin-top:14px}th,td{border:1px solid #d8d5eb;padding:8px;text-align:left}th{background:#eeeaff}td{vertical-align:top}.summary{background:#f5f1ff;padding:14px;border:1px solid #d8d0f0;border-radius:10px}.note{font-size:11px;color:#667085}</style></head><body><h1>Be Productive — Daily Review</h1><p>'+eh(reviewLongDate(day))+'<br><span class="note">'+eh(d.currentDay?'Snapshot of current progress':'End-of-day snapshot')+'</span></p><div class="summary"><h2>Efficiency: '+eh(d.efficiency===null?'Not measurable':d.efficiency+'%')+'</h2><p><p>Planned: '+d.planned+' · Completed: '+d.completed+' · Remaining: '+d.remaining+' · Removed: '+d.removed+'</p></div><h2>Task-by-task detail</h2><table><thead><tr><th>Task name</th><th>Category</th><th>Status at snapshot</th><th>Added</th><th>Completed</th><th>Last action</th><th>Last activity</th></tr></thead><tbody>'+taskRows+'</tbody></table><p class="note">Removed tasks are shown separately from incomplete tasks.</p></body></html>';downloadReviewFile('be-productive-review-'+day+'.doc','\uFEFF'+html,'application/msword;charset=utf-8;');say('reviewExportMessage','Daily review Word report downloaded.',true)}
 function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyMessage').textContent='';return}$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
