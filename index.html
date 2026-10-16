@@ -2073,6 +2073,67 @@ body.night-mode #studyManagerView .planner-export-summary strong,body.night-mode
  #studyManagerView .planner-export-csv,#studyManagerView .planner-export-word{min-height:45px}
 }
 
+
+/* Collapsible report-download sections: consistent tap-to-open / tap-to-close behavior. */
+.report-section-toggle{
+ width:100%;padding:0;margin:0;border:0;background:transparent;color:inherit;
+ font:inherit;text-align:left;cursor:pointer;appearance:none;-webkit-appearance:none;
+}
+.report-heading-copy{display:grid;gap:4px;min-width:0;flex:1}
+.report-heading-copy .report-title{display:block;font-size:21px;line-height:1.2;margin:4px 0 0;font-weight:950;color:#252442}
+.report-heading-copy .report-description{display:block;margin:4px 0 0;font-size:12px;line-height:1.45;font-weight:650;color:#667085}
+.report-toggle-icon,.study-report-toggle-icon,.review-report-toggle-icon{
+ display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px;margin-left:auto;
+ border:1px solid #dcd5f5;border-radius:13px;background:linear-gradient(140deg,#eee9ff,#e1f8ef);
+ color:#5544bd;font-size:23px;line-height:1;font-weight:900;
+}
+.report-section-body{margin-top:15px}
+.report-section-toggle:focus-visible,.planner-export-toggle:focus-visible,.review-report-toggle:focus-visible{
+ outline:3px solid #8a79ef;outline-offset:4px;border-radius:13px;
+}
+#studyManagerView .planner-export-toggle{
+ width:100%;border:0;border-bottom:1.5px solid #e4def2;background:transparent;color:inherit;
+ text-align:left;font:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;
+}
+#studyManagerView .planner-export-toggle .study-report-toggle-icon{order:3}
+#studyManagerView .planner-export-toggle .planner-card-icon{order:0}
+#studyManagerView .planner-export-toggle .planner-export-heading-copy{order:1;flex:1}
+#studyManagerView .planner-report-body{padding-top:1px}
+#studyManagerView .planner-export-toggle:hover{filter:brightness(.985)}
+#reviewManagerView .review-report-download{
+ margin-top:15px;border:1.5px solid #ded9f1;border-radius:17px;
+ background:linear-gradient(145deg,#fff 0%,#fbfaff 58%,#f0faf7 100%);overflow:hidden;
+}
+#reviewManagerView .review-report-toggle{
+ width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;
+ padding:14px 15px;border:0;background:transparent;color:inherit;text-align:left;
+ font:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;
+}
+#reviewManagerView .review-report-toggle-copy{display:grid;gap:4px;min-width:0;flex:1}
+#reviewManagerView .review-report-kicker{font-size:10px;line-height:1.3;letter-spacing:.7px;font-weight:950;color:#7161c7}
+#reviewManagerView .review-report-title{font-size:15px;line-height:1.3;font-weight:950;color:#25223d}
+#reviewManagerView .review-report-subtitle{font-size:11px;line-height:1.45;font-weight:750;color:#69748a}
+#reviewManagerView .review-report-body{padding:0 14px 14px}
+#reviewManagerView .review-report-body .review-export-row{margin-top:0}
+#reviewManagerView .review-report-toggle:hover{background:#f8f6ff}
+body.night-mode .report-heading-copy .report-title{color:#f8f5ff}
+body.night-mode .report-heading-copy .report-description{color:#c6bed9}
+body.night-mode .report-toggle-icon,body.night-mode .study-report-toggle-icon,body.night-mode .review-report-toggle-icon{
+ background:linear-gradient(140deg,#342847,#24453d);border-color:#5b4a73;color:#e1d9ff;
+}
+body.night-mode #studyManagerView .planner-export-toggle{border-color:#51445e}
+body.night-mode #reviewManagerView .review-report-download{background:linear-gradient(145deg,#261f34,#202b33);border-color:#51445e}
+body.night-mode #reviewManagerView .review-report-title{color:#f8f5ff}
+body.night-mode #reviewManagerView .review-report-subtitle{color:#c6bed9}
+body.night-mode #reviewManagerView .review-report-kicker{color:#c4b7ff}
+body.night-mode #reviewManagerView .review-report-toggle:hover{background:#30253d}
+@media(max-width:620px){
+ .report-heading-copy .report-title{font-size:19px}
+ .report-heading-copy .report-description{font-size:11px}
+ .report-toggle-icon,.study-report-toggle-icon,.review-report-toggle-icon{width:34px;height:34px;flex-basis:34px}
+ #reviewManagerView .review-report-toggle{padding:13px}
+}
+
 </style>
 </head>
 <body>
@@ -2158,16 +2219,19 @@ body.night-mode #studyManagerView .planner-export-summary strong,body.night-mode
   </div>
 </section>
 <section class="panel task-history-panel daily-report-panel" aria-label="Date-wise task report export">
-  <div class="report-heading">
-    <div class="report-heading-icon">📅</div>
-    <div class="report-heading-copy"><div class="eyebrow">📊 DAILY REPORT</div><h2>Export task report</h2><p>Select a date, then download your report.</p></div>
+  <button id="toggleTaskReport" class="report-heading report-section-toggle" type="button" aria-expanded="false" aria-controls="taskReportBody">
+    <span class="report-heading-icon" aria-hidden="true">📅</span>
+    <span class="report-heading-copy"><span class="eyebrow">📊 DAILY REPORT</span><span class="report-title">Export task report</span><span class="report-description">Choose a date and download the task report.</span></span>
+    <span id="taskReportToggleIcon" class="report-toggle-icon" aria-hidden="true">＋</span>
+  </button>
+  <div id="taskReportBody" class="report-section-body hidden">
+    <div class="report-controls">
+      <div class="field report-date-field"><label for="historyDate">📆 Select date</label><input id="historyDate" type="date"></div>
+      <button id="exportTaskHistory" class="button report-csv-button" type="button">⬇ Download CSV</button>
+      <button id="exportTaskHistoryWord" class="button report-word-button" type="button">📝 Download Word</button>
+    </div>
+    <p id="historyMessage" class="message report-message" role="status"></p>
   </div>
-  <div class="report-controls">
-    <div class="field report-date-field"><label for="historyDate">📆 Select date</label><input id="historyDate" type="date"></div>
-    <button id="exportTaskHistory" class="button report-csv-button" type="button">⬇ Download CSV</button>
-    <button id="exportTaskHistoryWord" class="button report-word-button" type="button">📝 Download Word</button>
-  </div>
-  <p id="historyMessage" class="message report-message" role="status"></p>
 </section>
 
 </section>
@@ -2239,21 +2303,24 @@ body.night-mode #studyManagerView .planner-export-summary strong,body.night-mode
   </section>
 
   <section class="planner-export-card" aria-label="Download study session report">
-    <div class="planner-export-heading">
-      <span class="planner-card-icon planner-export-icon">📥</span>
-      <span><span class="study-kicker">STUDY RECORDS</span><strong>Download study report</strong><small>Choose a date to download every session with its details.</small></span>
-    </div>
-    <div class="planner-export-controls">
-      <div class="field"><label for="studyExportDate">📅 Report date</label><input id="studyExportDate" type="date" required></div>
-      <div id="studyExportSummary" class="planner-export-summary" aria-live="polite">
-        <strong>0 sessions</strong><span>0h 00m studied</span>
+    <button id="toggleStudyReport" class="planner-export-heading planner-export-toggle" type="button" aria-expanded="false" aria-controls="studyReportBody">
+      <span class="planner-card-icon planner-export-icon" aria-hidden="true">📥</span>
+      <span id="studyReportToggleIcon" class="study-report-toggle-icon" aria-hidden="true">＋</span>
+      <span class="planner-export-heading-copy"><span class="study-kicker">STUDY RECORDS</span><strong>Download study report</strong><small>Tap to open the date-wise session downloads.</small></span>
+    </button>
+    <div id="studyReportBody" class="planner-report-body hidden">
+      <div class="planner-export-controls">
+        <div class="field"><label for="studyExportDate">📅 Report date</label><input id="studyExportDate" type="date" required></div>
+        <div id="studyExportSummary" class="planner-export-summary" aria-live="polite">
+          <strong>0 sessions</strong><span>0h 00m studied</span>
+        </div>
       </div>
+      <div class="planner-export-buttons">
+        <button id="downloadStudyCsv" class="button planner-export-csv" type="button">⬇ Download CSV</button>
+        <button id="downloadStudyWord" class="button planner-export-word" type="button">📝 Download Word</button>
+      </div>
+      <div id="studyExportMessage" class="message" role="status"></div>
     </div>
-    <div class="planner-export-buttons">
-      <button id="downloadStudyCsv" class="button planner-export-csv" type="button">⬇ Download CSV</button>
-      <button id="downloadStudyWord" class="button planner-export-word" type="button">📝 Download Word</button>
-    </div>
-    <div id="studyExportMessage" class="message" role="status"></div>
   </section>
 </section>
 <section id="takeTestView" class="app-section manager-view hidden take-test-view">
@@ -2343,11 +2410,19 @@ body.night-mode #studyManagerView .planner-export-summary strong,body.night-mode
       <div class="review-task-group-heading"><h3>⏳ Incomplete tasks</h3><span id="reviewIncompleteTaskCount">0</span></div>
       <div id="reviewIncompleteTasks" class="review-day-tasks"></div>
     </section>
-    <div class="review-export-row">
-      <button id="downloadReviewCsv" class="button review-download-csv" type="button">⬇ Download CSV</button>
-      <button id="downloadReviewWord" class="button review-download-word" type="button">📝 Download Word</button>
+    <div class="review-report-download">
+      <button id="toggleReviewReport" class="review-report-toggle" type="button" aria-expanded="false" aria-controls="reviewReportBody">
+        <span class="review-report-toggle-copy"><span class="review-report-kicker">🧾 REPORT DOWNLOAD</span><span class="review-report-title">Download daily review report</span><span class="review-report-subtitle">Tap to open the CSV and Word options.</span></span>
+        <span id="reviewReportToggleIcon" class="review-report-toggle-icon" aria-hidden="true">＋</span>
+      </button>
+      <div id="reviewReportBody" class="review-report-body hidden">
+        <div class="review-export-row">
+          <button id="downloadReviewCsv" class="button review-download-csv" type="button">⬇ Download CSV</button>
+          <button id="downloadReviewWord" class="button review-download-word" type="button">📝 Download Word</button>
+        </div>
+        <div id="reviewExportMessage" class="message" role="status"></div>
+      </div>
     </div>
-    <div id="reviewExportMessage" class="message" role="status"></div>
   </section>
 </section>
 <div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
@@ -2370,9 +2445,26 @@ function toggleTheme(){const isNight=!document.body.classList.contains('night-mo
 function show(name){$('authView').classList.toggle('hidden',name!=='auth');$('appView').classList.toggle('hidden',name!=='app');$('signOut').classList.toggle('hidden',name!=='app');}
 function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView',study:'studyManagerView',test:'takeTestView',review:'reviewManagerView'};Object.entries(map).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==view));state.currentView=view;window.scrollTo({top:0,behavior:'smooth'});}
 function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));$('openTestView').addEventListener('click',()=>showAppSection('test'));$('backFromTest').addEventListener('click',()=>showAppSection('study'));}
+function setupCollapsibleToggle(buttonId,bodyId,iconId){
+ const button=$(buttonId),body=$(bodyId),icon=$(iconId);
+ if(!button||!body||!icon)return;
+ button.addEventListener('click',()=>{
+  const opening=body.classList.contains('hidden');
+  body.classList.toggle('hidden',!opening);
+  button.setAttribute('aria-expanded',String(opening));
+  icon.textContent=opening?'−':'＋';
+ });
+}
+function closeCollapsibleToggle(buttonId,bodyId,iconId){
+ const button=$(buttonId),body=$(bodyId),icon=$(iconId);
+ if(!button||!body||!icon)return;
+ body.classList.add('hidden');
+ button.setAttribute('aria-expanded','false');
+ icon.textContent='＋';
+}
 function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('studyExportDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
+wireNavigation();setupCollapsibleToggle('toggleTaskReport','taskReportBody','taskReportToggleIcon');setupCollapsibleToggle('toggleStudyReport','studyReportBody','studyReportToggleIcon');setupCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;closeCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
 let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
