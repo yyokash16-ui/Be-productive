@@ -2016,6 +2016,63 @@ body.night-mode #reviewManagerView .review-period-item.today .review-period-gaug
 body.night-mode #reviewManagerView .review-period-item.week .review-period-gauge{background:conic-gradient(#75dbbc var(--period-efficiency),#304942 0)}
 body.night-mode #reviewManagerView .review-period-item.month .review-period-gauge{background:conic-gradient(#f0a2cf var(--period-efficiency),#4a3547 0)}
 
+
+/* Study log collapsible header + date-wise study exports */
+#studyManagerView .planner-collapsible-log{padding:0!important;overflow:hidden}
+#studyManagerView .planner-log-toggle{
+ width:100%;display:flex;align-items:center;gap:13px;padding:19px!important;margin:0!important;
+ border:0!important;border-radius:0!important;background:linear-gradient(110deg,#fff 0%,#f5f1ff 55%,#effbf6 100%)!important;
+ color:#20213d!important;text-align:left;cursor:pointer;box-shadow:none!important;font-family:inherit
+}
+#studyManagerView .planner-log-toggle:focus-visible{outline:3px solid #8f7be5;outline-offset:-4px}
+#studyManagerView .planner-log-heading-copy{display:grid;flex:1;min-width:0;gap:4px}
+#studyManagerView .planner-log-heading-copy strong{font-size:22px;font-weight:950;letter-spacing:-.45px;color:#20213d}
+#studyManagerView .planner-log-heading-copy small{font-size:12px;font-weight:750;color:#626d84}
+#studyManagerView .planner-log-toggle-icon{flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;border:1.5px solid #d8d1ff;border-radius:12px;background:linear-gradient(135deg,#eee9ff,#dbf8ef);font-size:25px;font-weight:900;color:#6553ce}
+#studyManagerView .planner-session-form{border-top:1.5px solid #e4def2;padding:20px!important}
+#studyManagerView .planner-export-card{margin-top:17px;padding:19px;border:1.5px solid #d6d2ef;border-radius:22px;background:linear-gradient(145deg,#fff 0%,#fbfaff 54%,#f0faf7 100%);box-shadow:0 7px 0 #e8e0f3,0 14px 25px #51438a0e}
+#studyManagerView .planner-export-heading{display:flex;align-items:center;gap:12px;padding-bottom:14px;margin-bottom:15px;border-bottom:1.5px solid #e4def2}
+#studyManagerView .planner-export-heading>span:last-child{display:grid;gap:4px;min-width:0}
+#studyManagerView .planner-export-heading strong{font-size:20px;font-weight:950;letter-spacing:-.4px;color:#20213d}
+#studyManagerView .planner-export-heading small{font-size:12px;line-height:1.45;font-weight:750;color:#626d84}
+#studyManagerView .planner-export-icon{background:linear-gradient(135deg,#e8e3ff,#dbf8ef)!important}
+#studyManagerView .planner-export-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:12px}
+#studyManagerView .planner-export-controls .field label{font-size:12px;font-weight:900;color:#353650}
+#studyManagerView .planner-export-controls input{width:100%;min-height:46px;padding:11px 12px;border:1px solid #d9d6f8;border-radius:12px;background:#fff;color:#272940;font-size:14px;font-weight:750}
+#studyManagerView .planner-export-summary{display:grid;gap:5px;align-content:center;min-height:46px;padding:9px 12px;border:1.5px solid #bce6d5;border-radius:13px;background:linear-gradient(105deg,#e4f8ed,#eaf8ff)}
+#studyManagerView .planner-export-summary strong{font-size:15px;font-weight:950;color:#20213d}
+#studyManagerView .planner-export-summary span{font-size:11px;font-weight:850;color:#536176}
+#studyManagerView .planner-export-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+#studyManagerView .planner-export-csv,#studyManagerView .planner-export-word{min-height:46px;border:0;border-radius:12px;color:#fff;font-size:12px;font-weight:950;box-shadow:0 6px 14px #51438a1b}
+#studyManagerView .planner-export-csv{background:#6553ce}
+#studyManagerView .planner-export-word{background:#13846d}
+#studyManagerView .planner-export-csv:hover{background:#5140bc}
+#studyManagerView .planner-export-word:hover{background:#0e6e5b}
+#studyManagerView #studyExportMessage{margin-top:9px;font-size:11px;font-weight:850;color:#6553ce}
+body.night-mode #studyManagerView .planner-log-toggle{background:linear-gradient(110deg,#2c2237,#322641 55%,#203a36)!important;color:#fff!important}
+body.night-mode #studyManagerView .planner-log-heading-copy strong,body.night-mode #studyManagerView .planner-log-heading-copy small{color:#fff!important}
+body.night-mode #studyManagerView .planner-session-form{border-color:#4b405c}
+body.night-mode #studyManagerView .planner-export-card{background:linear-gradient(145deg,#272132,#211d2e 54%,#1d3430)!important;border-color:#4b405c;box-shadow:0 6px 0 #181420,0 12px 20px #0003}
+body.night-mode #studyManagerView .planner-export-heading{border-color:#4b405c}
+body.night-mode #studyManagerView .planner-export-heading strong,body.night-mode #studyManagerView .planner-export-heading small{color:#fff!important}
+body.night-mode #studyManagerView .planner-export-controls .field label{color:#fff!important}
+body.night-mode #studyManagerView .planner-export-controls input{background:#1b1725!important;color:#fff!important;border-color:#5b456a}
+body.night-mode #studyManagerView .planner-export-summary{background:linear-gradient(105deg,#1d4034,#21333c);border-color:#3c7d69}
+body.night-mode #studyManagerView .planner-export-summary strong,body.night-mode #studyManagerView .planner-export-summary span{color:#fff!important}
+@media(max-width:760px){
+ #studyManagerView .planner-log-toggle{padding:15px!important;gap:10px}
+ #studyManagerView .planner-log-heading-copy strong{font-size:19px}
+ #studyManagerView .planner-log-heading-copy small{font-size:11px}
+ #studyManagerView .planner-log-toggle-icon{width:34px;height:34px;flex-basis:34px;font-size:23px}
+ #studyManagerView .planner-session-form{padding:14px!important}
+ #studyManagerView .planner-export-card{padding:14px;border-radius:19px;margin-top:14px}
+ #studyManagerView .planner-export-heading strong{font-size:18px}
+ #studyManagerView .planner-export-heading small{font-size:11px}
+ #studyManagerView .planner-export-controls{grid-template-columns:1fr;gap:10px}
+ #studyManagerView .planner-export-buttons{grid-template-columns:1fr;gap:8px}
+ #studyManagerView .planner-export-csv,#studyManagerView .planner-export-word{min-height:45px}
+}
+
 </style>
 </head>
 <body>
@@ -2159,13 +2216,13 @@ body.night-mode #reviewManagerView .review-period-item.month .review-period-gaug
     </section>
   </div>
 
-  <section class="planner-log-card" aria-label="Log a study session">
-    <div class="planner-log-heading">
-      <div class="planner-card-icon planner-log-icon">✍️</div>
-      <div><div class="study-kicker">Study log</div><h2>Log a study session</h2><p>Capture what you studied today.</p></div>
-      
-    </div>
-    <form id="sessionForm" class="study-session-form planner-session-form">
+  <section class="planner-log-card planner-collapsible-log" aria-label="Log a study session">
+    <button id="toggleStudyLog" class="planner-log-heading planner-log-toggle" type="button" aria-expanded="false" aria-controls="sessionForm">
+      <span class="planner-card-icon planner-log-icon">✍️</span>
+      <span class="planner-log-heading-copy"><span class="study-kicker">STUDY LOG</span><strong>Log a study session</strong><small>Tap to add and save your study details.</small></span>
+      <span id="studyLogToggleIcon" class="planner-log-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+    <form id="sessionForm" class="study-session-form planner-session-form hidden">
       <div class="formgrid">
         <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
         <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
@@ -2179,6 +2236,24 @@ body.night-mode #reviewManagerView .review-period-item.month .review-period-gaug
       <button class="button full planner-save-session" type="submit">✨ Save study session</button>
       <div id="sessionMessage" class="message"></div>
     </form>
+  </section>
+
+  <section class="planner-export-card" aria-label="Download study session report">
+    <div class="planner-export-heading">
+      <span class="planner-card-icon planner-export-icon">📥</span>
+      <span><span class="study-kicker">STUDY RECORDS</span><strong>Download study report</strong><small>Choose a date to download every session with its details.</small></span>
+    </div>
+    <div class="planner-export-controls">
+      <div class="field"><label for="studyExportDate">📅 Report date</label><input id="studyExportDate" type="date" required></div>
+      <div id="studyExportSummary" class="planner-export-summary" aria-live="polite">
+        <strong>0 sessions</strong><span>0h 00m studied</span>
+      </div>
+    </div>
+    <div class="planner-export-buttons">
+      <button id="downloadStudyCsv" class="button planner-export-csv" type="button">⬇ Download CSV</button>
+      <button id="downloadStudyWord" class="button planner-export-word" type="button">📝 Download Word</button>
+    </div>
+    <div id="studyExportMessage" class="message" role="status"></div>
   </section>
 </section>
 <section id="takeTestView" class="app-section manager-view hidden take-test-view">
@@ -2295,9 +2370,9 @@ function toggleTheme(){const isNight=!document.body.classList.contains('night-mo
 function show(name){$('authView').classList.toggle('hidden',name!=='auth');$('appView').classList.toggle('hidden',name!=='app');$('signOut').classList.toggle('hidden',name!=='app');}
 function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView',study:'studyManagerView',test:'takeTestView',review:'reviewManagerView'};Object.entries(map).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==view));state.currentView=view;window.scrollTo({top:0,behavior:'smooth'});}
 function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));$('openTestView').addEventListener('click',()=>showAppSection('test'));$('backFromTest').addEventListener('click',()=>showAppSection('study'));}
-function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
+function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('studyExportDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
+wireNavigation();$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
 let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -2439,6 +2514,54 @@ function reviewReportRows(day){
 function downloadReviewFile(name,content,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportReviewDayCsv(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day);const csv='\uFEFF'+report.rows.map(reviewCsvLine).join('\r\n');downloadReviewFile('be-productive-review-'+day+'.csv',csv,'text/csv;charset=utf-8;');say('reviewExportMessage','Daily task detail CSV downloaded.',true)}
 function exportReviewDayWord(){const day=state.reviewSelectedDay||today(),report=reviewReportRows(day),d=report.data;const eh=v=>esc(String(v??''));const taskRows=d.tasks.map(t=>'<tr><td>'+eh(t.title)+'</td><td>'+eh(t.category)+'</td><td><strong>'+eh(reviewStatusLabel(t.status))+'</strong></td><td>'+eh(reviewClock(t.createdAt))+'</td><td>'+eh(t.completedAt?reviewClock(t.completedAt):'—')+'</td><td>'+eh(reviewActionLabel(t.lastAction))+'</td><td>'+eh(reviewClock(t.lastActivityAt))+'</td></tr>').join('');const html='<!doctype html><html><head><meta charset="utf-8"><title>Daily Review '+day+'</title><style>@page { size: A4 portrait; margin: 18mm 16mm; } @page Section1 { size: 595.3pt 841.9pt; mso-page-orientation: portrait; margin: 51pt 45pt 51pt 45pt; } div.Section1 { page: Section1; } body{font-family:Arial,sans-serif;font-size:10.5pt;color:#20213d;margin:0}h1{color:#6553ce}h2{margin-top:28px}p{line-height:1.6}table{border-collapse:collapse;width:100%;font-size:12px;margin-top:14px}th,td{border:1px solid #d8d5eb;padding:8px;text-align:left}th{background:#eeeaff}td{vertical-align:top}.summary{background:#f5f1ff;padding:14px;border:1px solid #d8d0f0;border-radius:10px}.note{font-size:11px;color:#667085}</style></head><body><div class="Section1"><h1>Be Productive — Daily Review</h1><p>'+eh(reviewLongDate(day))+'<br><span class="note">'+eh(d.currentDay?'Snapshot of current progress':'End-of-day snapshot')+'</span></p><div class="summary"><h2>Efficiency: '+eh(d.efficiency===null?'Not measurable':d.efficiency+'%')+'</h2><p>Planned: '+d.planned+' · Completed: '+d.completed+' · Remaining: '+d.remaining+' · Removed: '+d.removed+'</p></div><h2>Task-by-task detail</h2><table><thead><tr><th>Task name</th><th>Category</th><th>Status at snapshot</th><th>Added</th><th>Completed</th><th>Last action</th><th>Last activity</th></tr></thead><tbody>'+taskRows+'</tbody></table><p class="note">Removed tasks are shown separately from incomplete tasks.</p></div></body></html>';downloadReviewFile('be-productive-review-'+day+'.doc','\uFEFF'+html,'application/msword;charset=utf-8;');say('reviewExportMessage','Daily review Word report downloaded.',true)}
+function studySessionsForDay(day){
+ return (state.sessions||[]).filter(x=>x.study_date===day).slice().sort((a,b)=>new Date(a.created_at||a.study_date)-new Date(b.created_at||b.study_date));
+}
+function formatStudyDuration(minutes){
+ const value=Math.max(0,Number(minutes)||0),hours=Math.floor(value/60),mins=value%60;
+ return hours+'h '+String(mins).padStart(2,'0')+'m';
+}
+function renderStudyExportSummary(){
+ const dateField=$('studyExportDate');if(!dateField)return;
+ const day=dateField.value||today(),sessions=studySessionsForDay(day);
+ const totalMinutes=sessions.reduce((n,x)=>n+Number(x.duration_minutes||0),0);
+ $('studyExportSummary').innerHTML='<strong>'+sessions.length+' session'+(sessions.length===1?'':'s')+'</strong><span>'+esc(formatStudyDuration(totalMinutes))+' studied</span>';
+}
+function escapeReportHtml(value){
+ return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function studySessionReport(day){
+ const sessions=studySessionsForDay(day);
+ const totalMinutes=sessions.reduce((n,x)=>n+Number(x.duration_minutes||0),0);
+ return {day,sessions,totalMinutes,totalDuration:formatStudyDuration(totalMinutes)};
+}
+function exportStudySessionsCsv(){
+ const day=$('studyExportDate').value||today(),report=studySessionReport(day);
+ const rows=[
+  ['BE PRODUCTIVE — STUDY SESSION REPORT'],
+  ['Date',reportDayLabel(day)],
+  ['Sessions studied',report.sessions.length],
+  ['Total study time',report.totalDuration],
+  ['Total minutes',report.totalMinutes],
+  [],
+  ['Session','Subject','Study date','Duration (minutes)','Duration','Study method','Chapter / topic','Quick reflection','Logged at'],
+  ...report.sessions.map((item,index)=>[
+   index+1,item.subject||'Other',item.study_date||day,Number(item.duration_minutes)||0,
+   formatStudyDuration(item.duration_minutes),item.study_type||'',item.topic||'',item.notes||'',
+   item.created_at?new Date(item.created_at).toLocaleString('en-IN'):''
+  ])
+ ];
+ const csv='\uFEFF'+rows.map(row=>row.map(csvCell).join(',')).join('\r\n');
+ downloadReviewFile('be-productive-study-report-'+day+'.csv',csv,'text/csv;charset=utf-8;');
+ say('studyExportMessage',report.sessions.length+' session details downloaded as CSV.',true);
+}
+function exportStudySessionsWord(){
+ const day=$('studyExportDate').value||today(),report=studySessionReport(day);
+ const sessionsHtml=report.sessions.length?report.sessions.map((item,index)=>'<article class="session"><h2>Session '+(index+1)+': '+escapeReportHtml(item.subject||'Other')+' — '+escapeReportHtml(formatStudyDuration(item.duration_minutes))+'</h2><table><tbody><tr><th>Study date</th><td>'+escapeReportHtml(item.study_date||day)+'</td></tr><tr><th>Duration</th><td>'+escapeReportHtml(String(Number(item.duration_minutes)||0)+' minutes ('+formatStudyDuration(item.duration_minutes)+')')+'</td></tr><tr><th>Study method</th><td>'+escapeReportHtml(item.study_type||'—')+'</td></tr><tr><th>Chapter / topic</th><td>'+escapeReportHtml(item.topic||'—')+'</td></tr><tr><th>Quick reflection</th><td>'+escapeReportHtml(item.notes||'—')+'</td></tr><tr><th>Logged at</th><td>'+escapeReportHtml(item.created_at?new Date(item.created_at).toLocaleString('en-IN'):'—')+'</td></tr></tbody></table></article>').join(''):'<p class="empty">No study sessions were saved for this date.</p>';
+ const doc='<!doctype html><html><head><meta charset="utf-8"><title>Study Session Report</title><style>@page { size: A4 portrait; margin: 18mm 16mm; } @page Section1 { size: 595.3pt 841.9pt; mso-page-orientation: portrait; margin: 51pt 45pt 51pt 45pt; } div.Section1 { page: Section1; } body{font-family:Arial,sans-serif;font-size:10.5pt;color:#20213d;margin:0}h1{font-size:21pt;color:#6553ce;margin:0 0 7pt}h2{font-size:13pt;color:#31244a;margin:0 0 8pt}p{font-size:10.5pt;line-height:1.5;color:#4e5870}.summary{margin:15pt 0 22pt;padding:12pt;background:#f0edff;border:1px solid #d8d0f0;border-radius:8pt}.summary strong{font-size:15pt}.summary p{margin:5pt 0}.session{margin:0 0 17pt;page-break-inside:avoid}.session table{width:100%;border-collapse:collapse;table-layout:fixed}.session th,.session td{border:1px solid #d9ddec;padding:7pt 8pt;text-align:left;vertical-align:top;overflow-wrap:break-word}.session th{width:28%;background:#eeebff;color:#40378b}.session td{background:#fff}.empty{padding:12pt;border:1px dashed #d9ddec}.note{font-size:9pt;color:#788198;margin-top:22pt}</style></head><body><div class="Section1"><h1>Be Productive</h1><p>Study Session Report<br>'+escapeReportHtml(reportDayLabel(day))+'</p><div class="summary"><strong>'+report.sessions.length+' session'+(report.sessions.length===1?'':'s')+' · '+escapeReportHtml(report.totalDuration)+' studied</strong><p>Total study time: '+report.totalMinutes+' minutes</p></div><h2>Session details</h2>'+sessionsHtml+'<p class="note">Report generated from the study sessions saved in Be Productive.</p></div></body></html>';
+ downloadReviewFile('be-productive-study-report-'+day+'.doc','\uFEFF'+doc,'application/msword;charset=utf-8;');
+ say('studyExportMessage',report.sessions.length+' session details downloaded as an A4 Word report.',true);
+}
 function renderTaskHistory(){const day=$('historyDate').value||today();if(!state.historyReady){$('historyMessage').textContent='';return}$('historyMessage').textContent='';$('historyMessage').classList.remove('good')}
 function csvCell(value){const str=String(value??'');return '"'+str.replace(/"/g,'""')+'"'}
 function reportDayLabel(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
@@ -2528,7 +2651,7 @@ $('caTaskEmpty').classList.toggle('hidden',caTasks.length>0);$('personalTaskEmpt
 document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>toggleTask(x.dataset.check,x.checked)));document.querySelectorAll('[data-deltask]').forEach(x=>x.addEventListener('click',()=>removeRow('study_tasks',x.dataset.deltask)));renderTaskHistory();
 $('studyTargetPreview').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
 $('targetValue').textContent=state.target;$('targetCaption').textContent='Target: '+state.target+' hours';$('targetBar').style.width=Math.min(100,mins/(state.target*60)*100)+'%';
-renderReview();
+renderReview();renderStudyExportSummary();
 }
 document.addEventListener('DOMContentLoaded',init);
 })();
