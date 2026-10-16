@@ -52,3 +52,7 @@ The Study Manager uses a deep-teal and warm-coral visual theme, study-time cards
 
 ## Take a Test
 The Study Planner header includes a compact Take a Test button. The separate test page lets the signed-in user choose a subject, set a target duration, use a start/pause/reset countdown timer, mark whether the target was met, and save the test record to Supabase `study_test_records`. The table is protected by row-level security and has a matching migration in Supabase.
+
+
+## Review Time daily reports
+Review Time reconstructs each day's task list from `study_task_history`, using the latest saved status at that day's end (or the current time for today). Tap a day to see each task's category, end-of-day status, added time, completion time, and last activity. The displayed efficiency is completed tasks divided by all tasks added that day, multiplied by 100; removed tasks are shown separately and remain in the original planned count. Download CSV or Word-compatible daily reports include the calculation and task-by-task details. No database migration is required.
