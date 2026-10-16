@@ -1921,6 +1921,37 @@ body.night-mode #reviewManagerView .review-category-track{background:#211a2d;bor
 body.night-mode #reviewManagerView .review-no-data{background:#211c2c;border-color:#514361}
 body.night-mode #reviewManagerView .review-no-data strong,body.night-mode #reviewManagerView .review-no-data small{color:#fff4ff}
 
+
+/* Review Time: daily task detail is a true tap-to-expand / tap-again-to-hide panel */
+#reviewManagerView .review-selected-panel.hidden{display:none!important}
+#reviewManagerView .review-selected-panel{margin-top:15px;scroll-margin-top:15px;animation:reviewReveal .18s ease-out}
+@keyframes reviewReveal{from{opacity:.25;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+#reviewManagerView .review-task-group{margin:0 0 14px;padding:13px;border:1.5px solid #d8d2ef;border-radius:16px;background:linear-gradient(145deg,#f2edff,#fff9fd)}
+#reviewManagerView .review-completed-group{border-color:#a8dfc4;background:linear-gradient(145deg,#e4f9ed,#f8fffb)}
+#reviewManagerView .review-incomplete-group{border-color:#ead19b;background:linear-gradient(145deg,#fff2db,#fffdf7)}
+#reviewManagerView .review-task-group-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+#reviewManagerView .review-task-group-heading h3{margin:0;font-size:14px;font-weight:950;color:#22213b}
+#reviewManagerView .review-task-group-heading>span{min-width:28px;height:28px;display:grid;place-items:center;border:1px solid #ffffff;border-radius:10px;background:#fff;font-size:12px;font-weight:950;color:#22213b}
+#reviewManagerView .review-completed-group .review-task-group-heading>span{border-color:#a8dfc4;color:#176c4a}
+#reviewManagerView .review-incomplete-group .review-task-group-heading>span{border-color:#ead19b;color:#805b1a}
+#reviewManagerView .review-task-group .review-task-detail-row{background:#ffffffd9;box-shadow:0 3px 8px #51438a08}
+#reviewManagerView .review-task-group .review-day-empty{padding:14px;background:#ffffffb8;border-style:dashed}
+#reviewManagerView .review-task-group .review-day-empty strong{font-size:12px;font-weight:850}
+#reviewManagerView .review-day-row.selected{outline:2px solid #6553ce;outline-offset:1px}
+@media(max-width:760px){
+ #reviewManagerView .review-task-group{padding:10px;border-radius:14px;margin-bottom:11px}
+ #reviewManagerView .review-task-group-heading h3{font-size:13px}
+}
+body.night-mode #reviewManagerView .review-task-group{background:linear-gradient(145deg,#2e2540,#292035);border-color:#5c4a72}
+body.night-mode #reviewManagerView .review-completed-group{background:linear-gradient(145deg,#1c4034,#21382f);border-color:#3c8967}
+body.night-mode #reviewManagerView .review-incomplete-group{background:linear-gradient(145deg,#43341f,#302638);border-color:#94703e}
+body.night-mode #reviewManagerView .review-task-group-heading h3{color:#fff4ff}
+body.night-mode #reviewManagerView .review-task-group-heading>span{background:#211a2d;border-color:#5c4a72;color:#fff4ff}
+body.night-mode #reviewManagerView .review-completed-group .review-task-group-heading>span{border-color:#3c8967;color:#d4ffeb}
+body.night-mode #reviewManagerView .review-incomplete-group .review-task-group-heading>span{border-color:#94703e;color:#fff0c9}
+body.night-mode #reviewManagerView .review-task-group .review-task-detail-row{background:#211d2c;border-color:#514361}
+body.night-mode #reviewManagerView .review-task-group .review-day-empty{background:#211d2c;border-color:#514361}
+
 </style>
 </head>
 <body>
@@ -2143,24 +2174,19 @@ body.night-mode #reviewManagerView .review-no-data strong,body.night-mode #revie
     <div id="reviewDailyChart" class="review-daily-chart"></div>
     <div class="review-chart-legend"><span><i class="legend-done"></i> Completed</span><span><i class="legend-open"></i> Remaining</span><span><i class="legend-removed"></i> Removed</span></div>
   </section>
-  <section id="reviewSelectedDetail" class="review-panel review-selected-panel">
+  <section id="reviewSelectedDetail" class="review-panel review-selected-panel hidden">
     <div class="review-panel-heading review-detail-heading">
-      <div><div class="review-eyebrow">📂 DAILY REPORT</div><h2 id="reviewSelectedDateTitle">Today</h2><p id="reviewSelectedCutoff">Latest saved task status</p></div>
+      <div><div class="review-eyebrow">📂 DAILY TASKS</div><h2 id="reviewSelectedDateTitle">Selected day</h2><p>Tap the same day again to close this list.</p></div>
       <span class="review-panel-icon">🧾</span>
     </div>
-    <div class="review-detail-metrics">
-      <div class="review-detail-metric planned"><span>🗒️ Planned</span><strong id="reviewDetailPlanned">0</strong></div>
-      <div class="review-detail-metric completed"><span>✅ Completed</span><strong id="reviewDetailDone">0</strong></div>
-      <div class="review-detail-metric remaining"><span>⏳ Remaining</span><strong id="reviewDetailRemaining">0</strong></div>
-      <div class="review-detail-metric removed"><span>🗑️ Removed</span><strong id="reviewDetailRemoved">0</strong></div>
-    </div>
-    <div class="review-formula-card">
-      <div class="review-formula-label">HOW EFFICIENCY IS CALCULATED</div>
-      <div id="reviewDetailFormula" class="review-formula-equation">0 completed ÷ 0 planned × 100 = —</div>
-      <div class="review-formula-note">Efficiency measures completed tasks against all tasks added that day. Removed tasks stay visible in the report and remain part of the original planned count.</div>
-    </div>
-    <div class="review-task-list-heading"><h3>Tasks planned that day</h3><span id="reviewDetailTaskCount">0 tasks</span></div>
-    <div id="reviewDayTasks" class="review-day-tasks"></div>
+    <section class="review-task-group review-completed-group">
+      <div class="review-task-group-heading"><h3>✅ Completed tasks</h3><span id="reviewCompletedTaskCount">0</span></div>
+      <div id="reviewCompletedTasks" class="review-day-tasks"></div>
+    </section>
+    <section class="review-task-group review-incomplete-group">
+      <div class="review-task-group-heading"><h3>⏳ Incomplete tasks</h3><span id="reviewIncompleteTaskCount">0</span></div>
+      <div id="reviewIncompleteTasks" class="review-day-tasks"></div>
+    </section>
     <div class="review-export-row">
       <button id="downloadReviewCsv" class="button review-download-csv" type="button">⬇ Download CSV</button>
       <button id="downloadReviewWord" class="button review-download-word" type="button">📝 Download Word</button>
@@ -2180,7 +2206,7 @@ body.night-mode #reviewManagerView .review-no-data strong,body.night-mode #revie
 (()=>{'use strict';
 const $=id=>document.getElementById(id),cfg=window.BE_PRODUCTIVE_CONFIG||{};
 const ready=!!(cfg.supabaseUrl&&cfg.supabaseAnonKey&&window.supabase);
-const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,testRecords:[],testsReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home',reviewSelectedDay:''};
+const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,testRecords:[],testsReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home',reviewSelectedDay:'',reviewExpandedDay:''};
 const today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=n=>Math.floor(Number(n||0)/60)+'h '+String(Math.round(Number(n||0)%60)).padStart(2,'0')+'m';
@@ -2194,7 +2220,7 @@ function showAppSection(view){const map={home:'homeView',tasks:'taskManagerView'
 function wireNavigation(){document.querySelectorAll('[data-open-view]').forEach(b=>b.addEventListener('click',()=>showAppSection(b.dataset.openView)));document.querySelectorAll('[data-back-home]').forEach(b=>b.addEventListener('click',()=>showAppSection('home')));$('openTestView').addEventListener('click',()=>showAppSection('test'));$('backFromTest').addEventListener('click',()=>showAppSection('study'));}
 function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;state.reviewSelectedDay=row.dataset.reviewDay;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
+wireNavigation();$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
 let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -2283,25 +2309,28 @@ function reviewActionLabel(action){return ({created:'Added',completed:'Completed
 function reviewStatusLabel(status){return status==='completed'?'Completed':status==='removed'?'Removed':'Remaining'}
 function renderReview(){
  const root=$('reviewManagerView');if(!root)return;const data=reviewProgressData();
- if(!data.days.some(d=>d.day===state.reviewSelectedDay))state.reviewSelectedDay=today();
+ if(state.reviewExpandedDay&&!data.days.some(d=>d.day===state.reviewExpandedDay)){state.reviewExpandedDay='';state.reviewSelectedDay=''}
  $('reviewEfficiencyPercent').textContent=data.efficiency===null?'—':data.efficiency+'%';
  $('reviewEfficiencyGauge').style.setProperty('--review-efficiency',(data.efficiency||0)+'%');
  $('reviewDoneTasks').textContent=data.completed;$('reviewTotalTasks').textContent=data.planned;$('reviewOpenTasks').textContent=data.remaining;$('reviewRemovedTasks').textContent=data.removed;
  $('reviewEfficiencyFormula').textContent=data.planned?data.completed+' completed ÷ '+data.planned+' planned × 100 = '+data.efficiency+'%':'No tasks recorded in the last 7 days.';
  $('reviewNoData').classList.toggle('hidden',data.planned>0);
- $('reviewDailyChart').innerHTML=data.days.map(x=>'<button type="button" class="review-day-row '+(x.day===state.reviewSelectedDay?'selected':'')+'" data-review-day="'+x.day+'" aria-pressed="'+(x.day===state.reviewSelectedDay)+'"><div class="review-day-label"><strong>'+esc(reviewDayLabel(x.day))+'</strong><small>'+esc(date(x.day))+'</small></div><div class="review-day-bar-area"><div class="review-day-bar-track"><div class="review-day-bar-completed" style="width:'+(x.planned?x.completed/x.planned*100:0)+'%"></div><div class="review-day-bar-removed" style="width:'+(x.planned?x.removed/x.planned*100:0)+'%"></div></div><div class="review-day-subcounts"><span>'+x.completed+' done</span><span>'+x.remaining+' left</span>'+(x.removed?'<span>'+x.removed+' removed</span>':'')+'</div></div><div class="review-day-percent">'+(x.efficiency===null?'—':x.efficiency+'%')+'<small>tap ↗</small></div></button>').join('');
- renderSelectedReviewDay();
+ $('reviewDailyChart').innerHTML=data.days.map(x=>'<button type="button" class="review-day-row '+(x.day===state.reviewExpandedDay?'selected':'')+'" data-review-day="'+x.day+'" aria-pressed="'+(x.day===state.reviewExpandedDay)+'"><div class="review-day-label"><strong>'+esc(reviewDayLabel(x.day))+'</strong><small>'+esc(date(x.day))+'</small></div><div class="review-day-bar-area"><div class="review-day-bar-track"><div class="review-day-bar-completed" style="width:'+(x.planned?x.completed/x.planned*100:0)+'%"></div><div class="review-day-bar-removed" style="width:'+(x.planned?x.removed/x.planned*100:0)+'%"></div></div><div class="review-day-subcounts"><span>'+x.completed+' done</span><span>'+x.remaining+' left</span>'+(x.removed?'<span>'+x.removed+' removed</span>':'')+'</div></div><div class="review-day-percent">'+(x.efficiency===null?'—':x.efficiency+'%')+'<small>'+(x.day===state.reviewExpandedDay?'hide ↑':'view ↗')+'</small></div></button>').join('');
+ $('reviewSelectedDetail').classList.toggle('hidden',!state.reviewExpandedDay);
+ if(state.reviewExpandedDay)renderSelectedReviewDay();
  const categoryMarkup=(label,emoji,stats,cls)=>'<article class="review-category-card '+cls+'"><div class="review-category-top"><span class="review-category-emoji">'+emoji+'</span><div class="review-category-name">'+label+'</div><strong class="review-category-percent">'+(stats.efficiency===null?'—':stats.efficiency+'%')+'</strong></div><div class="review-category-track"><div style="width:'+(stats.efficiency||0)+'%"></div></div><div class="review-category-bottom"><span>'+stats.completed+' completed</span><span>'+stats.remaining+' left</span><span>'+stats.planned+' planned</span></div></article>';
  $('reviewCategoryGrid').innerHTML=categoryMarkup('Professional','💼',data.professional,'professional')+categoryMarkup('Personal','🌿',data.personal,'personal');
 }
 function renderSelectedReviewDay(){
- const day=state.reviewSelectedDay||today(),data=reviewDaySnapshot(day),$dayTitle=$('reviewSelectedDateTitle');
- $dayTitle.textContent=reviewLongDate(day)+(data.currentDay?' · Today':'');
- $('reviewSelectedCutoff').textContent=data.currentDay?'Day in progress · showing the latest saved status':'End-of-day snapshot · status recorded by midnight';
- $('reviewDetailPlanned').textContent=data.planned;$('reviewDetailDone').textContent=data.completed;$('reviewDetailRemaining').textContent=data.remaining;$('reviewDetailRemoved').textContent=data.removed;
- $('reviewDetailFormula').textContent=data.planned?data.completed+' completed ÷ '+data.planned+' planned × 100 = '+data.efficiency+'%':'No tasks were added on this date, so efficiency is not yet measurable.';
- $('reviewDetailTaskCount').textContent=data.planned+' task'+(data.planned===1?'':'s');
- $('reviewDayTasks').innerHTML=data.tasks.length?data.tasks.map(task=>'<article class="review-task-detail-row '+task.status+'"><div class="review-task-detail-main"><strong>'+esc(task.title)+'</strong><div class="review-task-detail-meta"><span>'+ (task.category==='Personal'?'🌿 Personal':'💼 Professional')+'</span><span>Added '+esc(reviewClock(task.createdAt))+'</span></div></div><div class="review-task-detail-right"><span class="review-status-pill '+task.status+'">'+reviewStatusLabel(task.status)+'</span><small>'+(task.status==='completed'?'Completed '+esc(reviewClock(task.completedAt||task.lastActivityAt)):task.status==='removed'?'Removed '+esc(reviewClock(task.lastActivityAt)):'Last update '+esc(reviewClock(task.lastActivityAt)))+'</small></div></article>').join(''):'<div class="review-day-empty"><span>🌱</span><strong>No tasks were added on this date.</strong><small>Select another day above or add tasks in Task Manager.</small></div>';
+ const day=state.reviewExpandedDay;if(!day)return;const data=reviewDaySnapshot(day);
+ $('reviewSelectedDateTitle').textContent=reviewLongDate(day)+(data.currentDay?' · Today':'');
+ const completed=data.tasks.filter(t=>t.status==='completed');
+ const incomplete=data.tasks.filter(t=>t.status==='remaining');
+ $('reviewCompletedTaskCount').textContent=completed.length;
+ $('reviewIncompleteTaskCount').textContent=incomplete.length;
+ const taskMarkup=(task,status)=>'<article class="review-task-detail-row '+status+'"><div class="review-task-detail-main"><strong>'+esc(task.title)+'</strong><div class="review-task-detail-meta"><span>'+(task.category==='Personal'?'🌿 Personal':'💼 Professional')+'</span></div></div><span class="review-status-pill '+status+'">'+(status==='completed'?'Completed':'Incomplete')+'</span></article>';
+ $('reviewCompletedTasks').innerHTML=completed.length?completed.map(t=>taskMarkup(t,'completed')).join(''):'<div class="review-day-empty"><strong>No completed tasks for this day.</strong></div>';
+ $('reviewIncompleteTasks').innerHTML=incomplete.length?incomplete.map(t=>taskMarkup(t,'remaining')).join(''):'<div class="review-day-empty"><strong>No incomplete tasks for this day. 🎉</strong></div>';
  $('reviewExportMessage').textContent='';
 }
 function csvSafe(value){return String(value??'').replace(/\r?\n/g,' ').replace(/"/g,'""')}
