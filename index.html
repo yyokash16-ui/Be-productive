@@ -2135,46 +2135,7 @@ body.night-mode #reviewManagerView .review-report-toggle:hover{background:#30253
 }
 
 </style>
-<style id="review-study-efficiency-styles">
-#reviewManagerView .review-study-efficiency{border-color:#cce9e2;background:linear-gradient(145deg,#fff 0%,#effbf7 56%,#f3f8ff 100%)}
-#reviewManagerView .review-study-target-note{margin:4px 0 14px;padding:10px 12px;border:1px solid #cce9e2;border-radius:12px;background:#edfaf5;color:#176b58;font-size:12px;font-weight:800;line-height:1.5}
-#reviewManagerView .review-study-period-circles{margin-bottom:20px}
-#reviewManagerView .review-study-gauge{background:conic-gradient(#25a88a var(--period-efficiency),#d9eee7 0);box-shadow:0 0 0 5px #ffffff9c,inset 0 0 0 1px #ffffff}
-#reviewManagerView .review-study-gauge:before{background:linear-gradient(145deg,#fff,#f0fbf7);box-shadow:inset 0 0 0 1px #d5eee5}
-#reviewManagerView .review-study-period-detail{max-width:115px;text-align:center;font-size:10px;font-weight:800;color:#57766e;line-height:1.35}
-#reviewManagerView .review-study-chart-heading{margin-top:10px}
-#reviewManagerView .review-study-chart-heading h3{margin:3px 0 0;font-size:17px}
-#reviewManagerView .review-study-daily-chart{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(5px,1.4vw,15px);min-height:200px;padding:12px 7px 2px;overflow-x:auto}
-#reviewManagerView .review-study-day-button{appearance:none;border:0;background:transparent;box-shadow:none;flex:1 0 0;min-width:0;max-width:125px;padding:0 3px 6px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;border-radius:14px;cursor:pointer;color:#24213d;font-family:inherit}
-#reviewManagerView .review-study-day-button:focus-visible{outline:2px solid #229d80;outline-offset:2px}
-#reviewManagerView .review-study-day-button.selected{background:linear-gradient(180deg,#ddf7ee80,#effbf780);box-shadow:inset 0 0 0 1.5px #48b89b}
-#reviewManagerView .review-study-bar-percent{font-size:12px;font-weight:950;color:#176b58;line-height:1.1;min-height:14px}
-#reviewManagerView .review-study-pillar{display:flex;align-items:flex-end;justify-content:center;width:min(68%,54px);height:125px;border-radius:13px 13px 7px 7px;overflow:hidden;background:linear-gradient(180deg,#eef8f4,#deefe9);box-shadow:inset 0 0 0 1px #cde7de}
-#reviewManagerView .review-study-pillar-fill{display:block;width:100%;min-height:0;border-radius:12px 12px 5px 5px;background:linear-gradient(180deg,#58d2b1 0%,#1d9c7e 100%);transition:height .3s}
-#reviewManagerView .review-study-day-label{display:grid;gap:3px;justify-items:center;text-align:center}
-#reviewManagerView .review-study-day-label strong{font-size:12px;font-weight:950;color:#24213d}
-#reviewManagerView .review-study-day-label small,#reviewManagerView .review-study-day-count{font-size:10px;font-weight:800;color:#57766e;text-align:center}
-#reviewManagerView .review-study-legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#25a88a;margin-right:5px}
-#reviewManagerView .review-study-empty{padding:10px 12px;margin:0 0 12px;border:1px dashed #9bd9c7;border-radius:12px;background:#f5fcf9;color:#477a6b;font-size:12px;line-height:1.5}
-#reviewManagerView .review-study-selected-panel{border-color:#cce9e2;background:linear-gradient(145deg,#fff,#f1fbf7)}
-#reviewManagerView .review-study-session-list{display:grid;gap:10px}
-#reviewManagerView .review-study-session-card{border:1px solid #d2eae2;border-radius:13px;background:#f8fdfb;padding:13px}
-#reviewManagerView .review-study-session-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-#reviewManagerView .review-study-session-top>strong{font-size:14px;line-height:1.45;color:#203a35}
-#reviewManagerView .review-study-session-duration{flex:none;border-radius:999px;background:#dcf6ed;color:#176b58;font-size:12px;font-weight:900;padding:5px 9px}
-#reviewManagerView .review-study-session-meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin:8px 0;color:#57766e;font-size:11px;font-weight:750}
-#reviewManagerView .review-study-session-card p{margin:7px 0 0;color:#4b625b;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
-body.night-mode #reviewManagerView .review-study-efficiency,body.night-mode #reviewManagerView .review-study-selected-panel{background:linear-gradient(145deg,#211f2d,#1b2929);border-color:#3f665d}
-body.night-mode #reviewManagerView .review-study-target-note,body.night-mode #reviewManagerView .review-study-empty{background:#1c302b;border-color:#3b7162;color:#bcefe0}
-body.night-mode #reviewManagerView .review-study-gauge:before{background:linear-gradient(145deg,#211f2d,#20302e);box-shadow:inset 0 0 0 1px #3a6258}
-body.night-mode #reviewManagerView .review-study-period-detail,body.night-mode #reviewManagerView .review-study-day-count,body.night-mode #reviewManagerView .review-study-day-label small{color:#a2c8bc}
-body.night-mode #reviewManagerView .review-study-day-label strong,body.night-mode #reviewManagerView .review-study-session-top>strong{color:#effaf6}
-body.night-mode #reviewManagerView .review-study-session-card{background:#1c302b;border-color:#3f665d}
-body.night-mode #reviewManagerView .review-study-session-card p,body.night-mode #reviewManagerView .review-study-session-meta{color:#a2c8bc}
-body.night-mode #reviewManagerView .review-study-pillar{background:#263d37;box-shadow:inset 0 0 0 1px #395e53}
-body.night-mode #reviewManagerView .review-study-session-duration{background:#244e43;color:#bcefe0}
-@media(max-width:480px){#reviewManagerView .review-study-period-circles{gap:4px}#reviewManagerView .review-study-period-detail{font-size:9px}#reviewManagerView .review-study-pillar{height:100px}#reviewManagerView .review-study-daily-chart{min-height:170px;padding-left:0;padding-right:0}#reviewManagerView .review-study-bar-percent{font-size:10px}#reviewManagerView .review-study-day-label strong{font-size:10px}#reviewManagerView .review-study-day-count{font-size:9px}}
-</style>
+
 <style id="review-efficiency-accordion-styles">
 #reviewManagerView .review-efficiency-accordion{margin:0 0 14px;border:1px solid #ded9f1;border-radius:18px;background:linear-gradient(145deg,#fff,#f7f5ff);box-shadow:0 7px 22px #3e2e7210;overflow:hidden}
 #reviewManagerView .review-efficiency-toggle{appearance:none;width:100%;display:flex;align-items:center;gap:12px;padding:16px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#282442;text-align:left;cursor:pointer;font:inherit}
@@ -2200,7 +2161,63 @@ body.night-mode #reviewManagerView .review-efficiency-toggle.study{background:li
 body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-efficiency-toggle-icon,body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-efficiency-toggle-mark{background:#244e43;color:#bcefe0}
 @media(max-width:480px){#reviewManagerView .review-efficiency-toggle{padding:13px;gap:10px}#reviewManagerView .review-efficiency-toggle-icon{width:36px;height:36px}#reviewManagerView .review-efficiency-toggle-copy strong{font-size:15px}#reviewManagerView .review-efficiency-body{padding:0 6px 6px}}
 </style>
-</head>
+<style id="review-group-growth-styles">
+#reviewManagerView .review-group-growth-panel{border-color:#dcd7f0;background:linear-gradient(145deg,#fff,#f8f6ff)}
+#reviewManagerView .review-group-subjects{margin:4px 0 14px;padding:10px 12px;border:1px solid #ded9f1;border-radius:12px;background:#f6f3ff;color:#514879;font-size:11px;font-weight:750;line-height:1.5}
+#reviewManagerView .review-group-stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0 20px}
+#reviewManagerView .review-group-stat{min-width:0;display:grid;gap:6px;align-content:start;padding:11px 9px;border:1px solid #e0dcef;border-radius:13px;background:#fff}
+#reviewManagerView .review-group-stat>span{font-size:10px;font-weight:850;color:#6b6583}
+#reviewManagerView .review-group-stat>strong{font-size:clamp(13px,3.4vw,18px);font-weight:950;color:#443887;overflow-wrap:anywhere}
+#reviewManagerView .review-group-stat>small{font-size:10px;font-weight:750;color:#75708b}
+#reviewManagerView .review-group-accordion.group-two .review-group-growth-panel{border-color:#cce9e2;background:linear-gradient(145deg,#fff,#f1fbf7)}
+#reviewManagerView .review-group-accordion.group-two .review-group-subjects{border-color:#cce9e2;background:#effaf6;color:#326d5d}
+#reviewManagerView .review-group-accordion.group-two .review-group-stat>strong{color:#187a61}
+#reviewManagerView .review-group-chart-heading{margin-top:10px}
+#reviewManagerView .review-group-chart-heading h3{margin:3px 0 0;font-size:17px}
+#reviewManagerView .review-group-daily-chart{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(5px,1.4vw,15px);min-height:200px;padding:12px 7px 2px;overflow-x:auto}
+#reviewManagerView .review-group-day-button{appearance:none;border:0;background:transparent;box-shadow:none;flex:1 0 0;min-width:0;max-width:125px;padding:0 3px 6px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;border-radius:14px;cursor:pointer;color:#24213d;font-family:inherit}
+#reviewManagerView .review-group-day-button:focus-visible{outline:2px solid #6553ce;outline-offset:2px}
+#reviewManagerView .review-group-accordion.group-two .review-group-day-button:focus-visible{outline-color:#229d80}
+#reviewManagerView .review-group-day-button.selected{background:linear-gradient(180deg,#eeeaff80,#fff0f755);box-shadow:inset 0 0 0 1.5px #8d7ce2}
+#reviewManagerView .review-group-accordion.group-two .review-group-day-button.selected{background:linear-gradient(180deg,#ddf7ee80,#effbf780);box-shadow:inset 0 0 0 1.5px #48b89b}
+#reviewManagerView .review-group-bar-duration{font-size:10px;font-weight:900;color:#5140a6;line-height:1.1;min-height:12px;white-space:nowrap}
+#reviewManagerView .review-group-accordion.group-two .review-group-bar-duration{color:#176b58}
+#reviewManagerView .review-group-pillar{display:flex;align-items:flex-end;justify-content:center;width:min(68%,54px);height:120px;border-radius:12px 12px 6px 6px;overflow:hidden;background:linear-gradient(180deg,#f0edfb,#e6e1f3);box-shadow:inset 0 0 0 1px #d9d2ee}
+#reviewManagerView .review-group-accordion.group-two .review-group-pillar{background:linear-gradient(180deg,#eef8f4,#deefe9);box-shadow:inset 0 0 0 1px #cde7de}
+#reviewManagerView .review-group-pillar-fill{display:block;width:100%;min-height:0;border-radius:11px 11px 4px 4px;background:linear-gradient(180deg,#a69afa,#5e4ac8);transition:height .3s}
+#reviewManagerView .review-group-accordion.group-two .review-group-pillar-fill{background:linear-gradient(180deg,#58d2b1,#1d9c7e)}
+#reviewManagerView .review-group-day-label{display:grid;gap:3px;justify-items:center;text-align:center}
+#reviewManagerView .review-group-day-label strong{font-size:11px;font-weight:950;color:#24213d}
+#reviewManagerView .review-group-day-label small,#reviewManagerView .review-group-session-count{font-size:9px;font-weight:800;color:#657089;text-align:center}
+#reviewManagerView .review-group-accordion.group-two .review-group-day-label small,#reviewManagerView .review-group-accordion.group-two .review-group-session-count{color:#57766e}
+#reviewManagerView .review-group-selected-panel{border-color:#dcd7f0;background:linear-gradient(145deg,#fff,#faf9ff)}
+#reviewManagerView .review-group-accordion.group-two .review-group-selected-panel{border-color:#cce9e2;background:linear-gradient(145deg,#fff,#f1fbf7)}
+#reviewManagerView .review-group-session-list{display:grid;gap:10px}
+#reviewManagerView .review-group-session-card{border:1px solid #e0dcef;border-radius:13px;background:#fff;padding:13px}
+#reviewManagerView .review-group-accordion.group-two .review-group-session-card{border-color:#d2eae2;background:#f8fdfb}
+#reviewManagerView .review-group-session-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+#reviewManagerView .review-group-session-top>strong{font-size:13px;line-height:1.45;color:#292442;overflow-wrap:anywhere}
+#reviewManagerView .review-group-session-duration{flex:none;border-radius:999px;background:#eeeaff;color:#5140a6;font-size:11px;font-weight:900;padding:5px 8px}
+#reviewManagerView .review-group-accordion.group-two .review-group-session-duration{background:#dcf6ed;color:#176b58}
+#reviewManagerView .review-group-session-meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin:8px 0;color:#657089;font-size:10px;font-weight:750}
+#reviewManagerView .review-group-session-card p{margin:7px 0 0;color:#4b5268;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+#reviewManagerView .review-group-no-data{padding:10px 12px;margin:0 0 12px;border:1px dashed #d2cbed;border-radius:12px;background:#fbfaff;color:#686080;font-size:12px;line-height:1.5}
+#reviewManagerView .review-group-unassigned-note{margin:0 0 14px;padding:0 4px;color:#737087;font-size:11px;line-height:1.45}
+body.night-mode #reviewManagerView .review-group-growth-panel,body.night-mode #reviewManagerView .review-group-selected-panel{background:#211f2d;border-color:#514361}
+body.night-mode #reviewManagerView .review-group-subjects{background:#2a2540;border-color:#514361;color:#d0c7ff}
+body.night-mode #reviewManagerView .review-group-stat{background:#211d2c;border-color:#514361}
+body.night-mode #reviewManagerView .review-group-stat>span,body.night-mode #reviewManagerView .review-group-stat>small{color:#b8b1ca}
+body.night-mode #reviewManagerView .review-group-stat>strong{color:#d0c7ff}
+body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-subjects{background:#1c302b;border-color:#3b7162;color:#bcefe0}
+body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-stat>strong{color:#bcefe0}
+body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-day-label small,body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-session-count{color:#a2c8bc}
+body.night-mode #reviewManagerView .review-group-session-card{background:#211d2c;border-color:#514361}
+body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-session-card{background:#1c302b;border-color:#3f665d}
+body.night-mode #reviewManagerView .review-group-session-card p,body.night-mode #reviewManagerView .review-group-session-meta{color:#a2c8bc}
+body.night-mode #reviewManagerView .review-group-pillar{background:#302b42;box-shadow:inset 0 0 0 1px #514361}
+body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-pillar{background:#263d37;box-shadow:inset 0 0 0 1px #395e53}
+@media(max-width:480px){#reviewManagerView .review-group-stats-grid{gap:5px}#reviewManagerView .review-group-stat{padding:9px 6px}#reviewManagerView .review-group-stat>strong{font-size:13px}#reviewManagerView .review-group-daily-chart{min-height:165px;padding-left:0;padding-right:0}#reviewManagerView .review-group-pillar{height:96px}#reviewManagerView .review-group-bar-duration{font-size:9px}#reviewManagerView .review-group-day-label strong{font-size:10px}}
+</style></head>
 <body>
 <div class="shell">
 <header class="top"><div class="brand"><div class="logo"><img src="./icons/sow-ca-logo.svg" alt="Sow CA logo"></div><div><strong>Be Productive</strong><small>STUDY SYSTEM FOR SOW</small></div></div><div class="top-actions"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false"><span id="themeToggleIcon">🌙</span><span id="themeToggleLabel">Night Mode</span></button><button id="installBtn" class="button secondary hidden">↓ Install</button><button id="signOut" class="button secondary hidden">Sign out</button></div></header>
@@ -2353,7 +2370,7 @@ body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-effic
     </button>
     <form id="sessionForm" class="study-session-form planner-session-form hidden">
       <div class="formgrid">
-        <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+        <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Advanced Accounting</option><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
         <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
       </div>
       <div class="formgrid">
@@ -2397,7 +2414,7 @@ body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-effic
   <div class="test-intro"><span>🎯</span><div><strong>One test. One clear goal.</strong><small>Set the subject and target, start the timer, then record your result.</small></div></div>
   <section class="test-workspace">
     <div class="test-settings-grid">
-      <div class="field"><label for="testSubject">📚 Subject of the test</label><select id="testSubject"><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+      <div class="field"><label for="testSubject">📚 Subject of the test</label><select id="testSubject"><option>Advanced Accounting</option><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
       <div class="field"><label for="testTargetMinutes">🎯 Target completion time (minutes)</label><input id="testTargetMinutes" type="number" min="1" max="1440" value="60" required></div>
     </div>
     <div class="test-clock-card">
@@ -2497,32 +2514,60 @@ body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-effic
   </section>
     </div>
   </section>
-  <section class="review-efficiency-accordion" aria-label="Study efficiency">
-    <button id="toggleReviewStudyEfficiency" class="review-efficiency-toggle study" type="button" aria-expanded="false" aria-controls="reviewStudyEfficiencyBody">
-      <span class="review-efficiency-toggle-icon" aria-hidden="true">📚</span>
-      <span class="review-efficiency-toggle-copy"><strong>Study efficiency</strong><small>Tap to view saved study sessions and progress</small></span>
-      <span id="reviewStudyEfficiencyIcon" class="review-efficiency-toggle-mark" aria-hidden="true">＋</span>
+    <section class="review-efficiency-accordion review-group-accordion group-one" aria-label="Group 1 Growth">
+    <button id="toggleGroup1Growth" class="review-efficiency-toggle group-one" type="button" aria-expanded="false" aria-controls="group1GrowthBody">
+      <span class="review-efficiency-toggle-icon" aria-hidden="true">📘</span>
+      <span class="review-efficiency-toggle-copy"><strong>Group 1 Growth</strong><small>Tap to view study time, sessions and daily progress</small></span>
+      <span id="group1GrowthToggleIcon" class="review-efficiency-toggle-mark" aria-hidden="true">＋</span>
     </button>
-    <div id="reviewStudyEfficiencyBody" class="review-efficiency-body hidden">
-  <section class="review-panel review-study-efficiency" aria-label="Study efficiency">
-    <div class="review-panel-heading"><div><div class="review-eyebrow">📚 STUDY PROGRESS</div><h2>Study efficiency</h2></div><span class="review-panel-icon">⏱️</span></div>
-    <div id="reviewStudyNoData" class="review-study-empty hidden">No study sessions have been saved in the last 7 days. Your efficiency will update automatically when you log a session.</div>
-    <div class="review-period-circles review-study-period-circles">
-      <div class="review-period-item"><div id="reviewStudyTodayGauge" class="review-period-gauge review-study-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewStudyTodayEfficiency">0%</strong></div></div><strong class="review-period-title">Today</strong><small id="reviewStudyTodayDetail" class="review-study-period-detail">0 / 6h</small></div>
-      <div class="review-period-item"><div id="reviewStudyWeekGauge" class="review-period-gauge review-study-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewStudyWeekEfficiency">0%</strong></div></div><strong class="review-period-title">Last 7 days</strong><small id="reviewStudyWeekDetail" class="review-study-period-detail">0 / 42h</small></div>
-      <div class="review-period-item"><div id="reviewStudyMonthGauge" class="review-period-gauge review-study-gauge" style="--period-efficiency:0%"><div class="review-period-gauge-centre"><strong id="reviewStudyMonthEfficiency">0%</strong></div></div><strong class="review-period-title">Month to date</strong><small id="reviewStudyMonthDetail" class="review-study-period-detail">0h logged</small></div>
+    <div id="group1GrowthBody" class="review-efficiency-body hidden">
+      <section class="review-panel review-group-growth-panel">
+        <div class="review-panel-heading"><div><div class="review-eyebrow">📚 GROUP 1</div><h2>Group 1 Growth</h2></div><span class="review-panel-icon">🌱</span></div>
+        <p class="review-group-subjects"><strong>Subjects:</strong> Advanced Accounting · Law · Taxation</p>
+        <div class="review-group-stats-grid">
+          <article class="review-group-stat"><span>Today</span><strong id="group1TodayDuration">0h 00m</strong><small id="group1TodaySessions">0 sessions</small></article>
+          <article class="review-group-stat"><span>Last 7 days</span><strong id="group1WeekDuration">0h 00m</strong><small id="group1WeekSessions">0 sessions</small></article>
+          <article class="review-group-stat"><span>Month to date</span><strong id="group1MonthDuration">0h 00m</strong><small id="group1MonthSessions">0 sessions</small></article>
+        </div>
+        <div class="review-panel-heading review-group-chart-heading"><div><div class="review-eyebrow">LAST 7 DAYS</div><h3>Daily study time</h3></div><span class="review-panel-icon">📊</span></div>
+        <div class="review-tap-hint">Tap a day to see the saved Group 1 sessions. Tap again to close the details.</div>
+        <div id="group1DailyChart" class="review-group-daily-chart"></div>
+        <div id="group1NoData" class="review-group-no-data hidden">No Group 1 sessions were logged in the last 7 days.</div>
+      </section>
+      <section id="group1SelectedDetail" class="review-panel review-group-selected-panel hidden">
+        <div class="review-panel-heading"><div><div class="review-eyebrow">📂 SAVED SESSIONS</div><h2 id="group1SelectedDateTitle">Selected day</h2><p id="group1SelectedSummary">Study session details</p></div><span class="review-panel-icon">📝</span></div>
+        <div id="group1SessionsList" class="review-group-session-list"></div>
+      </section>
     </div>
-    <div class="review-panel-heading review-study-chart-heading"><div><div class="review-eyebrow">DAILY BREAKDOWN</div><h3>Study efficiency by day</h3></div><span class="review-panel-icon">📈</span></div>
-    <div class="review-tap-hint">Tap a day to view the sessions you entered and how much of the target you reached.</div>
-    <div id="reviewStudyDailyChart" class="review-study-daily-chart"></div>
-    <div class="review-chart-legend"><span><i class="review-study-legend-dot"></i> Study time compared with target</span></div>
   </section>
-  <section id="reviewStudySelectedDetail" class="review-panel review-study-selected-panel hidden">
-    <div class="review-panel-heading"><div><div class="review-eyebrow">📂 SAVED STUDY SESSIONS</div><h2 id="reviewStudySelectedDateTitle">Selected day</h2><p id="reviewStudySelectedSummary">Study session details</p></div><span class="review-panel-icon">📝</span></div>
-    <div id="reviewStudySessionsList" class="review-study-session-list"></div>
-  </section>
+  <section class="review-efficiency-accordion review-group-accordion group-two" aria-label="Group 2 Growth">
+    <button id="toggleGroup2Growth" class="review-efficiency-toggle group-two" type="button" aria-expanded="false" aria-controls="group2GrowthBody">
+      <span class="review-efficiency-toggle-icon" aria-hidden="true">📗</span>
+      <span class="review-efficiency-toggle-copy"><strong>Group 2 Growth</strong><small>Tap to view study time, sessions and daily progress</small></span>
+      <span id="group2GrowthToggleIcon" class="review-efficiency-toggle-mark" aria-hidden="true">＋</span>
+    </button>
+    <div id="group2GrowthBody" class="review-efficiency-body hidden">
+      <section class="review-panel review-group-growth-panel">
+        <div class="review-panel-heading"><div><div class="review-eyebrow">📚 GROUP 2</div><h2>Group 2 Growth</h2></div><span class="review-panel-icon">🌿</span></div>
+        <p class="review-group-subjects"><strong>Subjects:</strong> Cost & Management Accounting · Auditing & Ethics · Financial Management · Strategic Management</p>
+        <div class="review-group-stats-grid">
+          <article class="review-group-stat"><span>Today</span><strong id="group2TodayDuration">0h 00m</strong><small id="group2TodaySessions">0 sessions</small></article>
+          <article class="review-group-stat"><span>Last 7 days</span><strong id="group2WeekDuration">0h 00m</strong><small id="group2WeekSessions">0 sessions</small></article>
+          <article class="review-group-stat"><span>Month to date</span><strong id="group2MonthDuration">0h 00m</strong><small id="group2MonthSessions">0 sessions</small></article>
+        </div>
+        <div class="review-panel-heading review-group-chart-heading"><div><div class="review-eyebrow">LAST 7 DAYS</div><h3>Daily study time</h3></div><span class="review-panel-icon">📊</span></div>
+        <div class="review-tap-hint">Tap a day to see the saved Group 2 sessions. Tap again to close the details.</div>
+        <div id="group2DailyChart" class="review-group-daily-chart"></div>
+        <div id="group2NoData" class="review-group-no-data hidden">No Group 2 sessions were logged in the last 7 days.</div>
+      </section>
+      <section id="group2SelectedDetail" class="review-panel review-group-selected-panel hidden">
+        <div class="review-panel-heading"><div><div class="review-eyebrow">📂 SAVED SESSIONS</div><h2 id="group2SelectedDateTitle">Selected day</h2><p id="group2SelectedSummary">Study session details</p></div><span class="review-panel-icon">📝</span></div>
+        <div id="group2SessionsList" class="review-group-session-list"></div>
+      </section>
     </div>
   </section>
+  <p class="review-group-unassigned-note">Sessions saved with the subject “Other” are not included in either group.</p>
+</section>
 <div class="footer">Your study data belongs to your signed-in account · Be Productive</div>
 </main>
 </div>
@@ -2531,7 +2576,7 @@ body.night-mode #reviewManagerView .review-efficiency-toggle.study .review-effic
 (()=>{'use strict';
 const $=id=>document.getElementById(id),cfg=window.BE_PRODUCTIVE_CONFIG||{};
 const ready=!!(cfg.supabaseUrl&&cfg.supabaseAnonKey&&window.supabase);
-const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,testRecords:[],testsReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home',reviewSelectedDay:'',reviewExpandedDay:'',reviewExpandedStudyDay:''};
+const state={db:null,user:null,mode:'signin',sessions:[],tasks:[],taskHistory:[],historyReady:false,testRecords:[],testsReady:false,target:6,wakePlans:[],wakeReady:false,channel:null,install:null,currentView:'home',reviewSelectedDay:'',reviewExpandedDay:'',reviewExpandedGroup1Day:'',reviewExpandedGroup2Day:''};
 const today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=n=>Math.floor(Number(n||0)/60)+'h '+String(Math.round(Number(n||0)%60)).padStart(2,'0')+'m';
@@ -2569,7 +2614,7 @@ function closeCollapsibleToggle(buttonId,bodyId,iconId){
 }
 function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('studyExportDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();setupCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');setupCollapsibleToggle('toggleReviewStudyEfficiency','reviewStudyEfficiencyBody','reviewStudyEfficiencyIcon');setupCollapsibleToggle('toggleTaskReport','taskReportBody','taskReportToggleIcon');setupCollapsibleToggle('toggleStudyReport','studyReportBody','studyReportToggleIcon');setupCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;closeCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;openCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('reviewStudyDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-study-review-day]');if(!row)return;const day=row.dataset.studyReviewDay;if(state.reviewExpandedStudyDay===day){state.reviewExpandedStudyDay='';renderReviewStudy();return}state.reviewExpandedStudyDay=day;openCollapsibleToggle('toggleReviewStudyEfficiency','reviewStudyEfficiencyBody','reviewStudyEfficiencyIcon');renderReviewStudy();$('reviewStudySelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
+wireNavigation();setupCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');setupCollapsibleToggle('toggleGroup1Growth','group1GrowthBody','group1GrowthToggleIcon');setupCollapsibleToggle('toggleGroup2Growth','group2GrowthBody','group2GrowthToggleIcon');setupCollapsibleToggle('toggleTaskReport','taskReportBody','taskReportToggleIcon');setupCollapsibleToggle('toggleStudyReport','studyReportBody','studyReportToggleIcon');setupCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');$('group1DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('group2DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;closeCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;openCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
 let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
@@ -2657,41 +2702,57 @@ function reviewProgressData(){
  const todayData=reviewDaySnapshot(today());
  return {days,planned:weekly.planned,completed:weekly.completed,remaining:weekly.remaining,removed:weekly.removed,efficiency:weekly.efficiency,today:todayData,weekly,monthly};
 }
-function reviewStudyDaySnapshot(day){
- const sessions=studySessionsForDay(day),targetMinutes=Math.max(1,Number(state.target)||6)*60;
- const totalMinutes=sessions.reduce((n,item)=>n+Math.max(0,Number(item.duration_minutes)||0),0);
- return {day,sessions,totalMinutes,targetMinutes,sessionCount:sessions.length,efficiency:Math.round(totalMinutes/targetMinutes*100)};
+function studyGroupNumber(session){
+ const subject=String(session?.subject||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+ if(/advanced accounting|corporate and other law|corporate other law|^law$|taxation|income tax|indirect tax|direct tax/.test(subject))return 1;
+ if(/cost.*management accounting|auditing|audit and ethics|financial management|strategic management/.test(subject))return 2;
+ return 0;
 }
-function reviewStudyRange(startDay,endDay){
- const dates=[];for(let day=startDay;day<=endDay;day=shiftDate(day,1))dates.push(day);
- const days=dates.map(reviewStudyDaySnapshot),totalMinutes=days.reduce((n,d)=>n+d.totalMinutes,0),sessionCount=days.reduce((n,d)=>n+d.sessionCount,0),targetMinutes=days.reduce((n,d)=>n+d.targetMinutes,0);
- return {startDay,endDay,days,totalMinutes,sessionCount,targetMinutes,efficiency:targetMinutes?Math.round(totalMinutes/targetMinutes*100):0};
+function reviewGroupSessionsForDay(day,group){return studySessionsForDay(day).filter(session=>studyGroupNumber(session)===group)}
+function reviewGroupDaySnapshot(day,group){
+ const sessions=reviewGroupSessionsForDay(day,group);
+ const totalMinutes=sessions.reduce((sum,session)=>sum+Math.max(0,Number(session.duration_minutes)||0),0);
+ return {day,group,sessions,totalMinutes,sessionCount:sessions.length};
 }
-function reviewStudyProgressData(){
- const days=Array.from({length:7},(_,i)=>shiftDate(today(),i-6)).map(reviewStudyDaySnapshot);
- return {days,today:reviewStudyDaySnapshot(today()),weekly:reviewStudyRange(shiftDate(today(),-6),today()),monthly:reviewStudyRange(today().slice(0,8)+'01',today()),targetHours:Math.max(1,Number(state.target)||6)};
+function reviewGroupRange(startDay,endDay,group){
+ const days=[];for(let d=startDay;d<=endDay;d=shiftDate(d,1))days.push(reviewGroupDaySnapshot(d,group));
+ return {days,totalMinutes:days.reduce((sum,item)=>sum+item.totalMinutes,0),sessionCount:days.reduce((sum,item)=>sum+item.sessionCount,0)};
 }
-function renderReviewStudy(){
- const data=reviewStudyProgressData();
- const put=(gaugeId,valueId,detailId,stats)=>{$(valueId).textContent=stats.efficiency+'%';$(gaugeId).style.setProperty('--period-efficiency',Math.min(100,Math.max(0,stats.efficiency))+'%');$(detailId).textContent=formatStudyDuration(stats.totalMinutes)+' / '+formatStudyDuration(stats.targetMinutes);};
- put('reviewStudyTodayGauge','reviewStudyTodayEfficiency','reviewStudyTodayDetail',data.today);
- put('reviewStudyWeekGauge','reviewStudyWeekEfficiency','reviewStudyWeekDetail',data.weekly);
- put('reviewStudyMonthGauge','reviewStudyMonthEfficiency','reviewStudyMonthDetail',data.monthly);
- $('reviewStudyNoData').classList.toggle('hidden',data.weekly.sessionCount>0);
- if(state.reviewExpandedStudyDay&&!data.days.some(d=>d.day===state.reviewExpandedStudyDay))state.reviewExpandedStudyDay='';
- $('reviewStudyDailyChart').innerHTML=data.days.map(item=>{
-  const visual=Math.min(100,Math.max(0,item.efficiency)),selected=item.day===state.reviewExpandedStudyDay;
-  return '<button type="button" class="review-study-day-button '+(selected?'selected':'')+'" data-study-review-day="'+item.day+'" aria-pressed="'+selected+'" aria-label="'+esc(reviewLongDate(item.day))+', '+item.efficiency+' percent study efficiency, '+item.sessionCount+' sessions, '+formatStudyDuration(item.totalMinutes)+' studied"><span class="review-study-bar-percent">'+item.efficiency+'%</span><span class="review-study-pillar"><span class="review-study-pillar-fill" style="height:'+visual+'%"></span></span><span class="review-study-day-label"><strong>'+esc(reviewDayLabel(item.day))+'</strong><small>'+esc(date(item.day))+'</small></span><span class="review-study-day-count">'+item.sessionCount+' session'+(item.sessionCount===1?'':'s')+'</span></button>';
+function reviewGroupGrowthData(group){
+ const d=today(),weekDays=Array.from({length:7},(_,i)=>shiftDate(d,i-6)),monthDays=[];
+ for(let day=d.slice(0,8)+'01';day<=d;day=shiftDate(day,1))monthDays.push(day);
+ return {days:weekDays.map(day=>reviewGroupDaySnapshot(day,group)),today:reviewGroupRange(d,d,group),week:reviewGroupRange(weekDays[0],weekDays[6],group),month:reviewGroupRange(monthDays[0],monthDays[monthDays.length-1],group)};
+}
+function renderReviewGroupGrowth(group){
+ const prefix='group'+group,data=reviewGroupGrowthData(group);
+ const put=(period,stats)=>{$(prefix+period+'Duration').textContent=formatStudyDuration(stats.totalMinutes);$(prefix+period+'Sessions').textContent=stats.sessionCount+' session'+(stats.sessionCount===1?'':'s')};
+ put('Today',data.today);put('Week',data.week);put('Month',data.month);
+ const key=group===1?'reviewExpandedGroup1Day':'reviewExpandedGroup2Day';
+ if(state[key]&&!data.days.some(item=>item.day===state[key]))state[key]='';
+ const maxMinutes=Math.max(1,...data.days.map(item=>item.totalMinutes));
+ $(prefix+'DailyChart').innerHTML=data.days.map(item=>{
+  const visual=item.totalMinutes?Math.max(5,Math.round(item.totalMinutes/maxMinutes*100)):0,selected=item.day===state[key];
+  return '<button type="button" class="review-group-day-button '+(selected?'selected':'')+'" data-growth-group="'+group+'" data-growth-day="'+item.day+'" aria-pressed="'+selected+'" aria-label="'+esc(reviewLongDate(item.day))+', '+formatStudyDuration(item.totalMinutes)+', '+item.sessionCount+' sessions"><span class="review-group-bar-duration">'+formatStudyDuration(item.totalMinutes)+'</span><span class="review-group-pillar"><span class="review-group-pillar-fill" style="height:'+visual+'%"></span></span><span class="review-group-day-label"><strong>'+esc(reviewDayLabel(item.day))+'</strong><small>'+esc(date(item.day))+'</small></span><span class="review-group-session-count">'+item.sessionCount+' session'+(item.sessionCount===1?'':'s')+'</span></button>';
  }).join('');
- $('reviewStudySelectedDetail').classList.toggle('hidden',!state.reviewExpandedStudyDay);
- if(state.reviewExpandedStudyDay)renderSelectedStudyDay();
+ $(prefix+'NoData').classList.toggle('hidden',data.week.sessionCount>0);
+ $(prefix+'SelectedDetail').classList.toggle('hidden',!state[key]);
+ if(state[key])renderSelectedGroupDay(group);
 }
-function renderSelectedStudyDay(){
- const day=state.reviewExpandedStudyDay;if(!day)return;
- const data=reviewStudyDaySnapshot(day);
- $('reviewStudySelectedDateTitle').textContent=reviewLongDate(day);
- $('reviewStudySelectedSummary').textContent=data.efficiency+'% efficiency · '+data.sessionCount+' session'+(data.sessionCount===1?'':'s')+' · '+formatStudyDuration(data.totalMinutes)+' studied against '+formatStudyDuration(data.targetMinutes)+' target';
- $('reviewStudySessionsList').innerHTML=data.sessions.length?data.sessions.map((item,index)=>'<article class="review-study-session-card"><div class="review-study-session-top"><strong>'+esc((index+1)+'. '+(item.subject||'Other'))+'</strong><span class="review-study-session-duration">'+esc(formatStudyDuration(item.duration_minutes))+'</span></div><div class="review-study-session-meta"><span>📚 '+esc(item.study_type||'Study session')+'</span>'+(item.created_at?'<span>🕒 '+esc(new Date(item.created_at).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'}))+'</span>':'')+'</div>'+(item.topic?'<p><strong>Chapter / topic:</strong> '+esc(item.topic)+'</p>':'')+(item.notes?'<p><strong>Reflection:</strong> '+esc(item.notes)+'</p>':'')+'</article>').join(''):'<div class="review-day-empty"><strong>No saved study sessions for this date.</strong><p>Log a session in Study Manager and it will show here.</p></div>';
+function renderSelectedGroupDay(group){
+ const prefix='group'+group,key=group===1?'reviewExpandedGroup1Day':'reviewExpandedGroup2Day',day=state[key];if(!day)return;
+ const data=reviewGroupDaySnapshot(day,group);
+ $(prefix+'SelectedDateTitle').textContent=reviewLongDate(day);
+ $(prefix+'SelectedSummary').textContent=data.sessionCount+' session'+(data.sessionCount===1?'':'s')+' · '+formatStudyDuration(data.totalMinutes)+' logged';
+ $(prefix+'SessionsList').innerHTML=data.sessions.length?data.sessions.map((item,index)=>'<article class="review-group-session-card"><div class="review-group-session-top"><strong>'+esc((index+1)+'. '+(item.subject||'Other'))+'</strong><span class="review-group-session-duration">'+esc(formatStudyDuration(item.duration_minutes))+'</span></div><div class="review-group-session-meta"><span>📚 '+esc(item.study_type||'Study session')+'</span>'+(item.created_at?'<span>🕒 '+esc(new Date(item.created_at).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'}))+'</span>':'')+'</div>'+(item.topic?'<p><strong>Chapter / topic:</strong> '+esc(item.topic)+'</p>':'')+(item.notes?'<p><strong>Reflection:</strong> '+esc(item.notes)+'</p>':'')+'</article>').join(''):'<div class="review-day-empty"><strong>No sessions saved for this day.</strong></div>';
+}
+function handleGroupGrowthDayClick(event){
+ const row=event.target.closest('[data-growth-group][data-growth-day]');if(!row)return;
+ const group=Number(row.dataset.growthGroup),day=row.dataset.growthDay,key=group===1?'reviewExpandedGroup1Day':'reviewExpandedGroup2Day',prefix='group'+group;
+ if(state[key]===day){state[key]='';renderReviewGroupGrowth(group);return}
+ state[key]=day;
+ openCollapsibleToggle(group===1?'toggleGroup1Growth':'toggleGroup2Growth',prefix+'GrowthBody',prefix+'GrowthToggleIcon');
+ renderReviewGroupGrowth(group);
+ $(prefix+'SelectedDetail').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function reviewDayLabel(day){if(day===today())return 'Today';if(day===shiftDate(today(),-1))return 'Yesterday';return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short'})}
 function reviewLongDate(day){return new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
@@ -2715,7 +2776,8 @@ function renderReview(){
  }).join('');
  $('reviewSelectedDetail').classList.toggle('hidden',!state.reviewExpandedDay);
  if(state.reviewExpandedDay)renderSelectedReviewDay();
- renderReviewStudy();
+ renderReviewGroupGrowth(1);
+ renderReviewGroupGrowth(2);
 }
 function renderSelectedReviewDay(){
  const day=state.reviewExpandedDay;if(!day)return;const data=reviewDaySnapshot(day);
