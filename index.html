@@ -2217,6 +2217,19 @@ body.night-mode #reviewManagerView .review-group-session-card p,body.night-mode 
 body.night-mode #reviewManagerView .review-group-pillar{background:#302b42;box-shadow:inset 0 0 0 1px #514361}
 body.night-mode #reviewManagerView .review-group-accordion.group-two .review-group-pillar{background:#263d37;box-shadow:inset 0 0 0 1px #395e53}
 @media(max-width:480px){#reviewManagerView .review-group-stats-grid{gap:5px}#reviewManagerView .review-group-stat{padding:9px 6px}#reviewManagerView .review-group-stat>strong{font-size:13px}#reviewManagerView .review-group-daily-chart{min-height:165px;padding-left:0;padding-right:0}#reviewManagerView .review-group-pillar{height:96px}#reviewManagerView .review-group-bar-duration{font-size:9px}#reviewManagerView .review-group-day-label strong{font-size:10px}}
+</style><style id="study-group-session-styles">
+#studyManagerView .study-group-log-card{border-color:#dcd7f0;background:linear-gradient(145deg,#fff,#f8f6ff)}
+#studyManagerView .study-group-log-card.group-two-log-card{border-color:#cce9e2;background:linear-gradient(145deg,#fff,#f1fbf7)}
+#studyManagerView .study-group-log-card .planner-log-icon{background:#eeeaff}
+#studyManagerView .study-group-log-card.group-two-log-card .planner-log-icon{background:#def6ed}
+#studyManagerView .study-group-log-card .planner-log-heading-copy strong{font-size:16px}
+#studyManagerView .study-group-log-card.group-two-log-card .planner-log-heading-copy strong{color:#187a61}
+#studyManagerView .study-group-log-card .planner-log-toggle-icon{background:#eeeaff;color:#6553ce}
+#studyManagerView .study-group-log-card.group-two-log-card .planner-log-toggle-icon{background:#dcf6ed;color:#178266}
+body.night-mode #studyManagerView .study-group-log-card{background:#211d2c;border-color:#514361}
+body.night-mode #studyManagerView .study-group-log-card.group-two-log-card{background:#1c302b;border-color:#3f665d}
+body.night-mode #studyManagerView .study-group-log-card.group-two-log-card .planner-log-heading-copy strong{color:#bcefe0}
+@media(max-width:480px){#studyManagerView .study-group-log-card .planner-log-heading-copy strong{font-size:15px}}
 </style></head>
 <body>
 <div class="shell">
@@ -2362,25 +2375,47 @@ body.night-mode #reviewManagerView .review-group-accordion.group-two .review-gro
     </section>
   </div>
 
-  <section class="planner-log-card planner-collapsible-log" aria-label="Log a study session">
-    <button id="toggleStudyLog" class="planner-log-heading planner-log-toggle" type="button" aria-expanded="false" aria-controls="sessionForm">
-      <span class="planner-card-icon planner-log-icon">✍️</span>
-      <span class="planner-log-heading-copy"><span class="study-kicker">STUDY LOG</span><strong>Log a study session</strong><small>Tap to add and save your study details.</small></span>
-      <span id="studyLogToggleIcon" class="planner-log-toggle-icon" aria-hidden="true">＋</span>
+  <section class="planner-log-card planner-collapsible-log study-group-log-card group-one-log-card" aria-label="Log a Group 1 study session">
+    <button id="toggleStudyLogGroup1" class="planner-log-heading planner-log-toggle" type="button" aria-expanded="false" aria-controls="sessionFormGroup1">
+      <span class="planner-card-icon planner-log-icon">📘</span>
+      <span class="planner-log-heading-copy"><span class="study-kicker">GROUP 1</span><strong>Log a Group 1 study session</strong><small>Advanced Accounting, Direct Tax, GST and Corporate and Other Laws.</small></span>
+      <span id="studyLogGroup1ToggleIcon" class="planner-log-toggle-icon" aria-hidden="true">＋</span>
     </button>
-    <form id="sessionForm" class="study-session-form planner-session-form hidden">
+    <form id="sessionFormGroup1" class="study-session-form planner-session-form hidden" data-study-group="1">
       <div class="formgrid">
-        <div class="field"><label for="subject">📚 Subject</label><select id="subject"><option>Advanced Accounting</option><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
-        <div class="field"><label for="studyDate">📅 Study date</label><input id="studyDate" type="date" required></div>
+        <div class="field"><label for="subjectGroup1">📚 Group 1 subject</label><select id="subjectGroup1" required><option>Advanced Accounting</option><option>Direct Tax</option><option>GST</option><option>Corporate and Other Laws</option></select></div>
+        <div class="field"><label for="studyDateGroup1">📅 Study date</label><input id="studyDateGroup1" type="date" required></div>
       </div>
       <div class="formgrid">
-        <div class="field"><label for="minutes">⏱️ Duration (minutes)</label><input id="minutes" type="number" min="1" max="1440" value="60" required></div>
-        <div class="field"><label for="studyType">🎀 Study method</label><select id="studyType"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
+        <div class="field"><label for="minutesGroup1">⏱️ Duration (minutes)</label><input id="minutesGroup1" type="number" min="1" max="1440" value="60" required></div>
+        <div class="field"><label for="studyTypeGroup1">🎀 Study method</label><select id="studyTypeGroup1"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
       </div>
-      <div class="field"><label for="topic">📖 Chapter / topic</label><input id="topic" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div>
-      <div class="field"><label for="notes">💭 Quick reflection (optional)</label><textarea id="notes" rows="2" maxlength="500" placeholder="What did you understand today?"></textarea></div>
-      <button class="button full planner-save-session" type="submit">✨ Save study session</button>
-      <div id="sessionMessage" class="message"></div>
+      <div class="field"><label for="topicGroup1">📖 Chapter / topic</label><input id="topicGroup1" maxlength="120" placeholder="e.g. GST — Input Tax Credit"></div>
+      <div class="field"><label for="notesGroup1">💭 Quick reflection (optional)</label><textarea id="notesGroup1" rows="2" maxlength="500" placeholder="What did you understand today?"></textarea></div>
+      <button class="button full planner-save-session" type="submit">✨ Save Group 1 session</button>
+      <div id="sessionMessageGroup1" class="message" role="status"></div>
+    </form>
+  </section>
+
+  <section class="planner-log-card planner-collapsible-log study-group-log-card group-two-log-card" aria-label="Log a Group 2 study session">
+    <button id="toggleStudyLogGroup2" class="planner-log-heading planner-log-toggle" type="button" aria-expanded="false" aria-controls="sessionFormGroup2">
+      <span class="planner-card-icon planner-log-icon">📗</span>
+      <span class="planner-log-heading-copy"><span class="study-kicker">GROUP 2</span><strong>Log a Group 2 study session</strong><small>Cost & Management Accounting, Auditing & Ethics, Financial Management and Strategic Management.</small></span>
+      <span id="studyLogGroup2ToggleIcon" class="planner-log-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+    <form id="sessionFormGroup2" class="study-session-form planner-session-form hidden" data-study-group="2">
+      <div class="formgrid">
+        <div class="field"><label for="subjectGroup2">📚 Group 2 subject</label><select id="subjectGroup2" required><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option></select></div>
+        <div class="field"><label for="studyDateGroup2">📅 Study date</label><input id="studyDateGroup2" type="date" required></div>
+      </div>
+      <div class="formgrid">
+        <div class="field"><label for="minutesGroup2">⏱️ Duration (minutes)</label><input id="minutesGroup2" type="number" min="1" max="1440" value="60" required></div>
+        <div class="field"><label for="studyTypeGroup2">🎀 Study method</label><select id="studyTypeGroup2"><option>Concept learning</option><option>Question practice</option><option>Revision</option><option>Mock test</option><option>Lecture / video</option><option>Assignment</option></select></div>
+      </div>
+      <div class="field"><label for="topicGroup2">📖 Chapter / topic</label><input id="topicGroup2" maxlength="120" placeholder="e.g. Standard Costing — Variances"></div>
+      <div class="field"><label for="notesGroup2">💭 Quick reflection (optional)</label><textarea id="notesGroup2" rows="2" maxlength="500" placeholder="What did you understand today?"></textarea></div>
+      <button class="button full planner-save-session" type="submit">✨ Save Group 2 session</button>
+      <div id="sessionMessageGroup2" class="message" role="status"></div>
     </form>
   </section>
 
@@ -2414,7 +2449,7 @@ body.night-mode #reviewManagerView .review-group-accordion.group-two .review-gro
   <div class="test-intro"><span>🎯</span><div><strong>One test. One clear goal.</strong><small>Set the subject and target, start the timer, then record your result.</small></div></div>
   <section class="test-workspace">
     <div class="test-settings-grid">
-      <div class="field"><label for="testSubject">📚 Subject of the test</label><select id="testSubject"><option>Advanced Accounting</option><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option><option>Law</option><option>Taxation</option><option>Other</option></select></div>
+      <div class="field"><label for="testSubject">📚 Subject of the test</label><select id="testSubject"><option>Advanced Accounting</option><option>Direct Tax</option><option>GST</option><option>Corporate and Other Laws</option><option>Cost & Management Accounting</option><option>Auditing & Ethics</option><option>Financial Management</option><option>Strategic Management</option></select></div>
       <div class="field"><label for="testTargetMinutes">🎯 Target completion time (minutes)</label><input id="testTargetMinutes" type="number" min="1" max="1440" value="60" required></div>
     </div>
     <div class="test-clock-card">
@@ -2523,7 +2558,7 @@ body.night-mode #reviewManagerView .review-group-accordion.group-two .review-gro
     <div id="group1GrowthBody" class="review-efficiency-body hidden">
       <section class="review-panel review-group-growth-panel">
         <div class="review-panel-heading"><div><div class="review-eyebrow">📚 GROUP 1</div><h2>Group 1 Growth</h2></div><span class="review-panel-icon">🌱</span></div>
-        <p class="review-group-subjects"><strong>Subjects:</strong> Advanced Accounting · Law · Taxation</p>
+        <p class="review-group-subjects"><strong>Subjects:</strong> Advanced Accounting · Direct Tax · GST · Corporate and Other Laws</p>
         <div class="review-group-stats-grid">
           <article class="review-group-stat"><span>Today</span><strong id="group1TodayDuration">0h 00m</strong><small id="group1TodaySessions">0 sessions</small></article>
           <article class="review-group-stat"><span>Last 7 days</span><strong id="group1WeekDuration">0h 00m</strong><small id="group1WeekSessions">0 sessions</small></article>
@@ -2612,10 +2647,10 @@ function closeCollapsibleToggle(buttonId,bodyId,iconId){
  button.setAttribute('aria-expanded','false');
  icon.textContent='＋';
 }
-function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDate').value=t;$('historyDate').value=t;$('studyExportDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
+function init(){initializeTheme();$('themeToggle').addEventListener('click',toggleTheme);let t=today(),h=new Date().getHours();$('studyDateGroup1').value=t;$('studyDateGroup2').value=t;$('historyDate').value=t;$('studyExportDate').value=t;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('greeting').textContent=h<12?'Good morning.':h<17?'Good afternoon.':'Good evening.';
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));$('authSubmit').textContent=state.mode==='signin'?'Sign in':'Create account';$('password').autocomplete=state.mode==='signin'?'current-password':'new-password';say('authMessage','');}));
-wireNavigation();setupCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');setupCollapsibleToggle('toggleGroup1Growth','group1GrowthBody','group1GrowthToggleIcon');setupCollapsibleToggle('toggleGroup2Growth','group2GrowthBody','group2GrowthToggleIcon');setupCollapsibleToggle('toggleTaskReport','taskReportBody','taskReportToggleIcon');setupCollapsibleToggle('toggleStudyReport','studyReportBody','studyReportToggleIcon');setupCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');$('group1DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('group2DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;closeCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;openCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionForm').addEventListener('submit',saveSession);$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
-let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDate').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
+wireNavigation();setupStudySessionToggle(1);setupStudySessionToggle(2);setupCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');setupCollapsibleToggle('toggleGroup1Growth','group1GrowthBody','group1GrowthToggleIcon');setupCollapsibleToggle('toggleGroup2Growth','group2GrowthBody','group2GrowthToggleIcon');setupCollapsibleToggle('toggleTaskReport','taskReportBody','taskReportToggleIcon');setupCollapsibleToggle('toggleStudyReport','studyReportBody','studyReportToggleIcon');setupCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');$('group1DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('group2DailyChart').addEventListener('click',handleGroupGrowthDayClick);$('reviewDailyChart').addEventListener('click',e=>{const row=e.target.closest('[data-review-day]');if(!row)return;const day=row.dataset.reviewDay;closeCollapsibleToggle('toggleReviewReport','reviewReportBody','reviewReportToggleIcon');if(state.reviewExpandedDay===day){state.reviewExpandedDay='';state.reviewSelectedDay='';renderReview();return}state.reviewSelectedDay=day;state.reviewExpandedDay=day;openCollapsibleToggle('toggleReviewTaskEfficiency','reviewTaskEfficiencyBody','reviewTaskEfficiencyIcon');renderReview();$('reviewSelectedDetail').scrollIntoView({behavior:'smooth',block:'start'})});$('downloadReviewCsv').addEventListener('click',exportReviewDayCsv);$('downloadReviewWord').addEventListener('click',exportReviewDayWord);$('historyDate').addEventListener('change',renderTaskHistory);$('exportTaskHistory').addEventListener('click',exportTaskHistory);$('exportTaskHistoryWord').addEventListener('click',exportTaskHistoryWord);$('authForm').addEventListener('submit',auth);$('signOut').addEventListener('click',logout);$('sessionFormGroup1').addEventListener('submit',e=>saveSession(e,1));$('sessionFormGroup2').addEventListener('submit',e=>saveSession(e,2));$('toggleStudyLog').addEventListener('click',()=>{const form=$('sessionForm'),opening=form.classList.contains('hidden');form.classList.toggle('hidden');$('toggleStudyLog').setAttribute('aria-expanded',String(opening));$('studyLogToggleIcon').textContent=opening?'−':'＋';if(opening)$('subject').focus()});$('studyExportDate').addEventListener('change',renderStudyExportSummary);$('downloadStudyCsv').addEventListener('click',exportStudySessionsCsv);$('downloadStudyWord').addEventListener('click',exportStudySessionsWord);$('taskForm').addEventListener('submit',saveTask);$('taskCategory').addEventListener('change',updateTaskCategory);$('wakeTodayForm').addEventListener('submit',saveWakeToday);$('tomorrowWakeForm').addEventListener('submit',saveTomorrowWake);$('showTaskForm').addEventListener('click',()=>{$('taskForm').classList.toggle('hidden');if(!$('taskForm').classList.contains('hidden'))$('taskTitle').focus()});$('cancelTask').addEventListener('click',()=>{$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory()});$('targetSlider').addEventListener('input',()=>$('targetValue').textContent=$('targetSlider').value);$('saveTarget').addEventListener('click',saveTarget);$('startTestTimer').addEventListener('click',startTestTimer);$('pauseTestTimer').addEventListener('click',pauseTestTimer);$('resetTestTimer').addEventListener('click',resetTestTimer);$('testTargetMinutes').addEventListener('change',updateTestTarget);$('recordTest').addEventListener('click',recordTestResult);renderTestClock();
+let lastObservedDay=today();setInterval(()=>{const currentDay=today();if(currentDay===lastObservedDay)return;const previousDay=lastObservedDay;lastObservedDay=currentDay;$('todayWeekday').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long'}).toUpperCase();$('todayDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const hour=new Date().getHours();$('greeting').textContent=hour<12?'Good morning.':hour<17?'Good afternoon.':'Good evening.';$('studyDateGroup1').value=currentDay;$('studyDateGroup2').value=currentDay;if($('historyDate').value===previousDay)$('historyDate').value=currentDay;if(state.db&&state.user)load().catch(e=>{$('syncStatus').textContent='Sync error'})},30000);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.install=e;$('installBtn').classList.remove('hidden')});$('installBtn').addEventListener('click',async()=>{if(state.install){state.install.prompt();await state.install.userChoice;state.install=null;$('installBtn').classList.add('hidden')}else alert('Use browser menu → Install app / Add to Home Screen.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 if(!ready){show('auth');$('setupWarning').classList.remove('hidden');say('authMessage','Supabase config missing. Check config.js.');$('authSubmit').disabled=true;return}
@@ -2630,7 +2665,41 @@ async function fetchAllTaskHistory(){const rows=[];let start=0,pageSize=1000;whi
 async function load(){let [s,t,g]=await Promise.all([state.db.from('study_sessions').select('*').order('study_date',{ascending:false}).order('created_at',{ascending:false}).limit(500),state.db.from('study_tasks').select('*').order('due_date',{ascending:true}).order('created_at',{ascending:false}).limit(500),state.db.from('study_settings').select('daily_target').eq('user_id',state.user.id).maybeSingle()]);for(let r of [s,t,g])if(r.error)throw r.error;state.sessions=s.data||[];state.tasks=t.data||[];state.target=g.data?.daily_target||6;const d=today(),tom=shiftDate(d,1);const w=await state.db.from('wake_up_plans').select('*').gte('plan_date',d).lte('plan_date',tom).order('plan_date');state.wakeReady=!w.error;state.wakePlans=w.data||[];const h=await fetchAllTaskHistory();state.historyReady=!h.error;state.taskHistory=h.data||[];const tr=await state.db.from('study_test_records').select('*').order('recorded_at',{ascending:false}).limit(100);state.testsReady=!tr.error;state.testRecords=tr.data||[];$('targetSlider').value=state.target;$('targetValue').textContent=state.target;render();$('syncStatus').textContent='Cloud synced'}
 let timer;async function refresh(){clearTimeout(timer);timer=setTimeout(()=>load().catch(e=>$('syncStatus').textContent='Sync error'),300)}
 function subscribe(){if(state.channel)state.db.removeChannel(state.channel);state.channel=state.db.channel('study-progress-sync').on('postgres_changes',{event:'*',schema:'public',table:'study_sessions'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_tasks'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_settings'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'wake_up_plans'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_task_history'},refresh).on('postgres_changes',{event:'*',schema:'public',table:'study_test_records'},refresh).subscribe(status=>{if(status==='SUBSCRIBED')$('syncStatus').textContent='Live sync on'})}
-async function saveSession(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('sessionMessage','');try{let {error}=await state.db.from('study_sessions').insert({user_id:state.user.id,subject:$('subject').value,study_date:$('studyDate').value,duration_minutes:Number($('minutes').value),study_type:$('studyType').value,topic:$('topic').value.trim()||null,notes:$('notes').value.trim()||null});if(error)throw error;$('topic').value='';$('notes').value='';$('minutes').value=60;say('sessionMessage','Session saved and synced.',true);await load()}catch(e){say('sessionMessage',e.message)}finally{b.disabled=false}}
+async function saveSession(e,group){
+ e.preventDefault();
+ const suffix='Group'+group,button=e.submitter;
+ if(button)button.disabled=true;
+ say('sessionMessage'+suffix,'');
+ try{
+  const payload={
+   user_id:state.user.id,
+   subject:$('subject'+suffix).value,
+   study_date:$('studyDate'+suffix).value,
+   duration_minutes:Number($('minutes'+suffix).value),
+   study_type:$('studyType'+suffix).value,
+   topic:$('topic'+suffix).value.trim()||null,
+   notes:$('notes'+suffix).value.trim()||null
+  };
+  const {error}=await state.db.from('study_sessions').insert(payload);
+  if(error)throw error;
+  $('topic'+suffix).value='';$('notes'+suffix).value='';$('minutes'+suffix).value=60;
+  say('sessionMessage'+suffix,'Group '+group+' session saved and synced.',true);
+  await load();
+ }catch(error){say('sessionMessage'+suffix,error.message||'Could not save this session.')}
+ finally{if(button)button.disabled=false}
+}
+function setupStudySessionToggle(group){
+ const suffix='Group'+group,button=$('toggleStudyLog'+suffix),form=$('sessionForm'+suffix),icon=$('studyLog'+suffix+'ToggleIcon');
+ if(!button||!form||!icon)return;
+ button.addEventListener('click',()=>{
+  const opening=form.classList.contains('hidden');
+  form.classList.toggle('hidden',!opening);
+  button.setAttribute('aria-expanded',String(opening));
+  icon.textContent=opening?'−':'＋';
+  if(opening)$('subject'+suffix).focus();
+ });
+}
+
 function updateTaskCategory(){const isPersonal=$('taskCategory').value==='personal';$('taskSubjectWrap').classList.toggle('hidden',isPersonal);$('taskSubject').required=!isPersonal}
 async function saveTask(e){e.preventDefault();let b=e.submitter;b.disabled=true;say('taskMessage','');try{const isPersonal=$('taskCategory').value==='personal';let {error}=await state.db.from('study_tasks').insert({user_id:state.user.id,title:$('taskTitle').value.trim(),subject:isPersonal?'Personal':$('taskSubject').value,due_date:today(),priority:'normal',estimated_minutes:0,completed:false});if(error)throw error;$('taskForm').reset();$('taskForm').classList.add('hidden');updateTaskCategory();await load()}catch(e){say('taskMessage',e.message)}finally{b.disabled=false}}
 function shiftDate(iso,offset){const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+offset);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
@@ -2704,8 +2773,8 @@ function reviewProgressData(){
 }
 function studyGroupNumber(session){
  const subject=String(session?.subject||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
- if(/advanced accounting|corporate and other law|corporate other law|^law$|taxation|income tax|indirect tax|direct tax/.test(subject))return 1;
- if(/cost.*management accounting|auditing|audit and ethics|financial management|strategic management/.test(subject))return 2;
+ if(/advanced accounting|direct tax|^gst$|corporate and other laws?|corporate other laws?|^law$|^taxation$/.test(subject))return 1;
+ if(/cost.*management accounting|auditing.*ethics|financial management|strategic management/.test(subject))return 2;
  return 0;
 }
 function reviewGroupSessionsForDay(day,group){return studySessionsForDay(day).filter(session=>studyGroupNumber(session)===group)}
